@@ -8,6 +8,7 @@
 
 export { type Constructor, instanceOf } from "./instance_of.ts";
 export { type ArgumentsGuard, isArguments } from "./is_arguments.ts";
+export { isArray } from "./is_array.ts";
 export { isComplex } from "./is_complex.ts";
 export { type FunctionGuard, isFunction } from "./is_function.ts";
 export { isInstance } from "./is_instance.ts";
