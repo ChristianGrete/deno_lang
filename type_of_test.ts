@@ -1,4 +1,5 @@
 import { assertEquals, assertFalse, assertThrows } from "@std/assert";
+import type { TagLabel } from "./tag_label_of.ts";
 import { type Type, typeByTagLabel, typeOf } from "./type_of.ts";
 
 Deno.test("typeOf() returns correct primitive types", () => {
@@ -76,7 +77,7 @@ Deno.test("typeByTagLabel covers known mappings", () => {
   };
 
   for (const [key, value] of Object.entries(known)) {
-    assertEquals(typeByTagLabel[key], value);
+    assertEquals((typeByTagLabel as Record<TagLabel, Type>)[key], value);
   }
 
   assertFalse(Object.hasOwn(typeByTagLabel, "[object HTMLDivElement]"));

@@ -19,7 +19,7 @@ import { unsetPrototype } from "./internal/unset_prototype.ts";
 import { validateArgsLength } from "./internal/validate_args_length.ts";
 import type { TagLabel } from "./tag_label_of.ts";
 
-const { toString } = Object.prototype;
+const { freeze, prototype: { toString } } = Object;
 
 /**
  * Built-in runtime types defined in the ECMAScript specification.
@@ -67,25 +67,27 @@ export type Type = BuiltinTypes | ExtendedTypes | NullOrUndefinedTypes;
  *
  * @const
  * @name lang/type_of.typeByTagLabel
- * @type {Record<TagLabel, Type>}
+ * @readonly
  */
-export const typeByTagLabel: Record<TagLabel, Type> = {
-  "[object Arguments]": "arguments",
-  "[object Array]": "array",
-  "[object BigInt]": "bigint",
-  "[object Boolean]": "boolean",
-  "[object Date]": "date",
-  "[object Error]": "error",
-  "[object Function]": "function",
-  "[object Map]": "map",
-  "[object Number]": "number",
-  "[object Object]": "object",
-  "[object Promise]": "promise",
-  "[object RegExp]": "regexp",
-  "[object Set]": "set",
-  "[object String]": "string",
-  "[object Symbol]": "symbol",
-};
+export const typeByTagLabel = freeze(
+  {
+    "[object Arguments]": "arguments",
+    "[object Array]": "array",
+    "[object BigInt]": "bigint",
+    "[object Boolean]": "boolean",
+    "[object Date]": "date",
+    "[object Error]": "error",
+    "[object Function]": "function",
+    "[object Map]": "map",
+    "[object Number]": "number",
+    "[object Object]": "object",
+    "[object Promise]": "promise",
+    "[object RegExp]": "regexp",
+    "[object Set]": "set",
+    "[object String]": "string",
+    "[object Symbol]": "symbol",
+  } as const,
+);
 
 /**
  * Determines the runtime type of a value.
@@ -104,7 +106,8 @@ export function typeOf(value: unknown): Type {
   const type = typeof value;
 
   return type === "object"
-    ? (typeByTagLabel[toString.call(value)] ?? "object")
+    ? ((typeByTagLabel as Record<TagLabel, Type>)[toString.call(value)] ??
+      "object")
     : type;
 }
 
