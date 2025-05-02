@@ -22,7 +22,6 @@ import { validateArgsLength } from "./internal/validate_args_length.ts";
  *
  * @const
  * @name lang/is_primitive.primitiveTypes
- * @type {Set<string>}
  */
 export const primitiveTypes = new Set([
   "bigint",
