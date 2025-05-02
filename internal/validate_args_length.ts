@@ -10,5 +10,3 @@ export const validateArgsLength = (
     );
   }
 };
-
-export default validateArgsLength;
