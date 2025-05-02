@@ -10,5 +10,3 @@ export const unsetPrototype = (func: unknown): void => {
     });
   }
 };
-
-export default unsetPrototype;
