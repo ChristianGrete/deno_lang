@@ -1,0 +1,14 @@
+const { defineProperty } = Object;
+
+export const unsetPrototype = (func: unknown): void => {
+  if (typeof func === "function") {
+    defineProperty(func, "prototype", {
+      configurable: false,
+      enumerable: false,
+      writable: false,
+      value: null,
+    });
+  }
+};
+
+export default unsetPrototype;
