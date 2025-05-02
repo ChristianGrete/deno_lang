@@ -1,5 +1,5 @@
 /**
- * Utility module for retrieving the tag label of a value (e.g. "[object Array]").
+ * Utility module for retrieving the tag label of a value (e.g. `"[object Array]"`).
  *
  * The result is based on `Object.prototype.toString.call(value)` and can be customized via `Symbol.toStringTag`.
  *
@@ -64,7 +64,7 @@ export type TagLabel =
   | string;
 
 /**
- * Returns the tag label of a value (e.g. "[object Array]").
+ * Returns the tag label of a value (e.g. `"[object Array]"`).
  *
  * @function
  * @name lang/tag_label_of.tagLabelOf

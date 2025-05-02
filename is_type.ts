@@ -11,6 +11,8 @@
 
 import { unsetPrototype } from "./internal/unset_prototype.ts";
 import { validateArgsLength } from "./internal/validate_args_length.ts";
+import type { ArgumentsGuard } from "./is_arguments.ts";
+import type { FunctionGuard } from "./is_function.ts";
 import { type Type, typeOf } from "./type_of.ts";
 
 const { toString } = Object.prototype;
@@ -23,13 +25,13 @@ const { toString } = Object.prototype;
  * @name lang/is_type.GuardByType
  */
 export interface GuardByType {
-  "arguments": ArrayLike<unknown>;
+  "arguments": ArgumentsGuard;
   "array": unknown[];
   "bigint": bigint;
   "boolean": boolean;
   "date": Date;
   "error": Error;
-  "function": (...args: unknown[]) => unknown;
+  "function": FunctionGuard;
   "map": Map<unknown, unknown>;
   "null": null;
   "number": number;

@@ -1,5 +1,5 @@
 /**
- * Utility module for extracting the tag of a value (e.g. "Array").
+ * Utility module for extracting the tag of a value (e.g. `"Array"`).
  *
  * The result is based on the internal tag used by `Object.prototype.toString`, minus the surrounding "[object ...]".
  *
@@ -58,7 +58,7 @@ export type NullOrUndefinedTags = "Null" | "Undefined";
 export type Tag = BuiltinTags | ExtendedTags | NullOrUndefinedTags | string;
 
 /**
- * Extracts the tag (e.g. "Array", "Date", "Map") of a given value.
+ * Extracts the tag (e.g. `"Array"`, `"Date"`, `"Map"`) of a given value.
  *
  * @function
  * @name lang/tag_of.tagOf
