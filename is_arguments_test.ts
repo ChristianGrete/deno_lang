@@ -1,8 +1,8 @@
 import { assert, assertFalse, assertThrows } from "@std/assert";
-import { type ArgumentsGuard, isArguments } from "./is_arguments.ts";
+import { type Arguments, isArguments } from "./is_arguments.ts";
 
 Deno.test("isArguments() returns true for arguments list", () => {
-  function getArgs(..._: unknown[]): ArgumentsGuard {
+  function getArgs(..._: unknown[]): Arguments {
     return arguments;
   }
 

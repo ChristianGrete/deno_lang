@@ -17,13 +17,13 @@ import { validateArgsLength } from "./internal/validate_args_length.ts";
 import { typeOf } from "./type_of.ts";
 
 /**
- * A callable value with any arguments and return type.
+ * A function with any arguments and return type.
  *
  * Used as the return type by {@link isFunction}.
  *
- * @name lang/is_function.FunctionGuard
+ * @name lang/is_function.Func
  */
-export type FunctionGuard = (...args: unknown[]) => unknown;
+export type Func = (...args: unknown[]) => unknown;
 
 /**
  * Checks whether a value is a function.
@@ -31,12 +31,12 @@ export type FunctionGuard = (...args: unknown[]) => unknown;
  * @function
  * @name lang/is_function.isFunction
  * @param {unknown} value – The value to check.
- * @returns {value is FunctionGuard} Whether the value is a function.
+ * @returns {value is Func} Whether the value is a function.
  * @see {@link lang/type_of.typeOf}
  */
 export function isFunction(
   value: unknown,
-): value is FunctionGuard {
+): value is Func {
   validateArgsLength(arguments);
 
   return typeOf(value) === "function";
