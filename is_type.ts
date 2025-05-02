@@ -11,31 +11,32 @@
 
 import { unsetPrototype } from "./internal/unset_prototype.ts";
 import { validateArgsLength } from "./internal/validate_args_length.ts";
-import type { ArgumentsGuard } from "./is_arguments.ts";
-import type { FunctionGuard } from "./is_function.ts";
+import type { Arguments } from "./is_arguments.ts";
+import type { Func } from "./is_function.ts";
+import type { Obj } from "./is_object.ts";
 import { type Type, typeOf } from "./type_of.ts";
 
 const { toString } = Object.prototype;
 
 /**
- * Mapping from runtime type strings to type guard return types.
+ * Mapping from runtime type strings to their corresponding TypeScript types.
  *
- * Used as return type by {@link isType}.
+ * Used as type predicate by {@link isType}.
  *
- * @name lang/is_type.GuardByType
+ * @name lang/is_type.InferredByType
  */
-export interface GuardByType {
-  "arguments": ArgumentsGuard;
+export interface InferredByType {
+  "arguments": Arguments;
   "array": unknown[];
   "bigint": bigint;
   "boolean": boolean;
   "date": Date;
   "error": Error;
-  "function": FunctionGuard;
+  "function": Func;
   "map": Map<unknown, unknown>;
   "null": null;
   "number": number;
-  "object": Record<string, unknown>;
+  "object": Obj;
   "promise": Promise<unknown>;
   "regexp": RegExp;
   "set": Set<unknown>;
@@ -51,14 +52,14 @@ export interface GuardByType {
  * @name lang/is_type.isType
  * @param {unknown} value – The value to check.
  * @param {Type} type – The expected type string as returned by {@link typeOf}.
- * @returns {value is GuardByType[T]} Whether the value has the expected type.
+ * @returns {value is InferredByType[T]} Whether the value has the expected type.
  * @see {@link lang/type_of.typeOf}
  * @template T
  */
 export function isType<T extends Type>(
   value: unknown,
   type: T,
-): value is GuardByType[T] {
+): value is InferredByType[T] {
   validateArgsLength(arguments, 2);
 
   const argTagLabel = toString.call(type);

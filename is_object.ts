@@ -19,9 +19,9 @@ import { typeOf } from "./type_of.ts";
 /**
  * Represents any non-null object with string, number, or symbol keys.
  *
- * @name lang/is_object.ObjectGuard
+ * @name lang/is_object.Obj
  */
-export type ObjectGuard = Record<string | symbol | number, unknown>;
+export type Obj = Record<string | symbol | number, unknown>;
 
 /**
  * Checks whether a value is an object.
@@ -29,12 +29,12 @@ export type ObjectGuard = Record<string | symbol | number, unknown>;
  * @function
  * @name lang/is_object.isObject
  * @param {unknown} value – The value to check.
- * @returns {value is ObjectGuard} Whether the value is an object.
+ * @returns {value is Obj} Whether the value is an object.
  * @see {@link lang/type_of.typeOf}
  */
 export function isObject(
   value: unknown,
-): value is ObjectGuard {
+): value is Obj {
   validateArgsLength(arguments);
 
   return typeOf(value) === "object";

@@ -17,9 +17,9 @@ import { typeOf } from "./type_of.ts";
 /**
  * Represents an array-like `arguments` list.
  *
- * @name lang/is_arguments.ArgumentsGuard
+ * @name lang/is_arguments.Arguments
  */
-export type ArgumentsGuard = ArrayLike<unknown>;
+export type Arguments = ArrayLike<unknown>;
 
 /**
  * Checks whether a value is an arguments list.
@@ -27,10 +27,10 @@ export type ArgumentsGuard = ArrayLike<unknown>;
  * @function
  * @name lang/is_arguments.isArguments
  * @param {unknown} value – The value to check.
- * @returns {value is ArgumentsGuard} Whether the value is an `arguments` list.
+ * @returns {value is Arguments} Whether the value is an `arguments` list.
  * @see {@link lang/type_of.typeOf}
  */
-export function isArguments(value: unknown): value is ArgumentsGuard {
+export function isArguments(value: unknown): value is Arguments {
   validateArgsLength(arguments);
 
   return typeOf(value) === "arguments";
