@@ -17,9 +17,9 @@
 
 import { unsetPrototype } from "./internal/unset_prototype.ts";
 import { validateArgsLength } from "./internal/validate_args_length.ts";
-import type { TagLabel } from "./tag_label_of.ts";
+import { getTagLabel, type TagLabel } from "./tag_label_of.ts";
 
-const { freeze, prototype: { toString } } = Object;
+const { freeze } = Object;
 
 /**
  * Built-in runtime types defined in the ECMAScript specification.
@@ -90,10 +90,10 @@ export const typeByTagLabel = freeze(
 );
 
 /**
- * Internal type detection helper used by {@link typeOf}.
+ * Internal impementation of {@link typeOf}.
  *
  * @function
- * @name module:lang/type_of~getType
+ * @name lang/type_of~getType
  */
 export const getType = (value: unknown): Type => {
   if (value == null) return (value + "") as NullOrUndefinedTypes;
@@ -101,7 +101,7 @@ export const getType = (value: unknown): Type => {
   const type = typeof value;
 
   return type === "object"
-    ? ((typeByTagLabel as Record<TagLabel, Type>)[toString.call(value)] ??
+    ? ((typeByTagLabel as Record<TagLabel, Type>)[getTagLabel(value)] ??
       "object")
     : type;
 };

@@ -13,9 +13,8 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 import type { Arguments } from "./is_arguments.ts";
 import type { Func } from "./is_function.ts";
 import type { Obj } from "./is_object.ts";
+import { getTagLabel } from "./tag_label_of.ts";
 import { getType, type Type } from "./type_of.ts";
-
-const { toString } = Object.prototype;
 
 /**
  * Mapping from runtime type strings to their corresponding TypeScript types.
@@ -61,7 +60,7 @@ export function isType<T extends Type>(
 ): value is InferredByType[T] {
   validateArgsLength(arguments, 2);
 
-  const argTagLabel = toString.call(type);
+  const argTagLabel = getTagLabel(type);
 
   if (argTagLabel !== "[object String]") {
     throw new TypeError(

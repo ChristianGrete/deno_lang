@@ -63,6 +63,16 @@ export type TagLabel =
   | string;
 
 /**
+ * Internal impementation of {@link tagLabelOf}.
+ *
+ * @function
+ * @name lang/tag_label_of~getTagLabel
+ */
+export const getTagLabel = toString.call.bind(toString) as (
+  value: unknown,
+) => TagLabel;
+
+/**
  * Returns the tag label of a value (e.g. `"[object Array]"`).
  *
  * @function
@@ -73,7 +83,7 @@ export type TagLabel =
 export function tagLabelOf(value: unknown): TagLabel {
   validateArgsLength(arguments);
 
-  return toString.call(value);
+  return getTagLabel(value);
 }
 
 unsetPrototype(tagLabelOf);
