@@ -8,10 +8,8 @@
  * @module lang/is_constructor
  */
 
-import { unsetPrototype } from "./internal/unset_prototype.ts";
-import { validateArgsLength } from "./internal/validate_args_length.ts";
+import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 import type { Func } from "./is_function.ts";
-import { typeOf } from "./type_of.ts";
 
 const { hasOwnProperty } = Object.prototype;
 
@@ -36,10 +34,9 @@ export type Constructor = new (...args: unknown[]) => unknown;
 export function isConstructor(
   value: unknown,
 ): value is Constructor {
-  validateArgsLength(arguments);
-
   if (
-    typeOf(value) !== "function" || !hasOwnProperty.call(value, "prototype") ||
+    boundTypeOf(arguments) !== "function" ||
+    !hasOwnProperty.call(value, "prototype") ||
     (value as Func).prototype == null
   ) return false;
 

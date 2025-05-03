@@ -10,8 +10,7 @@
  * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/isArray.js|mout@1.2.4/lang/isArray}
  */
 
-import { unsetPrototype } from "./internal/unset_prototype.ts";
-import { validateArgsLength } from "./internal/validate_args_length.ts";
+import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 
 const { isArray: nativeIsArray } = Array;
 

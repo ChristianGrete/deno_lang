@@ -12,9 +12,7 @@
  * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/isFunction.js|mout-lang-type@0.6.0/lang/isFunction}
  */
 
-import { unsetPrototype } from "./internal/unset_prototype.ts";
-import { validateArgsLength } from "./internal/validate_args_length.ts";
-import { typeOf } from "./type_of.ts";
+import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * A function with any arguments and return type.
@@ -30,16 +28,14 @@ export type Func = (...args: unknown[]) => unknown;
  *
  * @function
  * @name lang/is_function.isFunction
- * @param {unknown} value – The value to check.
- * @returns {value is Func} Whether the value is a function.
+ * @param {unknown} _value – The value to check.
+ * @returns {_value is Func} Whether the value is a function.
  * @see {@link lang/type_of.typeOf}
  */
 export function isFunction(
-  value: unknown,
-): value is Func {
-  validateArgsLength(arguments);
-
-  return typeOf(value) === "function";
+  _value: unknown,
+): _value is Func {
+  return boundTypeOf(arguments) === "function";
 }
 
 unsetPrototype(isFunction);
