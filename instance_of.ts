@@ -11,8 +11,7 @@
  * @see {@link https://github.com/mootools/mootools-core/blob/1.6.0/Source/Core/Core.js#L47|mootools-core@1.6.0/Core/Core.instanceOf}
  */
 
-import { unsetPrototype } from "./internal/unset_prototype.ts";
-import { validateArgsLength } from "./internal/validate_args_length.ts";
+import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 
 /**
  * A constructable function or class used by {@link instanceOf}.

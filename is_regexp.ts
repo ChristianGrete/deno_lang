@@ -12,23 +12,19 @@
  * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/isRegExp.js|mout-lang-type@0.6.0/lang/isRegExp}
  */
 
-import { unsetPrototype } from "./internal/unset_prototype.ts";
-import { validateArgsLength } from "./internal/validate_args_length.ts";
-import { typeOf } from "./type_of.ts";
+import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Checks whether a value is a regular expression.
  *
  * @function
  * @name lang/is_regexp.isRegExp
- * @param {unknown} value – The value to check.
- * @returns {value is RegExp} Whether the value is a regular expression.
+ * @param {unknown} _value – The value to check.
+ * @returns {_value is RegExp} Whether the value is a regular expression.
  * @see {@link lang/type_of.typeOf}
  */
-export function isRegExp(value: unknown): value is RegExp {
-  validateArgsLength(arguments);
-
-  return typeOf(value) === "regexp";
+export function isRegExp(_value: unknown): _value is RegExp {
+  return boundTypeOf(arguments) === "regexp";
 }
 
 unsetPrototype(isRegExp);

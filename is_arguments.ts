@@ -10,9 +10,7 @@
  * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/isArguments.js|mout@1.2.4/lang/isArguments}
  */
 
-import { unsetPrototype } from "./internal/unset_prototype.ts";
-import { validateArgsLength } from "./internal/validate_args_length.ts";
-import { typeOf } from "./type_of.ts";
+import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Represents an array-like `arguments` list.
@@ -26,14 +24,12 @@ export type Arguments = ArrayLike<unknown>;
  *
  * @function
  * @name lang/is_arguments.isArguments
- * @param {unknown} value – The value to check.
- * @returns {value is Arguments} Whether the value is an `arguments` list.
+ * @param {unknown} _value – The value to check.
+ * @returns {_value is Arguments} Whether the value is an `arguments` list.
  * @see {@link lang/type_of.typeOf}
  */
-export function isArguments(value: unknown): value is Arguments {
-  validateArgsLength(arguments);
-
-  return typeOf(value) === "arguments";
+export function isArguments(_value: unknown): _value is Arguments {
+  return boundTypeOf(arguments) === "arguments";
 }
 
 unsetPrototype(isArguments);

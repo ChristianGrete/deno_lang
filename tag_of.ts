@@ -13,8 +13,7 @@
  * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/kindOf.js|mout@1.2.4/lang/kindOf}
  */
 
-import { unsetPrototype } from "./internal/unset_prototype.ts";
-import { validateArgsLength } from "./internal/validate_args_length.ts";
+import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 
 const { toString } = Object.prototype;
 
