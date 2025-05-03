@@ -13,7 +13,7 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 import type { Arguments } from "./is_arguments.ts";
 import type { Func } from "./is_function.ts";
 import type { Obj } from "./is_object.ts";
-import { type Type, typeOf } from "./type_of.ts";
+import { getType, type Type } from "./type_of.ts";
 
 const { toString } = Object.prototype;
 
@@ -65,11 +65,11 @@ export function isType<T extends Type>(
 
   if (argTagLabel !== "[object String]") {
     throw new TypeError(
-      `Invalid argument 'type': expected string, got ${typeOf(type)}`,
+      `Invalid argument 'type': expected string, got ${getType(type)}`,
     );
   }
 
-  return typeOf(value) === type;
+  return getType(value) === type;
 }
 
 unsetPrototype(isType);
