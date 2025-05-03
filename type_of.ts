@@ -90,6 +90,23 @@ export const typeByTagLabel = freeze(
 );
 
 /**
+ * Internal type detection helper used by {@link typeOf}.
+ *
+ * @function
+ * @name module:lang/type_of~getType
+ */
+export const getType = (value: unknown): Type => {
+  if (value == null) return (value + "") as NullOrUndefinedTypes;
+
+  const type = typeof value;
+
+  return type === "object"
+    ? ((typeByTagLabel as Record<TagLabel, Type>)[toString.call(value)] ??
+      "object")
+    : type;
+};
+
+/**
  * Determines the runtime type of a value.
  *
  * @function
@@ -101,14 +118,7 @@ export const typeByTagLabel = freeze(
 export function typeOf(value: unknown): Type {
   validateArgsLength(arguments);
 
-  if (value == null) return (value + "") as NullOrUndefinedTypes;
-
-  const type = typeof value;
-
-  return type === "object"
-    ? ((typeByTagLabel as Record<TagLabel, Type>)[toString.call(value)] ??
-      "object")
-    : type;
+  return getType(value);
 }
 
 unsetPrototype(typeOf);
