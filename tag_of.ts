@@ -14,8 +14,7 @@
  */
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
-
-const { toString } = Object.prototype;
+import { getTagLabel } from "./tag_label_of.ts";
 
 /**
  * Built-in tags defined in the ECMAScript specification.
@@ -68,7 +67,7 @@ export type Tag = BuiltinTags | ExtendedTags | NullOrUndefinedTags | string;
 export function tagOf(value: unknown): Tag {
   validateArgsLength(arguments);
 
-  return toString.call(value).slice(8, -1);
+  return getTagLabel(value).slice(8, -1);
 }
 
 unsetPrototype(tagOf);
