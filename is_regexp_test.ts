@@ -5,7 +5,7 @@ Deno.test("isRegExp() returns true for regular expressions", () => {
   assert(isRegExp(/abc/));
   assert(isRegExp(new RegExp("abc")));
   assert(isRegExp(RegExp("abc"))); // without new
-  assert(isRegExp(Object(/abc/))); // boxed RegExp – still same object!
+  assert(isRegExp(Object(/abc/))); // boxed RegExp - still same object!
 });
 
 Deno.test("isRegExp() returns false for non-RegExp values", () => {
@@ -33,9 +33,9 @@ Deno.test("isRegExp() does not detect proxied regular expressions", () => {
 });
 
 Deno.test("isRegExp() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => isRegExp(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isRegExp(/abc/, /extra/), TypeError);
 });

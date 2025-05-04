@@ -24,7 +24,7 @@ export type Arguments = ArrayLike<unknown>;
  *
  * @function
  * @name lang/is_arguments.isArguments
- * @param {unknown} _value – The value to check.
+ * @param {unknown} _value - The value to check.
  * @returns {_value is Arguments} Whether the value is an `arguments` list.
  * @see {@link lang/type_of.typeOf}
  */

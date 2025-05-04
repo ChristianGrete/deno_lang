@@ -30,9 +30,9 @@ Deno.test("isConstructor() returns false for non-constructors", () => {
 });
 
 Deno.test("isConstructor() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => isConstructor(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isConstructor(function () {}, {}), TypeError);
 });

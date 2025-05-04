@@ -36,6 +36,6 @@ Deno.test("tagOf() returns Symbol.toStringTag if defined", () => {
 });
 
 Deno.test("tagOf() throws when called with no arguments", () => {
-  // @ts-expect-error – test invalid usage
+  // @ts-expect-error - test invalid usage
   assertThrows(() => tagOf(), TypeError);
 });

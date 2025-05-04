@@ -111,7 +111,7 @@ export const getType = (value: unknown): Type => {
  *
  * @function
  * @name lang/type_of.typeOf
- * @param {unknown} value – The value to check.
+ * @param {unknown} value - The value to check.
  * @returns {Type} A string representing the value's type.
  * @see {@link lang/tag_label_of.tagLabelOf}
  */

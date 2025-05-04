@@ -31,9 +31,9 @@ Deno.test("isArray() returns false for array-like but non-array objects", functi
 });
 
 Deno.test("isArray() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => isArray(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isArray([], []), TypeError);
 });

@@ -19,7 +19,7 @@ const { isArray: nativeIsArray } = Array;
  *
  * @function
  * @name lang/is_array.isArray
- * @param {unknown} value – The value to check.
+ * @param {unknown} value - The value to check.
  * @returns {value is unknown[]} Whether the value is an array.
  */
 export function isArray(

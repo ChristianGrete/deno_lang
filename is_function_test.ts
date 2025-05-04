@@ -22,9 +22,9 @@ Deno.test("isFunction() returns false for non-function values", () => {
 });
 
 Deno.test("isFunction() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => isFunction(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isFunction(() => {}, "extra"), TypeError);
 });

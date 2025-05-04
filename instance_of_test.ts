@@ -47,9 +47,9 @@ Deno.test("instanceOf() narrows types when true", () => {
 });
 
 Deno.test("instanceOf() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => instanceOf(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => instanceOf({}, Object, "extra"), TypeError);
 });

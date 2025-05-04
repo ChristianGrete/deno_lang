@@ -37,9 +37,9 @@ Deno.test("tagLabelOf() respects Symbol.toStringTag", () => {
 });
 
 Deno.test("tagLabelOf() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => tagLabelOf(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => tagLabelOf("a", "b"), TypeError);
 });
