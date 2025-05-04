@@ -35,7 +35,7 @@ export const primitiveTypes = new Set([
  *
  * @function
  * @name lang/is_primitive.isPrimitive
- * @param {unknown} value – The value to check.
+ * @param {unknown} value - The value to check.
  * @returns {boolean} Whether the value is primitive.
  */
 export function isPrimitive(value: unknown): boolean {

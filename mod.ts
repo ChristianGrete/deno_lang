@@ -9,8 +9,10 @@
 export { type Constructable, instanceOf } from "./instance_of.ts";
 export { type Arguments, isArguments } from "./is_arguments.ts";
 export { isArray } from "./is_array.ts";
+export { isBoolean } from "./is_boolean.ts";
 export { isComplex } from "./is_complex.ts";
 export { type Constructor, isConstructor } from "./is_constructor.ts";
+export { isDate } from "./is_date.ts";
 export { type Func, isFunction } from "./is_function.ts";
 export { isInstance } from "./is_instance.ts";
 export { isObject, type Obj } from "./is_object.ts";

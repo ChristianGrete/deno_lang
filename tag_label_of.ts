@@ -77,7 +77,7 @@ export const getTagLabel = toString.call.bind(toString) as (
  *
  * @function
  * @name lang/tag_label_of.tagLabelOf
- * @param {unknown} value – The value to inspect.
+ * @param {unknown} value - The value to inspect.
  * @returns {TagLabel} The tag label string.
  */
 export function tagLabelOf(value: unknown): TagLabel {

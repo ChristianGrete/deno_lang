@@ -26,7 +26,7 @@ export type Obj = Record<string | symbol | number, unknown>;
  *
  * @function
  * @name lang/is_object.isObject
- * @param {unknown} _value – The value to check.
+ * @param {unknown} _value - The value to check.
  * @returns {_value is Obj} Whether the value is an object.
  * @see {@link lang/type_of.typeOf}
  */

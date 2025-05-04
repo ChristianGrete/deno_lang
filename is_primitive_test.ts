@@ -30,10 +30,10 @@ Deno.test("isPrimitive() returns false for non-primitive objects", () => {
 });
 
 Deno.test("isPrimitive() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test intentional invalid usage
+  // @ts-expect-error - test intentional invalid usage
   assertThrows(() => isPrimitive(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isPrimitive("foo", "bar"), TypeError);
 });
 

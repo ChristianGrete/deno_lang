@@ -45,15 +45,15 @@ Deno.test("typeOf() correctly identifies boxed primitive wrappers", () => {
     const boxedSym = Object(Symbol("x"));
     assertEquals(typeOf(boxedSym), "symbol");
   } catch {
-    // Ignore – Symbol boxing is currently not a realistic scenario
+    // Ignore - Symbol boxing is currently not a realistic scenario
   }
 });
 
 Deno.test("typeOf() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test no args
+  // @ts-expect-error - test no args
   assertThrows(() => typeOf(), TypeError);
 
-  // @ts-expect-error – test too many args
+  // @ts-expect-error - test too many args
   assertThrows(() => typeOf({}, "extra"), TypeError);
 });
 

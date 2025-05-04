@@ -28,9 +28,9 @@ Deno.test("isComplex() returns false for primitive values", () => {
 });
 
 Deno.test("isComplex() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test intentional invalid usage
+  // @ts-expect-error - test intentional invalid usage
   assertThrows(() => isComplex(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isComplex("foo", "bar"), TypeError);
 });

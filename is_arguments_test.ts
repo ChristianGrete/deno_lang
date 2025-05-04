@@ -35,9 +35,9 @@ Deno.test("isArguments() returns false for functions and objects", () => {
 });
 
 Deno.test("isArguments() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => isArguments(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isArguments({}, {}), TypeError);
 });

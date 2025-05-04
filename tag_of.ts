@@ -60,7 +60,7 @@ export type Tag = BuiltinTags | ExtendedTags | NullOrUndefinedTags | string;
  *
  * @function
  * @name lang/tag_of.tagOf
- * @param {unknown} value – The value to inspect.
+ * @param {unknown} value - The value to inspect.
  * @returns {Tag} The tag string.
  * @see {@link lang/tag_label_of.tagLabelOf}
  */

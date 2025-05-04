@@ -29,9 +29,9 @@ Deno.test("isObject() returns false for built-in non-plain objects", () => {
 });
 
 Deno.test("isObject() throws on invalid number of arguments", () => {
-  // @ts-expect-error – test missing argument
+  // @ts-expect-error - test missing argument
   assertThrows(() => isObject(), TypeError);
 
-  // @ts-expect-error – test too many arguments
+  // @ts-expect-error - test too many arguments
   assertThrows(() => isObject({}, {}), TypeError);
 });
