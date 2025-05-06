@@ -8,10 +8,8 @@
  * @module lang/is_constructor
  */
 
-import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
+import { boundTypeOf, hasOwnProperty, unsetPrototype } from "./internal/mod.ts";
 import type { Func } from "./is_function.ts";
-
-const { hasOwnProperty } = Object.prototype;
 
 /**
  * A constructor function or class.
@@ -36,7 +34,7 @@ export function isConstructor(
 ): value is Constructor {
   if (
     boundTypeOf(arguments) !== "function" ||
-    !hasOwnProperty.call(value, "prototype") ||
+    !hasOwnProperty(value, "prototype") ||
     (value as Func).prototype == null
   ) return false;
 

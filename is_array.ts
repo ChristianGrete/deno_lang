@@ -12,7 +12,13 @@
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 
-const { isArray: nativeIsArray } = Array;
+/**
+ * Internal impementation of {@link isArray}.
+ *
+ * @function
+ * @name lang/is_array~nativeIsArray
+ */
+export const { isArray: nativeIsArray } = Array;
 
 /**
  * Checks whether a value is an array.
