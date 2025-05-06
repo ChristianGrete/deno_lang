@@ -19,7 +19,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  *
  * @name lang/is_object.Obj
  */
-export type Obj = Record<string | symbol | number, unknown>;
+export type Obj = Record<PropertyKey, unknown>;
 
 /**
  * Checks whether a value is an object.

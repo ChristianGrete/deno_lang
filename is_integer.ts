@@ -1,0 +1,35 @@
+/**
+ * Utility module for checking whether a value is an integer.
+ *
+ * @author Miller Medeiros <miller@millermedeiros.com>
+ * @author Christian Grete <webmaster@christiangrete.com>
+ * @author ChatGPT <chatgpt@openai.com>
+ * @copyright © 2025 Christian Grete
+ * @license MIT
+ * @module lang/is_integer
+ * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/isInteger.js|mout@1.2.4/lang/isInteger}
+ */
+
+import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
+
+/**
+ * Checks whether a value is an integer number.
+ *
+ * Accepts both primitive numbers and `Number` objects.
+ *
+ * @function
+ * @name lang/is_integer.isInteger
+ * @param {unknown} value - The value to check.
+ * @returns {value is number} Whether the value is an integer.
+ */
+export function isInteger(value: unknown): value is number {
+  if (boundTypeOf(arguments) !== "number") return false;
+
+  const number = typeof value === "number"
+    ? value
+    : (value as number).valueOf();
+
+  return Number.isInteger(number);
+}
+
+unsetPrototype(isInteger);
