@@ -1,5 +1,5 @@
-import { hasOwnProperty } from "./has_own_property.ts";
 import { assert, assertFalse } from "@std/assert";
+import { hasOwnProperty } from "./has_own_property.ts";
 
 Deno.test("hasOwnProperty() returns true for own enumerable properties", () => {
   const obj = { foo: 42 };
