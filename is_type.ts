@@ -9,11 +9,14 @@
  * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/isType.js|mout-lang-type@0.6.0/lang/isType}
  */
 
-import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
+import {
+  unsetPrototype,
+  validateArgsLength,
+  validateStringArg,
+} from "./internal/mod.ts";
 import type { Arguments } from "./is_arguments.ts";
 import type { Func } from "./is_function.ts";
 import type { Obj } from "./is_object.ts";
-import { getTagLabel } from "./tag_label_of.ts";
 import { getType, type Type } from "./type_of.ts";
 
 /**
@@ -46,7 +49,6 @@ export interface InferredByType {
 /**
  * Checks whether a value is of the expected runtime type.
  *
- * @function
  * @name lang/is_type.isType
  * @param {unknown} value - The value to check.
  * @param {Type} type - The expected type string as returned by {@link typeOf}.
@@ -59,14 +61,7 @@ export function isType<T extends Type>(
   type: T,
 ): value is InferredByType[T] {
   validateArgsLength(arguments, 2);
-
-  const argTagLabel = getTagLabel(type);
-
-  if (argTagLabel !== "[object String]") {
-    throw new TypeError(
-      `Invalid argument 'type': expected string, got ${getType(type)}`,
-    );
-  }
+  validateStringArg("type", type);
 
   return getType(value) === type;
 }

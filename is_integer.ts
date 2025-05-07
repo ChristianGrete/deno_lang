@@ -17,7 +17,6 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  *
  * Accepts both primitive numbers and `Number` objects.
  *
- * @function
  * @name lang/is_integer.isInteger
  * @param {unknown} value - The value to check.
  * @returns {value is number} Whether the value is an integer.

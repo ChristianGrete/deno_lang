@@ -19,7 +19,6 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
  *
  * Used internally by {@link isPrimitive}.
  *
- * @const
  * @name lang/is_primitive.primitiveTypes
  */
 export const primitiveTypes = new Set([
@@ -33,7 +32,6 @@ export const primitiveTypes = new Set([
 /**
  * Checks whether a value is a primitive (i.e. not an object or function).
  *
- * @function
  * @name lang/is_primitive.isPrimitive
  * @param {unknown} value - The value to check.
  * @returns {boolean} Whether the value is primitive.

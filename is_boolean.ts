@@ -16,7 +16,6 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Checks whether a value is a boolean.
  *
- * @function
  * @name lang/is_boolean.isBoolean
  * @param {unknown} _value - The value to check.
  * @returns {_value is boolean} Whether the value is a boolean.

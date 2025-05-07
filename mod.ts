@@ -6,6 +6,7 @@
  * @module lang
  */
 
+export { hasTag, type InferredByTag } from "./has_tag.ts";
 export { type Constructable, instanceOf } from "./instance_of.ts";
 export { type Arguments, isArguments } from "./is_arguments.ts";
 export { isArray } from "./is_array.ts";

@@ -15,7 +15,6 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Checks whether a value is a date object.
  *
- * @function
  * @name lang/is_date.isDate
  * @param {unknown} _value - The value to check.
  * @returns {_value is Date} Whether the value is a `Date` object.

@@ -24,7 +24,6 @@ export type Obj = Record<PropertyKey, unknown>;
 /**
  * Checks whether a value is an object.
  *
- * @function
  * @name lang/is_object.isObject
  * @param {unknown} _value - The value to check.
  * @returns {_value is Obj} Whether the value is an object.

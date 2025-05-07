@@ -26,7 +26,6 @@ export type Func = (...args: unknown[]) => unknown;
 /**
  * Checks whether a value is a function.
  *
- * @function
  * @name lang/is_function.isFunction
  * @param {unknown} _value - The value to check.
  * @returns {_value is Func} Whether the value is a function.
