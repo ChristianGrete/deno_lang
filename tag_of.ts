@@ -56,9 +56,15 @@ export type NullOrUndefinedTags = "Null" | "Undefined";
 export type Tag = BuiltinTags | ExtendedTags | NullOrUndefinedTags | string;
 
 /**
+ * Internal impementation of {@link tagOf}.
+ *
+ * @name lang/tag_of~getTag
+ */
+export const getTag = (value: unknown): Tag => getTagLabel(value).slice(8, -1);
+
+/**
  * Extracts the tag (e.g. `"Array"`, `"Date"`, `"Map"`) of a given value.
  *
- * @function
  * @name lang/tag_of.tagOf
  * @param {unknown} value - The value to inspect.
  * @returns {Tag} The tag string.
@@ -67,7 +73,7 @@ export type Tag = BuiltinTags | ExtendedTags | NullOrUndefinedTags | string;
 export function tagOf(value: unknown): Tag {
   validateArgsLength(arguments);
 
-  return getTagLabel(value).slice(8, -1);
+  return getTag(value);
 }
 
 unsetPrototype(tagOf);

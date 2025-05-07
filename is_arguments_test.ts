@@ -1,43 +1,43 @@
 import { assert, assertFalse, assertThrows } from "@std/assert";
 import { type Arguments, isArguments } from "./is_arguments.ts";
 
-Deno.test("isArguments() returns true for arguments list", () => {
-  function getArgs(..._: unknown[]): Arguments {
-    return arguments;
-  }
+function getArgs(..._: unknown[]): Arguments {
+  return arguments;
+}
 
-  const args = getArgs(1, 2, 3);
+Deno.test("isArguments() returns true for an arguments object", () => {
+  const args = getArgs("foo", 123, false);
   assert(isArguments(args));
 });
 
 Deno.test("isArguments() returns false for arrays and array-like objects", () => {
   assertFalse(isArguments([]));
   assertFalse(isArguments([1, 2, 3]));
-  assertFalse(isArguments({ 0: "a", 1: "b", length: 2 }));
+  assertFalse(isArguments({ 0: "x", 1: "y", length: 2 }));
 });
 
-Deno.test("isArguments() returns false for non-object types", () => {
+Deno.test("isArguments() returns false for primitive values", () => {
   assertFalse(isArguments(undefined));
   assertFalse(isArguments(null));
   assertFalse(isArguments(true));
-  assertFalse(isArguments(42));
+  assertFalse(isArguments(123));
   assertFalse(isArguments("hello"));
   assertFalse(isArguments(Symbol("sym")));
-  assertFalse(isArguments(100n));
+  assertFalse(isArguments(123n));
 });
 
-Deno.test("isArguments() returns false for functions and objects", () => {
-  assertFalse(isArguments(() => {}));
+Deno.test("isArguments() returns false for non-argument objects", () => {
   assertFalse(isArguments({}));
+  assertFalse(isArguments(() => {}));
   assertFalse(isArguments(new Date()));
-  assertFalse(isArguments(/regex/));
+  assertFalse(isArguments(/x/));
   assertFalse(isArguments(new Map()));
 });
 
 Deno.test("isArguments() throws on invalid number of arguments", () => {
-  // @ts-expect-error - test missing argument
+  // @ts-expect-error - missing argument
   assertThrows(() => isArguments(), TypeError);
 
-  // @ts-expect-error - test too many arguments
+  // @ts-expect-error - too many arguments
   assertThrows(() => isArguments({}, {}), TypeError);
 });

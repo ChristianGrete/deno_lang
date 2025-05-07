@@ -15,7 +15,6 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 /**
  * Internal impementation of {@link isArray}.
  *
- * @function
  * @name lang/is_array~nativeIsArray
  */
 export const { isArray: nativeIsArray } = Array;
@@ -23,7 +22,6 @@ export const { isArray: nativeIsArray } = Array;
 /**
  * Checks whether a value is an array.
  *
- * @function
  * @name lang/is_array.isArray
  * @param {unknown} value - The value to check.
  * @returns {value is unknown[]} Whether the value is an array.

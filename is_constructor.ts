@@ -23,7 +23,6 @@ export type Constructor = new (...args: unknown[]) => unknown;
 /**
  * Checks whether a value is a constructor function or class.
  *
- * @function
  * @name lang/is_constructor.isConstructor
  * @param {unknown} value - The value to check.
  * @returns {value is Constructor} Whether the value is a constructor.

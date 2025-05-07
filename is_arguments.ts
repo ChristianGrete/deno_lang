@@ -1,6 +1,10 @@
 /**
  * Utility module for checking whether a value is an arguments list.
  *
+ * This implementation detects the special `arguments` object available inside
+ * functions. These are array-like but not real arrays - they lack array
+ * methods, but have a `length` and indexed elements.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -15,14 +19,21 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Represents an array-like `arguments` list.
  *
- * @name lang/is_arguments.Arguments
+ * @name lang/is_arguments~Arguments
  */
 export type Arguments = ArrayLike<unknown>;
 
 /**
  * Checks whether a value is an arguments list.
  *
- * @function
+ * @example
+ * (function () {
+ *   isArguments(arguments); // true
+ * })();
+ *
+ * isArguments([]); // false
+ * isArguments({ length: 2 }); // false
+ *
  * @name lang/is_arguments.isArguments
  * @param {unknown} _value - The value to check.
  * @returns {_value is Arguments} Whether the value is an `arguments` list.

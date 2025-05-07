@@ -65,7 +65,6 @@ export type Type = BuiltinTypes | ExtendedTypes | NullOrUndefinedTypes;
  *
  * Used by {@link typeOf}.
  *
- * @const
  * @name lang/type_of.typeByTagLabel
  * @readonly
  */
@@ -92,7 +91,6 @@ export const typeByTagLabel = freeze(
 /**
  * Internal impementation of {@link typeOf}.
  *
- * @function
  * @name lang/type_of~getType
  */
 export const getType = (value: unknown): Type => {
@@ -109,7 +107,6 @@ export const getType = (value: unknown): Type => {
 /**
  * Determines the runtime type of a value.
  *
- * @function
  * @name lang/type_of.typeOf
  * @param {unknown} value - The value to check.
  * @returns {Type} A string representing the value's type.

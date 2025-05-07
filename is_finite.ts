@@ -15,7 +15,6 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Checks whether a value is a finite number.
  *
- * @function
  * @name lang/is_finite.isFinite
  * @param {unknown} value - The value to check.
  * @returns {value is number} Whether the value is a finite number.

@@ -15,7 +15,6 @@ import { boundTypeOf, hasOwnProperty, unsetPrototype } from "./internal/mod.ts";
 /**
  * Checks whether a value is considered empty.
  *
- * @function
  * @name lang/is_empty.isEmpty
  * @param {unknown} value - The value to check.
  * @returns {boolean} Whether the value is empty.

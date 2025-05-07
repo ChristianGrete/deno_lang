@@ -1,5 +1,10 @@
 /**
- * Utility module for checking whether a value is an instance of a constructor function or class.
+ * Utility module for checking whether a value is an instance of a constructor
+ * function or class.
+ *
+ * Unlike the built-in `instanceof` operator, this implementation also works
+ * with primitive values (e.g. `"foo"` with `String`) and safely handles `null`
+ * or `undefined`.
  *
  * @author Valerio Proietti <kamicane@gmail.com>
  * @author Christoph Nakazawa <christoph.pojer@gmail.com>
@@ -16,9 +21,10 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 /**
  * A constructable function or class used by {@link instanceOf}.
  *
- * Supports both regular class constructors and hybrid constructors like `Date` or `RegExp`.
+ * Includes both standard constructors and hybrid functions like `Date` or
+ * `RegExp`.
  *
- * @name lang/instance_of.Constructable
+ * @name lang/instance_of~Constructable
  * @template Instance
  */
 export type Constructable<Instance = unknown> =
@@ -28,12 +34,16 @@ export type Constructable<Instance = unknown> =
   | ((...args: any[]) => Instance);
 
 /**
- * Checks whether a given value is an instance of the provided "constructable".
+ * Checks whether a value is an instance of the given constructor or function.
  *
- * @function
+ * @example
+ * instanceOf(new Date(), Date); // true
+ * instanceOf(/abc/, RegExp);    // true
+ * instanceOf({}, Date);         // false
+ *
  * @name lang/instance_of.instanceOf
  * @param {unknown} value - The value to check.
- * @param {Constructable<Instance>} constructable - The function or class to test against.
+ * @param {Constructable<Instance>} constructable - The function or class to check against.
  * @returns {value is Instance} Whether the value is an instance of the constructable.
  * @template Instance
  */
