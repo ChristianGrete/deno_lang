@@ -4,7 +4,7 @@
 
 [![JSR @denoverse](https://jsr.io/badges/@denoverse)](https://jsr.io/@denoverse)
 
-**deno_lang** is a library-agnostic collection of language utilities for [Deno](https://deno.com) and [TypeScript](https://typescriptlang.org) — a nerdy homage to classics like [MooTools](https://mootools.net) and [mout](https://github.com/mout/mout)/[lang](https://github.com/mout/mout/tree/v1.2.4/src/lang). Check out the [history][repository-history-url] if you're curious about the backstory.
+**deno_lang** is a library-agnostic collection of language utilities for Deno and TypeScript — a nerdy homage to classics like [MooTools](https://mootools.net) and [mout](https://github.com/mout/mout)/[lang](https://github.com/mout/mout/tree/v1.2.4/src/lang). Check out the [history][repository-history-url] if you're curious about the backstory.
 
 Sure, there are _different ways_ to do many of these things today. But this project was built with love, a strong focus on performance, and an API that's meant to feel as idiomatic as possible. 🚀
 
