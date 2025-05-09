@@ -63,7 +63,7 @@ See [docs][repository-docs-url] for full API documentation.
 Copyright © 2025 ([MIT][repository-license-url]) [Christian Grete][repository-owner-url] for [Denoverse][repository-organization-url] and [contributors][repository-contributors-url]
 
 [repository-contributors-url]: https://github.com/denoverse/lang/graphs/contributors
-[repository-docs-url]: docs
+[repository-docs-url]: docs/README.md
 [repository-github-url]: https://github.com/denoverse/lang
 [repository-history-url]: HISTORY.md
 [repository-license-url]: LICENSE
