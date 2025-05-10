@@ -62,7 +62,7 @@ See [docs][repository-docs-url] for full API documentation.
 
 To the original authors of the libraries that inspired this project — thank you for the code, the ideas, and the fond memories of that era. You’re credited in every source file through references to the original implementations, and mentioned as co-authors in the commit history. ❤️
 
-Among them: [Valerio Proietti](https://github.com/kamicane), [Christoph Nakazawa](https://github.com/cpojer), [Miller Medeiros](https://github.com/millermedeiros), [Garrick Cheung](https://github.com/GCheung55), [André Cruz](https://github.com/satazor), [Max Nordlund](https://github.com/maxnordlund), and many more.
+This includes [Valerio Proietti](https://github.com/kamicane), [Christoph Nakazawa](https://github.com/cpojer), [Miller Medeiros](https://github.com/millermedeiros), [Garrick Cheung](https://github.com/GCheung55), [André Cruz](https://github.com/satazor) and [Max Nordlund](https://github.com/maxnordlund) — and the sources of inspiration behind their original ideas.
 
 Thanks also to [OpenAI](https://github.com/OPENAI) and ChatGPT for providing an exceptional pair programmer that contributed significantly to both productivity and code quality. 🦾
 
