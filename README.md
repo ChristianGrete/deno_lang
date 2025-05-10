@@ -4,9 +4,9 @@
 
 [![JSR @denoverse](https://jsr.io/badges/@denoverse)](https://jsr.io/@denoverse)
 
-**deno_lang** is a library-agnostic collection of language utilities for Deno and TypeScript — a nerdy homage to classics like [MooTools](https://mootools.net) and [mout](https://github.com/mout/mout)/[lang](https://github.com/mout/mout/tree/v1.2.4/src/lang). Check out the [history][repository-history-url] if you're curious about the backstory.
+**deno_lang** is a library-agnostic collection of language utilities for Deno and TypeScript — a nerdy homage to classics like [MooTools](https://mootools.net) and [mout](https://github.com/mout/mout)/[lang](https://github.com/mout/mout/tree/v1.2.4/src/lang). Check out our [backstory][repository-history-url] if you’re curious about the history behind this package.
 
-Sure, there are _different ways_ to do many of these things today. But this project was built with love, a strong focus on performance, and an API that's meant to feel as idiomatic as possible. 🚀
+Sure, there are _different ways_ to do many of these things today — in most cases, TypeScript handles it statically. But when you need type safety at runtime, this still comes in handy. Still, this project was built with love, a strong focus on performance, and an API that’s meant to feel as idiomatic as possible. 🚀
 
 We’re happy if you have fun with it — and yeah, we’re a little nostalgic about the good old days too.
 
@@ -41,22 +41,31 @@ Embrace the legacy of our forefathers — now with full TypeScript support:
 ```ts
 import { hasTag, instanceOf, isConstructor, isType, typeOf } from "@denoverse/lang";
 
-hasTag(123, "Number"); // true
-instanceOf(true, Boolean); // true, works with primitives
-isConstructor(() => {}); // false, must be newable
-typeOf(null) === "object"; // false - it's "null"
+hasTag(123, "Number"); // `true`
+instanceOf(true, Boolean); // `true`, works with primitives
+isConstructor(() => {}); // `false`, must be newable
+typeOf(null) === "object"; // `false` - it's `"null"`
 
 const message = "Howdy!" as unknown;
 
 // Type Guards FTW!
 if (isType(message, "string")) {
-  // message is now typed as string in TypeScript
+  // `message` is now typed as string in TypeScript
 } else {
-  // message is still typed as unknown
+  // `message` is still typed as unknown
 }
 ```
 
 See [docs][repository-docs-url] for full API documentation.
+
+## Special thanks
+
+To the original authors of the libraries that inspired this project — thank you for the code, the ideas, and the fond memories of that era. You’re credited in every source file through references to the original implementations, and mentioned as co-authors in the commit history. ❤️
+
+Among them: [Valerio Proietti](https://github.com/kamicane), [Christoph Nakazawa](https://github.com/cpojer), [Miller Medeiros](https://github.com/millermedeiros), [Garrick Cheung](https://github.com/GCheung55), [André Cruz](https://github.com/satazor), [Max Nordlund](https://github.com/maxnordlund), and many more.
+
+Thanks also to [OpenAI](https://github.com/OPENAI) and ChatGPT for providing an exceptional pair programmer that contributed significantly to both productivity and code quality. 🦾
+
 
 ---
 
