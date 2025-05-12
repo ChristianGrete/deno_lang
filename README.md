@@ -3,6 +3,7 @@
 > Also known as [@denoverse/lang](https://jsr.io/@denoverse/lang) and [x/lang](https://deno.land/x/lang).
 
 [![JSR @denoverse](https://jsr.io/badges/@denoverse)](https://jsr.io/@denoverse)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_me_a_coffee-222?logo=buymeacoffee&logoColor=222&labelColor=fd0)](https://buymeacoffee.com/christiangrete)
 
 **deno_lang** is a library-agnostic collection of language utilities for Deno and TypeScript — a nerdy homage to classics like [MooTools](https://mootools.net) and [mout](https://github.com/mout/mout)/[lang](https://github.com/mout/mout/tree/v1.2.4/src/lang). Check out our [backstory][repository-history-url] if you’re curious about the history behind this package.
 
