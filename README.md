@@ -70,7 +70,6 @@ This includes [Valerio Proietti](https://github.com/kamicane), [Christoph Nakaza
 
 Thanks also to [OpenAI](https://github.com/OPENAI) and ChatGPT for providing an exceptional pair programmer that contributed significantly to both productivity and code quality. 🦾
 
-
 ---
 
 Copyright © 2025 ([MIT][repository-license-url]) [Christian Grete][repository-owner-url] for [Denoverse][repository-organization-url] and [contributors][repository-contributors-url]
