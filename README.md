@@ -58,6 +58,10 @@ if (isType(message, "string")) {
 
 See [docs][repository-docs-url] for full API documentation.
 
+## Contributing
+
+Contributions are very welcome. Please see the [contribution guidelines](CONTRIBUTING.md) for details on how to get involved.
+
 ## Special thanks
 
 To the original authors of the libraries that inspired this project — thank you for the code, the ideas, and the fond memories of that era. You’re credited in every source file through references to the original implementations, and mentioned as co-authors in the commit history. ❤️

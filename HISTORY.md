@@ -1,4 +1,4 @@
-# The History of [deno_lang][repository-github-url]
+# The History Behind [deno_lang][repository-github-url]
 
 A few words from the project's originator, [Christian Grete][repository-owner-profile], about the background and motivation behind this project:
 
@@ -19,10 +19,21 @@ This project is the result of many long, curious, perfectionism-driven evenings 
 
 The idea is simple: provide a library that brings runtime type safety to modern JavaScript, backed by clear documentation and an idiomatic API. A small toolkit of utilities that act as Type Guards in TypeScript — for when static typing isn’t enough.
 
+The plan was to publish the package under [deno.land/x/lang](https://deno.land/x/lang), complementing Deno’s `std` library without feeling like just another third-party package. At the same time, it should work seamlessly in modern browsers, offering full compatibility across environments.
+
+As the project evolved, new insights followed. The trend was clearly shifting toward [JSR](https://jsr.io) as the future of package distribution — which meant we’d need a namespace. That led to the idea of creating a dedicated GitHub organization to serve as a new identity: [Denoverse][repository-organization-url].
+
+More projects are planned to follow under this namespace and organization.
+
+I hope you enjoy working with **deno_lang** — and I’m genuinely happy about every contribution. ❤️
+
+Feel free to check out the [contribution guidelines][repositoriy-contributing-url] to learn more about how you can get involved.
+
 ---
 
 Copyright © 2025 ([MIT][repository-license-url]) [Christian Grete][repository-owner-url] for [Denoverse][repository-organization-url] and [contributors][repository-contributors-url]
 
+[repositoriy-contributing-url]: CONTRIBUTING.md
 [repository-contributors-url]: https://github.com/denoverse/lang/graphs/contributors
 [repository-github-url]: https://github.com/denoverse/lang
 [repository-license-url]: LICENSE
