@@ -3,7 +3,9 @@
     "strict": true
   },
   "tasks": {
-    "dev": "deno run --watch mod.ts"
+    "dprint": "deno run -A npm:dprint",
+    "fmt:check": "deno task dprint check",
+    "fmt": "deno task dprint fmt"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@^1.0.13"
