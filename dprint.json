@@ -6,7 +6,8 @@
     "**/node_modules"
   ],
   "markdown": {
-    "lineWidth": 120
+    "lineWidth": 120,
+    "textWrap": "always"
   },
   "plugins": [
     "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.1.wasm",
