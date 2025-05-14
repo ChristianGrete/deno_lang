@@ -16,7 +16,6 @@
     "https://plugins.dprint.dev/typescript-0.95.3.wasm"
   ],
   "typescript": {
-    "memberSort": true,
     "preferSingleLine": true,
     "quoteStyle": "preferDouble",
     "semiColons": "always",
