@@ -8,7 +8,7 @@
 
 **deno_lang** is a library-agnostic collection of language utilities for Deno and TypeScript — a nerdy homage to classics like [MooTools](https://mootools.net) and [mout](https://github.com/mout/mout)/[lang](https://github.com/mout/mout/tree/v1.2.4/src/lang). Check out our [backstory][repository-history-url] if you’re curious about the history behind this package.
 
-Sure, there are _different ways_ to do many of these things today — in most cases, TypeScript handles it statically. But when you need type safety at runtime, this still comes in handy. Still, this project was built with love, a strong focus on performance, and an API that’s meant to feel as idiomatic as possible. 🚀
+Sure, there are _different ways_ to do many of these things today — in most cases, TypeScript handles it statically. But when you need type safety at runtime, this still comes in handy. That said, this project was built with love, a strong focus on performance, and an API that’s meant to feel as idiomatic as possible. 🚀
 
 We’re happy if you have fun with it — and yeah, we’re a little nostalgic about the good old days too.
 
@@ -34,7 +34,7 @@ Alternatively, you can import deno_lang via [deno.land/x](https://deno.land/x):
 import { typeOf } from "https://deno.land/x/lang/mod.ts";
 ```
 
-That said, we recommend using [JSR](https://jsr.io) as the future-proof standard for imports.
+We recommend using [JSR](https://jsr.io) as the future-proof standard for imports.
 
 ### Usage
 
@@ -52,9 +52,9 @@ const message = "Howdy!" as unknown;
 
 // Type Guards FTW!
 if (isType(message, "string")) {
-  // `message` is now typed as string in TypeScript
+  // `message` now has type `string` in TypeScript
 } else {
-  // `message` is still typed as unknown
+  // `message` is still typed as `unknown`
 }
 ```
 
