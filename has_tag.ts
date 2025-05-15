@@ -74,15 +74,9 @@ export function hasTag<T extends keyof InferredByTag>(
   tag: T,
 ): value is InferredByTag[T];
 
-export function hasTag<T extends string>(
-  value: unknown,
-  tag: T,
-): boolean;
+export function hasTag<T extends string>(value: unknown, tag: T): boolean;
 
-export function hasTag(
-  value: unknown,
-  tag: Tag,
-): boolean {
+export function hasTag(value: unknown, tag: Tag): boolean {
   validateArgsLength(arguments, 2);
   validateStringArg("tag", tag);
 
