@@ -1,9 +1,11 @@
 {
   "json": {
-    "deno": true
+    "deno": true,
+    "lineWidth": 120
   },
   "markdown": {
-    "deno": true
+    "deno": true,
+    "lineWidth": 120
   },
   "plugins": [
     "https://plugins.dprint.dev/json-0.20.0.wasm",
@@ -13,6 +15,7 @@
   "typescript": {
     "commentLine.forceSpaceAfterSlashes": true,
     "deno": true,
+    "lineWidth": 120,
     "module.sortExportDeclarations": "caseInsensitive",
     "module.sortImportDeclarations": "caseInsensitive",
     "preferSingleLine": true

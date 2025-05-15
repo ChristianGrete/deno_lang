@@ -98,10 +98,7 @@ export const getType = (value: unknown): Type => {
 
   const type = typeof value;
 
-  return type === "object"
-    ? ((typeByTagLabel as Record<TagLabel, Type>)[getTagLabel(value)] ??
-      "object")
-    : type;
+  return type === "object" ? ((typeByTagLabel as Record<TagLabel, Type>)[getTagLabel(value)] ?? "object") : type;
 };
 
 /**

@@ -1,9 +1,4 @@
-import {
-  assert,
-  assertFalse,
-  assertStrictEquals,
-  assertThrows,
-} from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 import { isInteger } from "./is_integer.ts";
 
 Deno.test("isInteger() returns true for primitive integer numbers", () => {

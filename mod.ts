@@ -30,13 +30,7 @@ export {
   type TagLabel,
   tagLabelOf,
 } from "./tag_label_of.ts";
-export {
-  type BuiltinTags,
-  type ExtendedTags,
-  type NullOrUndefinedTags,
-  type Tag,
-  tagOf,
-} from "./tag_of.ts";
+export { type BuiltinTags, type ExtendedTags, type NullOrUndefinedTags, type Tag, tagOf } from "./tag_of.ts";
 export {
   type BuiltinTypes,
   type ExtendedTypes,

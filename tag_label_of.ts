@@ -56,20 +56,14 @@ export type NullOrUndefinedTagLabels = "[object Null]" | "[object Undefined]";
  *
  * @name lang/tag_label_of.TagLabel
  */
-export type TagLabel =
-  | BuiltinTagLabels
-  | ExtendedTagLabels
-  | NullOrUndefinedTagLabels
-  | string;
+export type TagLabel = BuiltinTagLabels | ExtendedTagLabels | NullOrUndefinedTagLabels | string;
 
 /**
  * Internal impementation of {@link tagLabelOf}.
  *
  * @name lang/tag_label_of~getTagLabel
  */
-export const getTagLabel = toString.call.bind(toString) as (
-  value: unknown,
-) => TagLabel;
+export const getTagLabel = toString.call.bind(toString) as (value: unknown) => TagLabel;
 
 /**
  * Returns the tag label of a value (e.g. `"[object Array]"`).

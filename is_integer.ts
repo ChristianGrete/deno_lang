@@ -24,9 +24,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 export function isInteger(value: unknown): value is number {
   if (boundTypeOf(arguments) !== "number") return false;
 
-  const number = typeof value === "number"
-    ? value
-    : (value as number).valueOf();
+  const number = typeof value === "number" ? value : (value as number).valueOf();
 
   return Number.isInteger(number);
 }

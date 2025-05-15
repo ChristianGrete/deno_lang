@@ -1,9 +1,4 @@
-import {
-  assert,
-  assertFalse,
-  assertStrictEquals,
-  assertThrows,
-} from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 import { isBoolean } from "./is_boolean.ts";
 
 Deno.test("isBoolean() returns true for primitive booleans", () => {
