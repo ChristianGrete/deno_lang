@@ -28,23 +28,23 @@ import { getTag, type Tag } from "./tag_of.ts";
  * @name lang/has_tag~InferredByTag
  */
 export interface InferredByTag {
-  "Arguments": Arguments;
-  "Array": unknown[];
-  "BigInt": bigint;
-  "Boolean": boolean;
-  "Date": Date;
-  "Error": Error;
-  "Function": Func;
-  "Map": Map<unknown, unknown>;
-  "Null": null;
-  "Number": number;
-  "Object": Obj;
-  "Promise": Promise<unknown>;
-  "RegExp": RegExp;
-  "Set": Set<unknown>;
-  "String": string;
-  "Symbol": symbol;
-  "Undefined": undefined;
+  Arguments: Arguments;
+  Array: unknown[];
+  BigInt: bigint;
+  Boolean: boolean;
+  Date: Date;
+  Error: Error;
+  Function: Func;
+  Map: Map<unknown, unknown>;
+  Null: null;
+  Number: number;
+  Object: Obj;
+  Promise: Promise<unknown>;
+  RegExp: RegExp;
+  Set: Set<unknown>;
+  String: string;
+  Symbol: symbol;
+  Undefined: undefined;
 }
 
 /**
