@@ -18,6 +18,7 @@
     "lineWidth": 120,
     "module.sortExportDeclarations": "caseInsensitive",
     "module.sortImportDeclarations": "caseInsensitive",
-    "preferSingleLine": true
+    "preferSingleLine": true,
+    "quoteProps": "consistent"
   }
 }
