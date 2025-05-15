@@ -47,10 +47,7 @@ export type Constructable<Instance = unknown> =
  * @returns {value is Instance} Whether the value is an instance of the constructable.
  * @template Instance
  */
-export function instanceOf<Instance>(
-  value: unknown,
-  constructable: Constructable<Instance>,
-): value is Instance {
+export function instanceOf<Instance>(value: unknown, constructable: Constructable<Instance>): value is Instance {
   validateArgsLength(arguments, 2);
 
   if (value == null) return false;

@@ -30,9 +30,7 @@ export type Constructor = new (...args: unknown[]) => unknown;
  */
 export function isConstructor(value: unknown): value is Constructor {
   if (
-    boundTypeOf(arguments) !== "function" ||
-    !hasOwnProperty(value, "prototype") ||
-    (value as Func).prototype == null
+    boundTypeOf(arguments) !== "function" || !hasOwnProperty(value, "prototype") || (value as Func).prototype == null
   ) return false;
 
   try {

@@ -21,13 +21,7 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
  *
  * @name lang/is_primitive.primitiveTypes
  */
-export const primitiveTypes = new Set([
-  "bigint",
-  "boolean",
-  "number",
-  "string",
-  "symbol",
-]);
+export const primitiveTypes = new Set(["bigint", "boolean", "number", "string", "symbol"]);
 
 /**
  * Checks whether a value is a primitive (i.e. not an object or function).

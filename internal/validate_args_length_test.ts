@@ -11,9 +11,5 @@ Deno.test("validateArgsLength() throws when argument length is too low", () => {
 });
 
 Deno.test("validateArgsLength() throws when argument length is too high", () => {
-  assertThrows(
-    () => validateArgsLength([1, 2, 3], 2),
-    TypeError,
-    "expected 2, got 3",
-  );
+  assertThrows(() => validateArgsLength([1, 2, 3], 2), TypeError, "expected 2, got 3");
 });

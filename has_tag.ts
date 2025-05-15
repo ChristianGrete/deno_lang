@@ -14,11 +14,7 @@
  * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/isKind.js|mout-lang-type@0.6.0/lang/isKind}
  */
 
-import {
-  unsetPrototype,
-  validateArgsLength,
-  validateStringArg,
-} from "./internal/mod.ts";
+import { unsetPrototype, validateArgsLength, validateStringArg } from "./internal/mod.ts";
 import type { Arguments } from "./is_arguments.ts";
 import type { Func } from "./is_function.ts";
 import type { Obj } from "./is_object.ts";
@@ -69,10 +65,7 @@ export interface InferredByTag {
  * @see {@link lang/tag_of.tagOf}
  * @template T
  */
-export function hasTag<T extends keyof InferredByTag>(
-  value: unknown,
-  tag: T,
-): value is InferredByTag[T];
+export function hasTag<T extends keyof InferredByTag>(value: unknown, tag: T): value is InferredByTag[T];
 
 export function hasTag<T extends string>(value: unknown, tag: T): boolean;
 

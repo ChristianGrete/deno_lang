@@ -7,22 +7,9 @@ Deno.test("validateStringArg() passes for strings", () => {
 });
 
 Deno.test("validateStringArg() throws for non-strings", () => {
-  const invalidValues = [
-    42,
-    null,
-    undefined,
-    {},
-    [],
-    true,
-    Symbol("x"),
-    () => {},
-  ];
+  const invalidValues = [42, null, undefined, {}, [], true, Symbol("x"), () => {}];
 
   for (const val of invalidValues) {
-    assertThrows(
-      () => validateStringArg("arg", val),
-      TypeError,
-      `Invalid argument 'arg': expected string, got`,
-    );
+    assertThrows(() => validateStringArg("arg", val), TypeError, `Invalid argument 'arg': expected string, got`);
   }
 });

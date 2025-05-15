@@ -9,11 +9,7 @@
  * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/isType.js|mout-lang-type@0.6.0/lang/isType}
  */
 
-import {
-  unsetPrototype,
-  validateArgsLength,
-  validateStringArg,
-} from "./internal/mod.ts";
+import { unsetPrototype, validateArgsLength, validateStringArg } from "./internal/mod.ts";
 import type { Arguments } from "./is_arguments.ts";
 import type { Func } from "./is_function.ts";
 import type { Obj } from "./is_object.ts";
@@ -56,10 +52,7 @@ export interface InferredByType {
  * @see {@link lang/type_of.typeOf}
  * @template T
  */
-export function isType<T extends Type>(
-  value: unknown,
-  type: T,
-): value is InferredByType[T] {
+export function isType<T extends Type>(value: unknown, type: T): value is InferredByType[T] {
   validateArgsLength(arguments, 2);
   validateStringArg("type", type);
 

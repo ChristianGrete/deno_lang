@@ -33,9 +33,7 @@ Deno.test("isEmpty() returns true for empty plain objects", () => {
 
 Deno.test("isEmpty() returns false for objects with own properties", () => {
   assertFalse(isEmpty({ foo: 1 }));
-  assertFalse(
-    isEmpty(Object.create(null, { bar: { value: 2, enumerable: true } })),
-  );
+  assertFalse(isEmpty(Object.create(null, { bar: { value: 2, enumerable: true } })));
 });
 
 Deno.test("isEmpty() ignores inherited properties", () => {
