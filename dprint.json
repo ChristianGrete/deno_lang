@@ -15,10 +15,13 @@
   "typescript": {
     "commentLine.forceSpaceAfterSlashes": true,
     "deno": true,
+    "enumDeclaration.memberSpacing": "newLine",
     "lineWidth": 120,
+    "memberExpression.linePerExpression": true,
     "module.sortExportDeclarations": "caseInsensitive",
     "module.sortImportDeclarations": "caseInsensitive",
     "preferSingleLine": true,
-    "quoteProps": "consistent"
+    "quoteProps": "consistent",
+    "singleBodyPosition": "sameLine"
   }
 }
