@@ -1,36 +1,16 @@
 {
-  "excludes": [
-    "**/*-lock.json",
-    "**/coverage",
-    "**/dist",
-    "**/node_modules"
-  ],
+  "json": {
+    "deno": true
+  },
   "markdown": {
-    "lineWidth": 120,
-    "textWrap": "always"
+    "deno": true
   },
   "plugins": [
-    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.1.wasm",
     "https://plugins.dprint.dev/json-0.20.0.wasm",
     "https://plugins.dprint.dev/markdown-0.18.0.wasm",
     "https://plugins.dprint.dev/typescript-0.95.3.wasm"
   ],
   "typescript": {
-    "arrowFunction.useParentheses": "force",
-    "constructorType.spaceAfterNewKeyword": true,
-    "constructSignature.spaceAfterNewKeyword": true,
-    "enumDeclaration.memberSpacing": "newLine",
-    "memberExpression.linePerExpression": true,
-    "preferSingleLine": true,
-    "quoteProps": "consistent",
-    "quoteStyle": "preferDouble",
-    "semiColons": "always",
-    "singleBodyPosition": "sameLine",
-    "typeAssertion.spaceBeforeExpression": false
-  },
-  "yaml": {
-    "formatComments": true,
-    "lineWidth": 120,
-    "preferSingleLine": true
+    "deno": true
   }
 }
