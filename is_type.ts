@@ -23,23 +23,23 @@ import { getType, type Type } from "./type_of.ts";
  * @name lang/is_type.InferredByType
  */
 export interface InferredByType {
-  "arguments": Arguments;
-  "array": unknown[];
-  "bigint": bigint;
-  "boolean": boolean;
-  "date": Date;
-  "error": Error;
-  "function": Func;
-  "map": Map<unknown, unknown>;
-  "null": null;
-  "number": number;
-  "object": Obj;
-  "promise": Promise<unknown>;
-  "regexp": RegExp;
-  "set": Set<unknown>;
-  "string": string;
-  "symbol": symbol;
-  "undefined": undefined;
+  arguments: Arguments;
+  array: unknown[];
+  bigint: bigint;
+  boolean: boolean;
+  date: Date;
+  error: Error;
+  function: Func;
+  map: Map<unknown, unknown>;
+  null: null;
+  number: number;
+  object: Obj;
+  promise: Promise<unknown>;
+  regexp: RegExp;
+  set: Set<unknown>;
+  string: string;
+  symbol: symbol;
+  undefined: undefined;
 }
 
 /**
