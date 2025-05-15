@@ -28,9 +28,7 @@ export type Constructor = new (...args: unknown[]) => unknown;
  * @returns {value is Constructor} Whether the value is a constructor.
  * @see {@link lang/type_of.typeOf}
  */
-export function isConstructor(
-  value: unknown,
-): value is Constructor {
+export function isConstructor(value: unknown): value is Constructor {
   if (
     boundTypeOf(arguments) !== "function" ||
     !hasOwnProperty(value, "prototype") ||
@@ -38,9 +36,7 @@ export function isConstructor(
   ) return false;
 
   try {
-    new new Proxy(value as Constructor, {
-      construct: () => ({}),
-    })();
+    new new Proxy(value as Constructor, { construct: () => ({}) })();
     return true;
   } catch {
     return false;

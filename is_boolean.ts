@@ -21,9 +21,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * @returns {_value is boolean} Whether the value is a boolean.
  * @see {@link lang/type_of.typeOf}
  */
-export function isBoolean(
-  _value: unknown,
-): _value is boolean {
+export function isBoolean(_value: unknown): _value is boolean {
   return boundTypeOf(arguments) === "boolean";
 }
 

@@ -26,9 +26,7 @@ export const { isArray: nativeIsArray } = Array;
  * @param {unknown} value - The value to check.
  * @returns {value is unknown[]} Whether the value is an array.
  */
-export function isArray(
-  value: unknown,
-): value is unknown[] {
+export function isArray(value: unknown): value is unknown[] {
   validateArgsLength(arguments);
 
   return nativeIsArray(value);

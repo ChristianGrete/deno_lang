@@ -1,10 +1,10 @@
-import { isFinite } from "./is_finite.ts";
 import {
   assert,
   assertFalse,
   assertStrictEquals,
   assertThrows,
 } from "@std/assert";
+import { isFinite } from "./is_finite.ts";
 
 Deno.test("isFinite() returns true for finite numbers", () => {
   assert(isFinite(0));
