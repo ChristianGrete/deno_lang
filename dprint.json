@@ -1,5 +1,6 @@
 {
   "json": {
+    "commentLine.forceSpaceAfterSlashes": true,
     "deno": true,
     "lineWidth": 120
   },
