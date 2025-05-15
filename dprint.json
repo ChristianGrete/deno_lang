@@ -11,6 +11,10 @@
     "https://plugins.dprint.dev/typescript-0.95.3.wasm"
   ],
   "typescript": {
-    "deno": true
+    "commentLine.forceSpaceAfterSlashes": true,
+    "deno": true,
+    "module.sortExportDeclarations": "caseInsensitive",
+    "module.sortImportDeclarations": "caseInsensitive",
+    "preferSingleLine": true
   }
 }
