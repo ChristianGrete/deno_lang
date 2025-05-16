@@ -1,5 +1,8 @@
 /**
  * Rewraps comments in all `.ts` files under CWD to a max width of 80 characters.
+ *
+ * @author Christian Grete <webmaster@christiangrete.com>
+ * @author ChatGPT <chatgpt@openai.com>
  */
 
 import { walk } from "@std/fs/walk";
@@ -38,16 +41,19 @@ function formatComments(code: string): string {
     /(^[ \t]*\/\/ ?(.*)$|\/(\*\*?|\*)([\s\S]*?)\*\/)/gm,
     (match, lineComment, lineText, blockStart, blockBody) => {
       if (lineComment !== undefined) {
+        if (!lineText || !lineText.trim()) return match;
         const prefix = match.match(/^([ \t]*\/\/ ?)/)?.[1] ?? "// ";
-        return wrapComment(lineText ?? "", prefix);
+        return wrapComment(lineText, prefix);
       } else if (blockStart !== undefined) {
-        const isJSDoc = blockStart === "**";
         const lines = blockBody.split(/\r?\n/).map((line: string) => {
           const [, indent = "", text = ""] = line.match(/^([ \t]*\* ?)?(.*)$/) || [];
           return { indent, text };
         });
 
         const joined = lines.map((l: { text: string }) => l.text).join(" ");
+        if (!joined.trim()) return match;
+
+        const isJSDoc = blockStart === "**";
         const wrapped = wrapComment(joined, isJSDoc ? " * " : " * ");
         const indent = match.match(/^(\s*)\/(\*\*?|\*)/)?.[1] ?? "";
 
