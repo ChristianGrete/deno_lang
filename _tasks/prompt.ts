@@ -6,35 +6,41 @@
 
 function usage(): never {
   console.error("Usage: deno task prompt <tool> <args...>");
+
   Deno.exit(1);
 }
 
 if (import.meta.main) {
-  const [tool, ...args] = Deno.args;
-  if (!tool) usage();
+  const [prompt, ...args] = Deno.args;
 
-  const toolPath = `./_gpt_prompts/${tool}.ts`;
+  if (!prompt) usage();
+
+  const promptPath = `./_gpt_prompts/${prompt}.ts`;
 
   try {
-    const fileInfo = await Deno.stat(toolPath);
+    const fileInfo = await Deno.stat(promptPath);
+
     if (!fileInfo.isFile) {
-      console.error(`❌  '${toolPath}' exists but is not a file.`);
+      console.error(`✖ '${promptPath}' exists but is not a file.`);
+
       Deno.exit(1);
     }
   } catch {
     console.error(
-      `❌  Prompt '${tool}' not found in ./_gpt_prompts. Make sure the file exists and has a .ts extension.`,
+      `✖ Prompt '${prompt}' not found in ./_gpt_prompts. Make sure the file exists and has a .ts extension.`,
     );
+
     Deno.exit(1);
   }
 
   const command = new Deno.Command("deno", {
-    args: ["run", "-A", toolPath, ...args],
+    args: ["run", "-A", promptPath, ...args],
     stdin: "inherit",
     stdout: "inherit",
     stderr: "inherit",
   });
 
   const { code } = await command.output();
+
   Deno.exit(code);
 }
