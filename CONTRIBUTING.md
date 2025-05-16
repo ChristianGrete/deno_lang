@@ -10,25 +10,27 @@ Take a few minutes to read through — it helps everyone stay on the same page a
 
 ## Guiding principles
 
-We aim to build an idiomatic, easy-to-understand API without compromising on runtime performance.\
-Every public API must be clearly documented using JSDoc.
+We aim to build an idiomatic, easy-to-understand API without compromising on runtime performance.
 
-We're loosely following the structure of [denoland/std](https://github.com/denoland/std):
+We're loosely following the structure of [denoland/std](https://github.com/denoland/std) and on top of that, we follow
+these guiding principles:
 
 - Filenames use `snake_case`
 - Everything that's published must be tested
 - Test files use the same name as their implementation, with a `_test` suffix
 - Code should be reusable whenever possible
+- Every public API must be clearly documented using JSDoc
 - Internal code lives in [`./internal`](internal) or is marked as internal via [JSDoc](#jsdoc-style-guide) and not
   exported through `mod.ts`
 - All public APIs expose **named functions**
 - Everything is written in TypeScript and carefully typed
-- No classic build tools from the Node.js/npm world — this is the Deno universe
+- No classic build tools from the Node.js/npm world — this is the Deno universe (pure CLI tools from npm are allowed)
 - We aim to stay as cross-platform compatible as possible
+- We take the [config directory proposal](https://github.com/pi0/config-dir) into account when placing config files
 - Code is formatted using [dprint](https://github.com/dprint/dprint), while remaining compatible with `deno fmt`
 - Git hooks are managed using [lefthook](https://github.com/evilmartians/lefthook) and stored in
-  [`./git_hooks`](git_hooks)
-- More complex tasks go into [`./tasks`](tasks)
+  [`./_git_hooks`](_git_hooks)
+- More complex tasks go into [`./_tasks`](_tasks)
 - Entry points are always named `mod.ts`
 - We avoid hidden dotfiles in the repo whenever possible
 - We respect the [Code of Conduct](CODE_OF_CONDUCT.md) and aim to stay open, helpful, and kind to one another
