@@ -1,26 +1,76 @@
 # Contributing to [deno_lang][repository-github-url]
 
-### JSDoc Style Guide
+## Getting started
+
+This project uses a fork-based workflow — that means contributions should be made via forks and pull requests rather
+than direct pushes.
+
+### 1. Fork this repo
+
+Click the **“Fork”** button on [GitHub][repository-github-url] to create your own copy of the repository — ideally name
+your fork `deno_lang`.
+
+### 2. Clone your fork
+
+Once you've forked the repo, clone your copy as follows:
+
+```sh
+git clone git@github.com:<your-username>/deno_lang.git && cd deno_lang
+```
+
+### 3. Initialize your local copy
+
+> ⚠️ This is a Deno 2 project — make sure you're using Deno v2.0.0 or newer!
+
+Now run the following command to initialize the project for development:
+
+```sh
+deno install && deno task init
+```
+
+This will install required dependencies and Git hooks via [lefthook](https://github.com/evilmartians/lefthook) so you're
+ready to contribute. You can rerun `deno task init` anytime to reset your Git hook setup.
+
+## Guiding principles
+
+We aim to build an idiomatic, easy-to-understand API without compromising on runtime performance.\
+Every public API must be clearly documented using JSDoc.
+
+We're loosely following the structure of [denoland/std](https://github.com/denoland/std):
+
+- Filenames use `snake_case`
+- Everything that's published must be tested
+- Test files use the same name as their implementation, with a `_test` suffix
+- Code should be reusable whenever possible
+- Internal code lives in [`./internal`](internal) or is marked as internal via [JSDoc](#jsdoc-style-guide) and not
+  exported through `mod.ts`
+- All public APIs expose **named functions**
+- Everything is written in TypeScript and carefully typed
+- No classic build tools from the Node.js/npm world — this is the Deno universe
+- We aim to stay as cross-platform compatible as possible
+- Code is formatted using [dprint](https://github.com/dprint/dprint), while remaining compatible with `deno fmt`
+- Git hooks are managed using [lefthook](https://github.com/evilmartians/lefthook) and stored in
+  [`./git_hooks`](git_hooks)
+- More complex tasks go into [`./tasks`](tasks)
+- Entry points are always named `mod.ts`
+- We avoid hidden dotfiles in the repo whenever possible
+- We respect the [Code of Conduct](CODE_OF_CONDUCT.md) and aim to stay open, helpful, and kind to one another
+- Non-native speakers are encouraged to use AI tools for translating into US English
+- We see AI not as a competitor, but as a sparring partner to help us reach the best possible outcome
+
+## JSDoc style guide
 
 - Each exported member must be documented using JSDoc.
-
 - The first sentence of the comment should give a short, clear and concise explanation of what the function or type
   does. This may span multiple lines, but should not be overly verbose.
-
 - If terminology is not self-explanatory, add a short description below the title to clarify the concept (e.g. what
   qualifies as an “arguments list”).
-
 - The `@example` tag must appear **at the top** of the tag list (directly after the title/description), followed by a
   blank line. Only exported **functions** should include examples.
-
 - All remaining `@tags` (`@param`, `@returns`, `@template`, `@see`, etc.) must be sorted alphabetically.
-
 - Internal (non-exported) members should use a `@name` tag with a tilde (`~`), e.g. `@name lang/xyz~internalThing`.
-
 - `@author`, `@copyright`, and `@license` may only appear in the **file-level header comment** at the top of the module.
-
 - Wrap all lines at a maximum of 80 characters, except for:
-
   - `@see` URLs
   - inline tags like `{@link ...}`
 
