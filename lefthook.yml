@@ -1,0 +1,4 @@
+pre-commit:
+  commands:
+    lint_staged:
+      run: deno run -A _tools/lint_staged.ts
