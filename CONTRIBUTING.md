@@ -1,5 +1,40 @@
 # Contributing to [deno_lang][repository-github-url]
 
+Thanks for your interest in contributing to ** deno_lang** — every contribution is welcome, and we're genuinely glad
+you're here!
+
+This document covers everything you need to know to get started: how to set up your local environment, our code style,
+best practices, and a few things we care about as a team.
+
+Take a few minutes to read through — it helps everyone stay on the same page and keeps the vibe smooth. 😎
+
+## Guiding principles
+
+We aim to build an idiomatic, easy-to-understand API without compromising on runtime performance.\
+Every public API must be clearly documented using JSDoc.
+
+We're loosely following the structure of [denoland/std](https://github.com/denoland/std):
+
+- Filenames use `snake_case`
+- Everything that's published must be tested
+- Test files use the same name as their implementation, with a `_test` suffix
+- Code should be reusable whenever possible
+- Internal code lives in [`./internal`](internal) or is marked as internal via [JSDoc](#jsdoc-style-guide) and not
+  exported through `mod.ts`
+- All public APIs expose **named functions**
+- Everything is written in TypeScript and carefully typed
+- No classic build tools from the Node.js/npm world — this is the Deno universe
+- We aim to stay as cross-platform compatible as possible
+- Code is formatted using [dprint](https://github.com/dprint/dprint), while remaining compatible with `deno fmt`
+- Git hooks are managed using [lefthook](https://github.com/evilmartians/lefthook) and stored in
+  [`./git_hooks`](git_hooks)
+- More complex tasks go into [`./tasks`](tasks)
+- Entry points are always named `mod.ts`
+- We avoid hidden dotfiles in the repo whenever possible
+- We respect the [Code of Conduct](CODE_OF_CONDUCT.md) and aim to stay open, helpful, and kind to one another
+- Non-native speakers are encouraged to use AI tools for translating into US English
+- We see AI not as a competitor, but as a sparring partner to help us reach the best possible outcome
+
 ## Getting started
 
 This project uses a fork-based workflow — that means contributions should be made via forks and pull requests rather
@@ -30,33 +65,6 @@ deno install && deno task init
 
 This will install required dependencies and Git hooks via [lefthook](https://github.com/evilmartians/lefthook) so you're
 ready to contribute. You can rerun `deno task init` anytime to reset your Git hook setup.
-
-## Guiding principles
-
-We aim to build an idiomatic, easy-to-understand API without compromising on runtime performance.\
-Every public API must be clearly documented using JSDoc.
-
-We're loosely following the structure of [denoland/std](https://github.com/denoland/std):
-
-- Filenames use `snake_case`
-- Everything that's published must be tested
-- Test files use the same name as their implementation, with a `_test` suffix
-- Code should be reusable whenever possible
-- Internal code lives in [`./internal`](internal) or is marked as internal via [JSDoc](#jsdoc-style-guide) and not
-  exported through `mod.ts`
-- All public APIs expose **named functions**
-- Everything is written in TypeScript and carefully typed
-- No classic build tools from the Node.js/npm world — this is the Deno universe
-- We aim to stay as cross-platform compatible as possible
-- Code is formatted using [dprint](https://github.com/dprint/dprint), while remaining compatible with `deno fmt`
-- Git hooks are managed using [lefthook](https://github.com/evilmartians/lefthook) and stored in
-  [`./git_hooks`](git_hooks)
-- More complex tasks go into [`./tasks`](tasks)
-- Entry points are always named `mod.ts`
-- We avoid hidden dotfiles in the repo whenever possible
-- We respect the [Code of Conduct](CODE_OF_CONDUCT.md) and aim to stay open, helpful, and kind to one another
-- Non-native speakers are encouraged to use AI tools for translating into US English
-- We see AI not as a competitor, but as a sparring partner to help us reach the best possible outcome
 
 ## JSDoc style guide
 
