@@ -4,7 +4,7 @@
  * Usage: `deno task translate <text>`
  */
 
-const promptPath = "./_gpt_prompts/translate.ts";
+const promptPath = "./gpt_prompts/translate.ts";
 
 if (import.meta.main) {
   const args = Deno.args;
