@@ -14,6 +14,7 @@
     "fmt": "deno task dprint fmt",
     "init": "deno task install-hooks",
     "install-hooks": "deno task lefthook install",
-    "lefthook": "deno run -A --node-modules-dir=auto npm:lefthook"
+    "lefthook": "deno run -A --node-modules-dir=auto npm:lefthook",
+    "prompt": "deno run -A ./tasks/prompt.ts"
   }
 }
