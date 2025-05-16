@@ -1,0 +1,8 @@
+{
+  "*.ts": [
+    "deno check",
+    "deno lint --fix",
+    "deno task fmt"
+  ],
+  "*.{json,md,yml}": "deno task fmt"
+}
