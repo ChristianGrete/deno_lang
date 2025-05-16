@@ -5,9 +5,6 @@
   "fmt": {
     "lineWidth": 120
   },
-  "imports": {
-    "@std/assert": "jsr:@std/assert@^1.0.13"
-  },
   "tasks": {
     "dprint": "deno run -A npm:dprint",
     "fmt:check": "deno task dprint check",

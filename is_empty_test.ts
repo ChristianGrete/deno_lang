@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
 import { isEmpty } from "./is_empty.ts";
 
 Deno.test("isEmpty() returns true for null and undefined", () => {

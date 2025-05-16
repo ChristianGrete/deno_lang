@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
 import { isFunction } from "./is_function.ts";
 
 Deno.test("isFunction() returns true for function values", () => {

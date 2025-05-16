@@ -1,4 +1,4 @@
-import { assertEquals, assertThrows } from "@std/assert";
+import { assertEquals, assertThrows } from "jsr:@std/assert";
 import { unsetPrototype } from "./unset_prototype.ts";
 
 Deno.test("unsetPrototype() sets function prototype to null", () => {

@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "jsr:@std/assert";
 import { isDate } from "./is_date.ts";
 
 Deno.test("isDate() returns true for Date objects", () => {
