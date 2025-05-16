@@ -1,7 +1,7 @@
 /**
  * CLI tool to generate a ChatGPT-ready prompt for translating text.
  *
- * Usage: `deno run -A ./_gpt_prompts/translate.ts <text>`
+ * Usage: `deno run -A ./gpt_prompts/translate.ts <text>`
  */
 
 import { copyToClipboard, openChatGpt } from "./general.ts";
@@ -13,7 +13,7 @@ The content is intended for a Deno-based TypeScript project. Make descriptions s
 Output only the translated text in a Markdown code block - with no explanations or extra text.`;
 
 function usage(code: number): never {
-  console.error("Usage: deno run -A ./_gpt_prompts/translate.ts <text>");
+  console.error("Usage: deno run -A ./gpt_prompts/translate.ts <text>");
 
   Deno.exit(code);
 }

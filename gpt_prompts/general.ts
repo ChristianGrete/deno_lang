@@ -4,7 +4,7 @@
  *
  * Can be used standalone via CLI or imported from other prompt scripts.
  *
- * Usage: `deno run -A ./_gpt_prompts/prepare_prompt.ts "<prompt text>"`
+ * Usage: `deno run -A ./gpt_prompts/prepare_prompt.ts "<prompt text>"`
  */
 
 export async function copyToClipboard(text: string): Promise<void> {
@@ -61,7 +61,7 @@ if (import.meta.main) {
   const text = Deno.args.join(" ").trim();
 
   if (!text) {
-    console.error("Usage: deno run -A ./_gpt_prompts/prepare_prompt.ts <prompt text>");
+    console.error("Usage: deno run -A ./gpt_prompts/prepare_prompt.ts <prompt text>");
 
     Deno.exit(1);
   }

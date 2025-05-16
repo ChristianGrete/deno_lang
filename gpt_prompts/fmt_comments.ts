@@ -1,7 +1,7 @@
 /**
  * CLI tool to generate a ChatGPT-ready prompt for reformatting JSDoc comments.
  *
- * Usage: `deno run -A ./_gpt_prompts/fmt_comments.ts <filename>`
+ * Usage: `deno run -A ./gpt_prompts/fmt_comments.ts <filename>`
  */
 
 import { basename } from "jsr:@std/path";
@@ -21,7 +21,7 @@ Do not wrap or split links, URLs, Markdown, or inline tags like @link, @see, {@l
 Output only the updated TypeScript code - with no explanations or extra text.`;
 
 function usage(): never {
-  console.error("Usage: deno run -A ./_gpt_prompts/fmt_comments.ts <filename>");
+  console.error("Usage: deno run -A ./gpt_prompts/fmt_comments.ts <filename>");
 
   Deno.exit(1);
 }

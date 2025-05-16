@@ -30,7 +30,7 @@ these guiding principles:
 - Code is formatted using [dprint](https://github.com/dprint/dprint), while remaining compatible with `deno fmt`
 - Git hooks are managed using [lefthook](https://github.com/evilmartians/lefthook) and stored in
   [`./_git_hooks`](_git_hooks)
-- More complex tasks go into [`./_tasks`](_tasks)
+- More complex tasks go into [`./tasks`](tasks)
 - Entry points are always named `mod.ts`
 - We avoid hidden dotfiles in the repo whenever possible
 - We respect the [Code of Conduct](CODE_OF_CONDUCT.md) and aim to stay open, helpful, and kind to one another

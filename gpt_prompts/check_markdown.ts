@@ -1,7 +1,7 @@
 /**
  * CLI tool to generate a ChatGPT-ready prompt for proofreading Markdown files.
  *
- * Usage: `deno run -A ./_gpt_prompts/check_markdown.ts <filename>`
+ * Usage: `deno run -A ./gpt_prompts/check_markdown.ts <filename>`
  */
 
 import { basename } from "jsr:@std/path";
@@ -17,7 +17,7 @@ Provide a list of corrections and suggestions for improvement. Do not rewrite th
 If there are any factual inaccuracies, note them as well.`;
 
 function usage(): never {
-  console.error("Usage: deno run -A ./_gpt_prompts/check_markdown.ts <filename>");
+  console.error("Usage: deno run -A ./gpt_prompts/check_markdown.ts <filename>");
 
   Deno.exit(1);
 }
