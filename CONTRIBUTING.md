@@ -62,10 +62,10 @@ git clone git@github.com:<your-username>/deno_lang.git && cd deno_lang
 Now run the following command to initialize the project for development:
 
 ```sh
-deno install && deno task init
+deno task init
 ```
 
-This will install required dependencies and Git hooks via [lefthook](https://github.com/evilmartians/lefthook) so you're
+This will cache required dependencies and Git hooks via [lefthook](https://github.com/evilmartians/lefthook) so you're
 ready to contribute. You can rerun `deno task init` anytime to reset your Git hook setup.
 
 ## JSDoc style guide
