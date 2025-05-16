@@ -13,7 +13,7 @@ if (import.meta.main) {
   const [tool, ...args] = Deno.args;
   if (!tool) usage();
 
-  const toolPath = `./gpt_prompts/${tool}.ts`;
+  const toolPath = `./_gpt_prompts/${tool}.ts`;
 
   try {
     const fileInfo = await Deno.stat(toolPath);
@@ -23,7 +23,7 @@ if (import.meta.main) {
     }
   } catch {
     console.error(
-      `❌  Prompt '${tool}' not found in ./gpt_prompts. Make sure the file exists and has a .ts extension.`,
+      `❌  Prompt '${tool}' not found in ./_gpt_prompts. Make sure the file exists and has a .ts extension.`,
     );
     Deno.exit(1);
   }
