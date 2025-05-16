@@ -1,9 +1,9 @@
 pre-commit:
   commands:
-    validate:
+    lint-staged:
       run: deno task lint-staged
 
 commit-msg:
   commands:
-    lint:
+    commitlint:
       run: deno task commitlint --edit {1}
