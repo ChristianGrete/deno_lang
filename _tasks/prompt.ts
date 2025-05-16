@@ -10,10 +10,14 @@ function usage(): never {
   Deno.exit(1);
 }
 
+function isHelpFlag(arg: string): boolean {
+  return ["-h", "--help", "help"].includes(arg.toLowerCase());
+}
+
 if (import.meta.main) {
   const [prompt, ...args] = Deno.args;
 
-  if (!prompt) usage();
+  if (!prompt || isHelpFlag(prompt)) usage();
 
   const promptPath = `./_gpt_prompts/${prompt}.ts`;
 
