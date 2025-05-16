@@ -29,7 +29,11 @@ function usage(): never {
 if (import.meta.main) {
   const [file] = Deno.args;
 
-  if (!file) usage();
+  if (!file || !file.endsWith(".ts")) {
+    console.error("✖ Please provide a valid .ts file.");
+
+    usage();
+  }
 
   const path = new URL(file, `file://${Deno.cwd()}/`).pathname;
 
