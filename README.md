@@ -4,7 +4,7 @@
 
 [![deno.land/x/lang](https://img.shields.io/badge/x%2Flang-70ffaf?logo=deno&logoColor=172723&labelColor=f5f5f5)][repository-module-url]
 [![JSR @denoverse](https://jsr.io/badges/@denoverse)](https://jsr.io/@denoverse)
-[![Assisted by ChatGPT](https://img.shields.io/badge/Assisted_by_ChatGPT-412991?logo=openai&logoColor=fff&labelColor=111)](https://chatgpt.com)
+[![Assisted by ChatGPT](https://img.shields.io/badge/ChatGPT-Co--authored-412991?logo=openai&logoColor=fff&labelColor=000)](https://chatgpt.com)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy_me_a_coffee-222?logo=buymeacoffee&logoColor=222&labelColor=fd0)](https://buymeacoffee.com/christiangrete)
 
 **deno_lang** is a library-agnostic collection of language utilities for Deno and TypeScript — a nerdy homage to
