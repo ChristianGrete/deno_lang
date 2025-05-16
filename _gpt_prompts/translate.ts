@@ -18,10 +18,15 @@ function usage(): never {
   Deno.exit(1);
 }
 
-if (import.meta.main) {
-  const text = Deno.args.join(" ").trim();
+function isHelpFlag(arg: string): boolean {
+  return ["-h", "--help", "help"].includes(arg.toLowerCase());
+}
 
-  if (!text) usage();
+if (import.meta.main) {
+  const args = Deno.args;
+  const text = args.join(" ").trim();
+
+  if (!text || args.some(isHelpFlag)) usage();
 
   const prompt = `\`\`\`\n${text}\n\`\`\`\n\n${INSTRUCTION}`;
 

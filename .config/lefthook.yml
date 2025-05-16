@@ -1,7 +1,6 @@
 pre-commit:
   commands:
     validate:
-      # run: deno run -A ./git_hooks/validate_staged_files.ts
       run: deno task lint-staged
 
 commit-msg:
