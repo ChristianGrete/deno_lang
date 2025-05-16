@@ -29,8 +29,9 @@ these guiding principles:
 - We aim to stay as cross-platform compatible as possible
 - Code is formatted using [dprint](https://github.com/dprint/dprint), while remaining compatible with `deno fmt`
 - Git hooks are managed using [lefthook](https://github.com/evilmartians/lefthook) and stored in
-  [`./_git_hooks`](_git_hooks)
+  [`./git_hooks`](git_hooks)
 - More complex tasks go into [`./tasks`](tasks)
+- Common prompts are stored in [`./gpt_prompts`](gpt_prompts) and can be used via `deno task prompt`
 - Entry points are always named `mod.ts`
 - We avoid hidden dotfiles in the repo whenever possible
 - We respect the [Code of Conduct](CODE_OF_CONDUCT.md) and aim to stay open, helpful, and kind to one another

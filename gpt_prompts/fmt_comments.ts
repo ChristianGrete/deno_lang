@@ -27,7 +27,7 @@ function usage(): never {
 }
 
 if (import.meta.main) {
-  const [file] = Deno.args;
+  const file = Deno.args.join(" ").trim();
 
   if (!file || !file.endsWith(".ts")) {
     console.error("✖ Please provide a valid .ts file.");

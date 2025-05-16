@@ -23,12 +23,11 @@ function isHelpFlag(arg: string): boolean {
 }
 
 if (import.meta.main) {
-  const args = Deno.args;
-  const text = args.join(" ").trim();
+  const text = Deno.args.join(" ").trim();
 
   if (!text) usage(1);
 
-  if (args.some(isHelpFlag)) usage(0);
+  if (isHelpFlag(text)) usage(0);
 
   const prompt = `\`\`\`\n${text}\n\`\`\`\n\n${INSTRUCTION}`;
 
