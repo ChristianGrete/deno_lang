@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
 
 import { isComplex } from "./is_complex.ts";
 
