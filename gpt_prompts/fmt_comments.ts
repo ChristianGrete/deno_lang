@@ -1,7 +1,7 @@
 /**
  * CLI tool to generate a ChatGPT-ready prompt for reformatting TypeScript comments.
  *
- * Usage: deno run -A ./gpt_prompts/fmt_comments.ts <filename>
+ * Usage: `deno run -A ./gpt_prompts/fmt_comments.ts <filename>`
  */
 
 import { basename } from "jsr:@std/path";
@@ -77,9 +77,9 @@ if (import.meta.main) {
     }
   } catch (err: unknown) {
     if (err instanceof Error) {
-      console.error("❌ Error:", err.message);
+      console.error("❌  Error:", err.message);
     } else {
-      console.error("❌ Unknown error:", err);
+      console.error("❌  Unknown error:", err);
     }
     Deno.exit(1);
   }
