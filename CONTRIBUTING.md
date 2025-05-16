@@ -1,6 +1,6 @@
 # Contributing to [deno_lang][repository-github-url]
 
-Thanks for your interest in contributing to ** deno_lang** — every contribution is welcome, and we're genuinely glad
+Thanks for your interest in contributing to **deno_lang** — every contribution is welcome, and we're genuinely glad
 you're here!
 
 This document covers everything you need to know to get started: how to set up your local environment, our code style,
