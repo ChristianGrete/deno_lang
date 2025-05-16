@@ -65,7 +65,7 @@ Now run the following command to initialize the project for development:
 deno task init
 ```
 
-This will cache required dev-dependencies and Git hooks via [lefthook](https://github.com/evilmartians/lefthook) so
+This will setup your environment and install Git hooks via [lefthook](https://github.com/evilmartians/lefthook) so
 you're ready to contribute. You can rerun `deno task init` anytime to reset your Git hook setup.
 
 ## JSDoc style guide
