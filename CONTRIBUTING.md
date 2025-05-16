@@ -19,9 +19,8 @@ these guiding principles:
 - Everything that's published must be tested
 - Test files use the same name as their implementation, with a `_test` suffix
 - Code should be reusable whenever possible
-- Every public API must be clearly documented using JSDoc
-- Internal code lives in [`./internal`](internal) or is marked as internal via [JSDoc](#jsdoc-style-guide) and not
-  exported through `mod.ts`
+- Every public API must be clearly documented using [JSDoc](#jsdoc-style-guide)
+- Internal code lives in [`./internal`](internal) or is marked as internal via JSDoc and not exported through `mod.ts`
 - All public APIs expose **named functions**
 - Everything is written in TypeScript and carefully typed
 - No classic build tools from the Node.js/npm world — this is the Deno universe (pure CLI tools from npm are allowed)
