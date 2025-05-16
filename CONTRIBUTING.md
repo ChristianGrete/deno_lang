@@ -6,7 +6,8 @@ you're here!
 This document covers everything you need to know to get started: how to set up your local environment, our code style,
 best practices, and a few things we care about as a team.
 
-Take a few minutes to read through — it helps everyone stay on the same page and keeps the vibe smooth. 😎
+Take a few minutes to read through — it helps everyone stay on the same page and helps keep collaboration easy and
+enjoyable.
 
 ## Guiding principles
 

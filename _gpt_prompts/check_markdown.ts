@@ -10,6 +10,8 @@ import { copyToClipboard, openChatGpt } from "./general.ts";
 const INSTRUCTION =
   `Please proofread the Markdown file above. Check for grammatical, spelling, content-related, and stylistic issues.
 
+The goal is a casual, modern tone that still feels professional. Descriptions should be short, clear, and easy to understand.
+
 Provide a list of corrections and suggestions for improvement. Do not rewrite the full text. Instead, point out specific issues with references to the relevant lines or phrases.
 
 If there are any factual inaccuracies, note them as well.`;
