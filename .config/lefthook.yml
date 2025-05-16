@@ -2,9 +2,9 @@ pre-commit:
   commands:
     validate:
       # run: deno run -A ./git_hooks/validate_staged_files.ts
-      run: deno task lint-staged -c ./lint_staged.json
+      run: deno task lint-staged
 
 commit-msg:
   commands:
     lint:
-      run: deno task commitlint -g ./commitlint.json --edit {1}
+      run: deno task commitlint --edit {1}
