@@ -2,6 +2,7 @@
  * Git pre-commit hook script to check and format staged files.
  *
  * - Skips partially staged files to avoid corrupting selective commits
+ * - Skips deleted files
  * - Applies `deno check`, `deno lint --fix`, and `dprint fmt` to clean files
  * - Re-stages modified files after formatting
  * - Exits non-zero if any tool fails
@@ -35,8 +36,18 @@ function getPartiallyStagedFiles(): Promise<string[]> {
   );
 }
 
+/**
+ * Get all staged files that are marked as deleted.
+ */
+function getDeletedFiles(): Promise<string[]> {
+  return new Deno.Command("git", { args: ["diff", "--cached", "--diff-filter=D", "--name-only"], stdout: "piped" })
+    .output()
+    .then(({ stdout }) => decoder.decode(stdout).split("\n").map((f) => f.trim()).filter(Boolean));
+}
+
 const stagedFiles = await getStagedFiles();
 const partialFiles = await getPartiallyStagedFiles();
+const deletedFiles = await getDeletedFiles();
 
 if (stagedFiles.length === 0) {
   console.log("✅  No staged files to check.");
@@ -48,7 +59,12 @@ if (partialFiles.length > 0) {
   for (const file of partialFiles) console.warn(`  - ${file}`);
 }
 
-const cleanFiles = stagedFiles.filter((f) => !partialFiles.includes(f));
+if (deletedFiles.length > 0) {
+  console.warn("⚠️  The following files are staged for deletion and will be skipped:");
+  for (const file of deletedFiles) console.warn(`  - ${file}`);
+}
+
+const cleanFiles = stagedFiles.filter((f) => !partialFiles.includes(f) && !deletedFiles.includes(f));
 const tsFiles = cleanFiles.filter((f) => f.endsWith(".ts"));
 const dprintFiles = cleanFiles.filter((f) => f.match(/\.(json|md|ts|yml)$/));
 
