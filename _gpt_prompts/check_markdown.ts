@@ -18,13 +18,18 @@ If there are any factual inaccuracies, note them as well.`;
 
 function usage(): never {
   console.error("Usage: deno run -A ./_gpt_prompts/check_markdown.ts <filename>");
+
   Deno.exit(1);
 }
 
 if (import.meta.main) {
   const [file] = Deno.args;
 
-  if (!file) usage();
+  if (!file || !file.endsWith(".md")) {
+    console.error("✖ Please provide a valid .md file.");
+
+    usage();
+  }
 
   const path = new URL(file, `file://${Deno.cwd()}/`).pathname;
 

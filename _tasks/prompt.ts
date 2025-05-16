@@ -4,10 +4,10 @@
  * Usage: `deno task prompt <tool> <args...>`
  */
 
-function usage(): never {
+function usage(code: number): never {
   console.error("Usage: deno task prompt <tool> <args...>");
 
-  Deno.exit(1);
+  Deno.exit(code);
 }
 
 function isHelpFlag(arg: string): boolean {
@@ -17,7 +17,9 @@ function isHelpFlag(arg: string): boolean {
 if (import.meta.main) {
   const [prompt, ...args] = Deno.args;
 
-  if (!prompt || isHelpFlag(prompt)) usage();
+  if (!prompt) usage(1);
+
+  if (args.some(isHelpFlag)) usage(0);
 
   const promptPath = `./_gpt_prompts/${prompt}.ts`;
 

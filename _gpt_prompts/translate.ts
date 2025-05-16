@@ -12,10 +12,10 @@ The content is intended for a Deno-based TypeScript project. Make descriptions s
 
 Output only the translated text in a Markdown code block - with no explanations or extra text.`;
 
-function usage(): never {
+function usage(code: number): never {
   console.error("Usage: deno run -A ./_gpt_prompts/translate.ts <text>");
 
-  Deno.exit(1);
+  Deno.exit(code);
 }
 
 function isHelpFlag(arg: string): boolean {
@@ -26,7 +26,9 @@ if (import.meta.main) {
   const args = Deno.args;
   const text = args.join(" ").trim();
 
-  if (!text || args.some(isHelpFlag)) usage();
+  if (!text) usage(1);
+
+  if (args.some(isHelpFlag)) usage(0);
 
   const prompt = `\`\`\`\n${text}\n\`\`\`\n\n${INSTRUCTION}`;
 
