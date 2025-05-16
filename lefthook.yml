@@ -1,4 +1,4 @@
 pre-commit:
   commands:
-    lint_staged:
-      run: deno run -A _tools/lint_staged.ts
+    validate:
+      run: deno run -A ./git_hooks/validate_staged_files.ts
