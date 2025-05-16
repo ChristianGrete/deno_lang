@@ -1,11 +1,11 @@
 /**
  * Generic task proxy to call a GPT prompt tool.
  *
- * Usage: `deno task prompt <tool> <args...>`
+ * Usage: `deno task prompt <prompt> <args...>`
  */
 
 function usage(code: number): never {
-  console.error("Usage: deno task prompt <tool> <args...>");
+  console.error("Usage: deno task prompt <prompt> <args...>");
 
   Deno.exit(code);
 }
@@ -19,7 +19,7 @@ if (import.meta.main) {
 
   if (!prompt) usage(1);
 
-  if (args.some(isHelpFlag)) usage(0);
+  if (isHelpFlag(prompt)) usage(0);
 
   const promptPath = `./gpt_prompts/${prompt}.ts`;
 
@@ -32,9 +32,7 @@ if (import.meta.main) {
       Deno.exit(1);
     }
   } catch {
-    console.error(
-      `✖ Prompt '${prompt}' not found in ./gpt_prompts. Make sure the file exists and has a .ts extension.`,
-    );
+    console.error(`✖ '${promptPath}' not found. Make sure the prompt file exists.`);
 
     Deno.exit(1);
   }
