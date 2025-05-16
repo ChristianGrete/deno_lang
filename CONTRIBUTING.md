@@ -23,7 +23,8 @@ these guiding principles:
 - Internal code lives in [`./internal`](internal) or is marked as internal via JSDoc and not exported through `mod.ts`
 - All public APIs expose **named functions**
 - Everything is written in TypeScript and carefully typed
-- No classic build tools from the Node.js/npm world — this is the Deno universe (pure CLI tools from npm are allowed)
+- No classic build tools from the Node.js/npm world — this is the Deno universe
+- However, pure CLI tools from npm are allowed
 - We aim to stay as cross-platform compatible as possible
 - We take the [config directory proposal](https://github.com/pi0/config-dir) into account when placing config files
 - Code is formatted using [dprint](https://github.com/dprint/dprint), while remaining compatible with `deno fmt`
