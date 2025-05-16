@@ -51,9 +51,9 @@ export async function openChatGpt(): Promise<void> {
 
     await p.output();
 
-    console.log("🌐  Opened ChatGPT in your browser. Just paste and go!");
+    console.log("✔ Opened ChatGPT in your browser. Just paste and go!");
   } else {
-    console.log(`🌐  Prompt is in your clipboard. Open ${url} and paste it manually.`);
+    console.log(`✔ Prompt is in your clipboard. Open ${url} and paste it manually.`);
   }
 }
 

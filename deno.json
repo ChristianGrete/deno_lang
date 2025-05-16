@@ -15,6 +15,7 @@
     "install-hooks": "deno task lefthook install",
     "lefthook": "deno run -A --node-modules-dir=auto npm:lefthook",
     "lint-staged": "deno run -A --node-modules-dir=auto npm:lint-staged -c ./.config/lint_staged.json",
-    "prompt": "deno run -A ./_tasks/prompt.ts"
+    "prompt": "deno run -A ./_tasks/prompt.ts",
+    "translate": "deno run -A ./_tasks/translate.ts"
   }
 }
