@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { isPrimitive, primitiveTypes } from "./is_primitive.ts";
 
 Deno.test("isPrimitive() returns true for primitive values", () => {

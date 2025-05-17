@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { isConstructor } from "./is_constructor.ts";
 
 Deno.test("isConstructor() returns true for class constructors", () => {

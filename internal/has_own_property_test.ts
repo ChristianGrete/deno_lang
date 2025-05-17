@@ -1,4 +1,5 @@
 import { assert, assertFalse } from "jsr:@std/assert";
+
 import { hasOwnProperty } from "./has_own_property.ts";
 
 Deno.test("hasOwnProperty() returns true for own enumerable properties", () => {

@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { hasTag } from "./has_tag.ts";
 
 Deno.test("hasTag() returns true for matching built-in tags", () => {

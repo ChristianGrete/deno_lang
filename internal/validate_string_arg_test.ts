@@ -1,4 +1,5 @@
 import { assertThrows } from "jsr:@std/assert";
+
 import { validateStringArg } from "./validate_string_arg.ts";
 
 Deno.test("validateStringArg() passes for strings", () => {

@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { isObject } from "./is_object.ts";
 
 Deno.test("isObject() returns true for plain objects", () => {

@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { instanceOf } from "./instance_of.ts";
 
 class Person {}
