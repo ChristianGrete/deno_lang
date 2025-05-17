@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { type Arguments, isArguments } from "./is_arguments.ts";
 
 function getArgs(..._: unknown[]): Arguments {

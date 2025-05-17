@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertStrictEquals, assertThrows } from "jsr:@std/assert";
+
 import { isInteger } from "./is_integer.ts";
 
 Deno.test("isInteger() returns true for primitive integer numbers", () => {

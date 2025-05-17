@@ -1,4 +1,5 @@
 import { assertEquals, assertThrows } from "jsr:@std/assert";
+
 import { tagLabelOf } from "./tag_label_of.ts";
 
 // Helper for custom toStringTag

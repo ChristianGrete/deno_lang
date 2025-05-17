@@ -1,4 +1,5 @@
 import { assertEquals, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import type { TagLabel } from "./tag_label_of.ts";
 import { type Type, typeByTagLabel, typeOf } from "./type_of.ts";
 

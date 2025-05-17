@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { isArray } from "./is_array.ts";
 
 Deno.test("isArray() returns true for real arrays", () => {

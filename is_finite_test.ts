@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertStrictEquals, assertThrows } from "jsr:@std/assert";
+
 import { isFinite } from "./is_finite.ts";
 
 Deno.test("isFinite() returns true for finite numbers", () => {

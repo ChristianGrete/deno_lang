@@ -1,4 +1,5 @@
 import { assertEquals, assertThrows } from "jsr:@std/assert";
+
 import { boundTypeOf } from "./bound_type_of.ts";
 
 Deno.test("boundTypeOf returns expected type", () => {

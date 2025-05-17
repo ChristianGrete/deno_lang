@@ -1,4 +1,5 @@
 import { assertThrows } from "jsr:@std/assert";
+
 import { validateArgsLength } from "./validate_args_length.ts";
 
 Deno.test("validateArgsLength() passes when argument length matches", () => {

@@ -1,4 +1,5 @@
 import { assert, assertFalse, assertThrows } from "jsr:@std/assert";
+
 import { isRegExp } from "./is_regexp.ts";
 
 Deno.test("isRegExp() returns true for regular expressions", () => {
