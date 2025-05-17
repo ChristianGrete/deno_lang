@@ -5,4 +5,5 @@ const config: Configuration = {
   "*.{json,md,yml}": "deno task fmt",
 };
 
+// eslint-disable-next-line import/no-default-export
 export default config;
