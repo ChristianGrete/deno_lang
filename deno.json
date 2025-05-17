@@ -15,7 +15,7 @@
     "init": "deno task cache-commitlint && deno task install-hooks",
     "install-hooks": "deno task lefthook install",
     "lefthook": "deno run -A --node-modules-dir=auto npm:lefthook",
-    "lint-staged": "deno run -A --node-modules-dir=auto npm:lint-staged -c ./lint_staged.json",
+    "lint-staged": "deno run -A --node-modules-dir=auto npm:lint-staged -c ./lint_staged.ts",
     "prompt": "deno run -A ./tasks/prompt.ts",
     "translate": "deno run -A ./tasks/translate.ts"
   }
