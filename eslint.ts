@@ -5,6 +5,7 @@ import jsoncPlugin from "npm:eslint-plugin-jsonc";
 import simpleImportSortPlugin from "npm:eslint-plugin-simple-import-sort";
 import jsoncParser from "npm:jsonc-eslint-parser";
 
+// Workaround for CommonJS export: use `default` if present (CJS interop)
 const importPlugin = importPluginNs.default ?? importPluginNs;
 
 const config: Linter.Config[] = [{
