@@ -19,12 +19,12 @@ const config: Linter.Config[] = [{
     "import/no-duplicates": "error",
     "import/no-named-default": "error",
     "import/no-useless-path-segments": "error",
-    "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
   },
 }, {
   files: ["**/*.json"],
-  languageOptions: { parser: jsoncParser },
+  languageOptions: { parser: jsoncParser, parserOptions: { jsonSyntax: "JSON" } },
   plugins: { jsonc: jsoncPlugin as unknown as ESLint.Plugin },
   rules: { "jsonc/sort-keys": "error" },
 }];
