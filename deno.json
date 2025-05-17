@@ -7,8 +7,9 @@
   },
   "tasks": {
     "cache-commitlint": "deno cache --node-modules-dir=auto npm:@commitlint/config-conventional",
-    "commitlint": "deno run -A --node-modules-dir=auto npm:@commitlint/cli -g ./commitlint.json",
+    "commitlint": "deno run -A --node-modules-dir=auto npm:@commitlint/cli -g ./commitlint.ts",
     "dprint": "deno run -A npm:dprint",
+    "eslint": "deno run -A --node-modules-dir=auto npm:eslint -c ./eslint.ts",
     "fmt:check": "deno task dprint check",
     "fmt": "deno task dprint fmt",
     "init": "deno task cache-commitlint && deno task install-hooks",
