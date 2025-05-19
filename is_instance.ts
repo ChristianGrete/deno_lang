@@ -1,5 +1,5 @@
 /**
- * Shortcut alias for {@link instanceOf} using idiomatic isX-style naming.
+ * Shortcut alias for {@link lang/instance_of.instanceOf} using idiomatic isX-style naming.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>

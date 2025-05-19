@@ -47,7 +47,7 @@ export interface InferredByType {
  *
  * @name lang/is_type.isType
  * @param {unknown} value - The value to check.
- * @param {Type} type - The expected type string as returned by {@link typeOf}.
+ * @param {Type} type - The expected type string as returned by {@link lang/type_of.typeOf}.
  * @returns {value is InferredByType[T]} Whether the value has the expected type.
  * @see {@link lang/type_of.typeOf}
  * @template T
