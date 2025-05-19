@@ -6,9 +6,9 @@ try {
   await run(["deno", "lint", "--fix", ...files]);
   await run(["deno", "task", "eslint-fix", ...files]);
   await run(["deno", "task", "dprint-fmt", ...files]);
-} catch (error) {
-  if (error instanceof Error) {
-    console.error(error.message);
+} catch (err) {
+  if (err instanceof Error) {
+    console.error(err.message);
   } else {
     console.error("✖ An unknown error occurred.");
   }

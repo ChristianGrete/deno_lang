@@ -37,14 +37,14 @@ if (import.meta.main) {
     Deno.exit(1);
   }
 
-  const command = new Deno.Command("deno", {
+  const cmd = new Deno.Command("deno", {
     args: ["run", "-A", promptPath, ...args],
     stderr: "inherit",
     stdin: "inherit",
     stdout: "inherit",
   });
 
-  const { code } = await command.output();
+  const { code } = await cmd.output();
 
   Deno.exit(code);
 }
