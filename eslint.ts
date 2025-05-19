@@ -1,11 +1,11 @@
-import tsParser from "npm:@typescript-eslint/parser";
-import type { ESLint, Linter } from "npm:eslint";
-import importPlugin from "npm:eslint-plugin-import";
-import jsoncPlugin from "npm:eslint-plugin-jsonc";
-import simpleImportSortPlugin from "npm:eslint-plugin-simple-import-sort";
-import sortKeysFixPlugin from "npm:eslint-plugin-sort-keys-fix";
-import unusedImportsPlugin from "npm:eslint-plugin-unused-imports";
-import jsoncParser from "npm:jsonc-eslint-parser";
+import tsParser from "@typescript-eslint/parser";
+import type { ESLint, Linter } from "eslint";
+import importPlugin from "eslint-plugin-import";
+import jsoncPlugin from "eslint-plugin-jsonc";
+import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
+import sortKeysFixPlugin from "eslint-plugin-sort-keys-fix";
+import unusedImportsPlugin from "eslint-plugin-unused-imports";
+import jsoncParser from "jsonc-eslint-parser";
 
 const config: Linter.Config[] = [{
   files: ["**/*.ts"],

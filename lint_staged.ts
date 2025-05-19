@@ -1,4 +1,4 @@
-import { type Configuration } from "npm:lint-staged";
+import type { Configuration } from "lint-staged";
 
 const config: Configuration = {
   "*.{json,md,yml}": "deno task fmt",
