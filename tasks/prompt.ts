@@ -39,9 +39,9 @@ if (import.meta.main) {
 
   const command = new Deno.Command("deno", {
     args: ["run", "-A", promptPath, ...args],
+    stderr: "inherit",
     stdin: "inherit",
     stdout: "inherit",
-    stderr: "inherit",
   });
 
   const { code } = await command.output();
