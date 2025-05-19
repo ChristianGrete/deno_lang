@@ -11,8 +11,6 @@ enjoyable.
 
 ## Table of contents
 
-Let’s keep it organized:
-
 - [Getting started](#getting-started)
 - [Guiding principles](#guiding-principles)
 - [Tasks](#tasks)
