@@ -107,6 +107,13 @@ Using the command `deno task prompt <prompt> [...args]`, you can generate predef
 value refers to a filename in [`./gpt_prompts`](gpt_prompts) (without the file extension), and `[...args]` are the
 accepted arguments defined by that specific prompt file.
 
+These prompts are optional helpers and not part of the project's automation pipeline.
+
+Generated prompts are copied to the clipboard and open ChatGPT in a new browser window, allowing you to paste the prompt
+directly.
+
+Developers are responsible for any required licenses and access to appropriate GPT models themselves.
+
 ## JSDoc style guide
 
 See the style guide below to keep documentation consistent and clean across the project.
