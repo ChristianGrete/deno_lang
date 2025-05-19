@@ -12,6 +12,7 @@
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser",
     "eslint": "npm:eslint",
     "eslint-plugin-import": "npm:eslint-plugin-import",
+    "eslint-plugin-jsdoc": "npm:eslint-plugin-jsdoc",
     "eslint-plugin-jsonc": "npm:eslint-plugin-jsonc",
     "eslint-plugin-simple-import-sort": "npm:eslint-plugin-simple-import-sort",
     "eslint-plugin-sort-keys-fix": "npm:eslint-plugin-sort-keys-fix",
