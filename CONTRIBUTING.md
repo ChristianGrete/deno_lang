@@ -98,8 +98,8 @@ tasks:
 | `deno task run-p <tasks...>`          | Shorthand to run tasks in parallel                                                                |
 | `deno task run-s <tasks...>`          | Shorthand to run tasks sequentially                                                               |
 
-Some additional tasks like `commitlint`, `dprint`, `lefthook`, `lint-staged`, and `prompt` are exposed for convenience,
-but mainly serve as internal CLI wrappers.
+Some additional tasks like `commitlint`, `dprint`, `lefthook` and `lint-staged` are exposed for convenience, but mainly
+serve as internal CLI wrappers.
 
 ## Prompts
 
