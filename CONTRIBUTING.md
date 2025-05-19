@@ -71,7 +71,8 @@ these guiding principles:
 
 ## Tasks
 
-To reduce system-level dependencies and automate repetitive actions, all essential workflows are exposed as Deno tasks:
+To reduce system-level dependencies and automate repetitive actions, all essential workflows are available as Deno
+tasks:
 
 | Task command                        | Description                                                                                       |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -89,10 +90,12 @@ To reduce system-level dependencies and automate repetitive actions, all essenti
 | `deno task run-s <tasks...>`        | Shorthand to run tasks sequentially                                                               |
 | `deno task translate <text>`        | Saves a prompt to translate text into US English and copies the result                            |
 
-Some additional tasks like `commitlint`, `dprint`, `lefthook`, `lint-staged`, and `prompt` are available for
-convenience, but mainly serve as internal CLI wrappers.
+Some additional tasks like `commitlint`, `dprint`, `lefthook`, `lint-staged`, and `prompt` are exposed for convenience,
+but mainly serve as internal CLI wrappers.
 
 ## JSDoc style guide
+
+See the style guide below to keep documentation consistent and clean across the project.
 
 - Each exported member must be documented using JSDoc.
 - The first sentence of the comment should give a short, clear and concise explanation of what the function or type
