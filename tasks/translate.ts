@@ -9,14 +9,14 @@ const promptPath = "./gpt_prompts/translate.ts";
 if (import.meta.main) {
   const args = Deno.args;
 
-  const command = new Deno.Command("deno", {
+  const cmd = new Deno.Command("deno", {
     args: ["run", "-A", promptPath, ...args],
     stderr: "inherit",
     stdin: "inherit",
     stdout: "inherit",
   });
 
-  const { code } = await command.output();
+  const { code } = await cmd.output();
 
   Deno.exit(code);
 }
