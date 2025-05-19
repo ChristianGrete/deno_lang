@@ -25,7 +25,7 @@ Deno.test("isRegExp() returns false for non-RegExp values", () => {
   assertFalse(isRegExp(new Map()));
   assertFalse(isRegExp(new Set()));
   assertFalse(isRegExp(Promise.resolve()));
-  assertFalse(isRegExp({ source: "abc", flags: "g" })); // RegExp-like plain object
+  assertFalse(isRegExp({ flags: "g", source: "abc" })); // RegExp-like plain object
 });
 
 Deno.test("isRegExp() does not detect proxied regular expressions", () => {
