@@ -1,6 +1,7 @@
 import tsParser from "@typescript-eslint/parser";
 import type { ESLint, Linter } from "eslint";
 import importPlugin from "eslint-plugin-import";
+import jsdocPlugin from "eslint-plugin-jsdoc";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import sortKeysFixPlugin from "eslint-plugin-sort-keys-fix";
@@ -12,6 +13,7 @@ const config: Linter.Config[] = [{
   languageOptions: { parser: tsParser, parserOptions: { ecmaVersion: "latest", sourceType: "module" } },
   plugins: {
     "import": importPlugin,
+    "jsdoc": jsdocPlugin,
     "simple-import-sort": simpleImportSortPlugin,
     "sort-keys-fix": sortKeysFixPlugin,
     "unused-imports": unusedImportsPlugin,
@@ -23,6 +25,28 @@ const config: Linter.Config[] = [{
     "import/no-duplicates": "error",
     "import/no-named-default": "error",
     "import/no-useless-path-segments": "error",
+    "jsdoc/check-alignment": "error",
+    "jsdoc/check-indentation": "error",
+    "jsdoc/check-syntax": "error",
+    "jsdoc/check-tag-names": "error",
+    "jsdoc/check-template-names": "error",
+    "jsdoc/check-types": "error",
+    "jsdoc/check-values": "error",
+    "jsdoc/empty-tags": "error",
+    "jsdoc/informative-docs": "error",
+    "jsdoc/no-undefined-types": "error",
+    "jsdoc/require-asterisk-prefix": "error",
+    "jsdoc/require-hyphen-before-param-description": "error",
+    "jsdoc/require-param-description": "error",
+    "jsdoc/require-param-name": "error",
+    "jsdoc/require-param-type": "error",
+    "jsdoc/require-returns-check": "error",
+    "jsdoc/require-returns-description": "error",
+    "jsdoc/require-returns-type": "error",
+    "jsdoc/require-template": "error",
+    "jsdoc/require-throws": "error",
+    "jsdoc/require-yields": "error",
+    "jsdoc/require-yields-check": "error",
     "no-restricted-exports": ["error", { restrictedNamedExports: ["then"] }],
     "no-restricted-imports": ["error", { patterns: ["node:*"] }],
     "simple-import-sort/exports": "error",
