@@ -28,15 +28,15 @@
     "eslint": "deno run -A npm:eslint -c ./eslint.ts",
     "eslint-fix": "deno task eslint --fix",
     "fmt": "deno run -A ./tasks/fmt.ts",
-    "init": {
-      "dependencies": ["install:deps", "install:hooks"]
-    },
+    "init": "deno task run-s install:deps install:hooks",
     "install:deps": "deno install",
     "install:hooks": "deno task lefthook install",
     "lefthook": "deno run -A npm:lefthook",
     "lint": "deno run -A ./tasks/lint.ts",
     "lint-staged": "deno run -A npm:lint-staged -c ./lint_staged.ts",
     "prompt": "deno run -A ./tasks/prompt.ts",
+    "run-p": "deno run -A ./tasks/run.ts -p",
+    "run-s": "deno run -A ./tasks/run.ts -s",
     "translate": "deno run -A ./tasks/translate.ts"
   }
 }
