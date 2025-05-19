@@ -18,10 +18,10 @@
     "commentLine.forceSpaceAfterSlashes": true,
     "deno": true,
     "enumDeclaration.memberSpacing": "newLine",
+    "exportDeclaration.sortNamedExports": "maintain",
+    "importDeclaration.sortNamedImports": "maintain",
     "lineWidth": 120,
     "memberExpression.linePerExpression": true,
-    "module.sortExportDeclarations": "caseInsensitive",
-    "module.sortImportDeclarations": "caseInsensitive",
     "preferSingleLine": true,
     "quoteProps": "consistent",
     "singleBodyPosition": "sameLine"

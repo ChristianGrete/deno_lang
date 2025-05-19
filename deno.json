@@ -6,17 +6,20 @@
     "lineWidth": 120
   },
   "tasks": {
-    "cache-commitlint": "deno cache --node-modules-dir=auto npm:@commitlint/config-conventional",
     "commitlint": "deno run -A --node-modules-dir=auto npm:@commitlint/cli -g ./commitlint.ts",
     "dprint": "deno run -A npm:dprint",
     "dprint-check": "deno task dprint check",
     "dprint-fmt": "deno task dprint fmt",
     "eslint": "deno run -A --node-modules-dir=auto npm:eslint -c ./eslint.ts",
     "eslint-fix": "deno task eslint --fix",
-    "fmt": "deno task eslint-fix . && deno task dprint-fmt",
-    "init": "deno task cache-commitlint && deno task install-hooks",
-    "install-hooks": "deno task lefthook install",
+    "fmt": "deno task eslint-fix && deno task dprint-fmt",
+    "init": {
+      "dependencies": ["install:deps", "install:hooks"]
+    },
+    "install:deps": "deno cache --node-modules-dir=auto npm:@commitlint/config-conventional",
+    "install:hooks": "deno task lefthook install",
     "lefthook": "deno run -A --node-modules-dir=auto npm:lefthook",
+    "lint": "deno lint && deno task eslint && deno task dprint-check",
     "lint-staged": "deno run -A --node-modules-dir=auto npm:lint-staged -c ./lint_staged.ts",
     "prompt": "deno run -A ./tasks/prompt.ts",
     "translate": "deno run -A ./tasks/translate.ts"
