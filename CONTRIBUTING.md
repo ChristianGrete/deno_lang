@@ -81,21 +81,21 @@ these guiding principles:
 To reduce system-level dependencies and automate repetitive actions, all essential workflows are available as Deno
 tasks:
 
-| Task command                        | Description                                                                                       |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `deno task dprint-check [files...]` | Runs `dprint check` for the whole project or the specified `.json`, `.md`, `.ts`, or `.yml` files |
-| `deno task dprint-fmt [files...]`   | Runs `dprint fmt` for the whole project or the specified `.json`, `.md`, `.ts`, or `.yml` files   |
-| `deno task eslint [files...]`       | Runs ESLint for the whole project or the specified `.json` or `.ts` files                         |
-| `deno task eslint-fix [files...]`   | Same as above, but with auto-fix enabled (`--fix`)                                                |
-| `deno task fmt [files...]`          | Formats code using `deno lint --fix`, `eslint --fix`, and `dprint fmt` in one unified task        |
-| `deno task init`                    | Initializes the project (currently just runs the `install` task)                                  |
-| `deno task install`                 | Runs all `install:*` subtasks in parallel                                                         |
-| `deno task install:deps`            | Installs project dependencies via `deno install`                                                  |
-| `deno task install:hooks`           | Installs Git hooks using the `lefthook` CLI                                                       |
-| `deno task lint [files...]`         | Lints code using `deno lint`, `eslint`, and `dprint check` combined                               |
-| `deno task run-p <tasks...>`        | Shorthand to run tasks in parallel                                                                |
-| `deno task run-s <tasks...>`        | Shorthand to run tasks sequentially                                                               |
-| `deno task translate <text>`        | Saves a prompt to translate text into US English and copies the result                            |
+| Task command                        | Description                                                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `deno task dprint-check [files...]` | Runs `dprint check` for the whole project or the specified `.json`, `.md`, `.ts`, or `.yml` files                   |
+| `deno task dprint-fmt [files...]`   | Runs `dprint fmt` for the whole project or the specified `.json`, `.md`, `.ts`, or `.yml` files                     |
+| `deno task eslint [files...]`       | Runs ESLint for the whole project or the specified `.json` or `.ts` files                                           |
+| `deno task eslint-fix [files...]`   | Same as above, but with auto-fix enabled (`--fix`)                                                                  |
+| `deno task fmt [files...]`          | Formats code using `deno lint --fix`, `eslint --fix`, and `dprint fmt` in one unified task                          |
+| `deno task init`                    | Initializes the project (currently just runs the `install` task)                                                    |
+| `deno task install`                 | Runs all `install:*` subtasks in parallel                                                                           |
+| `deno task install:deps`            | Installs project dependencies via `deno install`                                                                    |
+| `deno task install:hooks`           | Installs Git hooks using the `lefthook` CLI                                                                         |
+| `deno task lint [files...]`         | Lints code using `deno lint`, `eslint`, and `dprint check` combined                                                 |
+| `deno task run-p <tasks...>`        | Shorthand to run tasks in parallel                                                                                  |
+| `deno task run-s <tasks...>`        | Shorthand to run tasks sequentially                                                                                 |
+| `deno task translate <text>`        | Generates a ChatGPT prompt to translate a given text into project-typical US English and copies it to the clipboard |
 
 Some additional tasks like `commitlint`, `dprint`, `lefthook`, `lint-staged`, and `prompt` are exposed for convenience,
 but mainly serve as internal CLI wrappers.
