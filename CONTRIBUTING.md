@@ -14,6 +14,7 @@ enjoyable.
 - [Getting started](#getting-started)
 - [Guiding principles](#guiding-principles)
 - [Tasks](#tasks)
+- [Prompts](#prompts)
 - [JSDoc style guide](#jsdoc-style-guide)
 
 ## Getting started
@@ -99,6 +100,12 @@ tasks:
 
 Some additional tasks like `commitlint`, `dprint`, `lefthook`, `lint-staged`, and `prompt` are exposed for convenience,
 but mainly serve as internal CLI wrappers.
+
+## Prompts
+
+Using the command `deno task prompt <prompt> [...args]`, you can generate predefined ChatGPT prompts. The `<prompt>`
+value refers to a filename in [`./gpt_prompts`](gpt_prompts) (without the file extension), and `[...args]` are the
+accepted arguments defined by that specific prompt file.
 
 ## JSDoc style guide
 
