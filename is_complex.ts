@@ -18,6 +18,7 @@ import { isPrimitive } from "./is_primitive.ts";
  * Returns `true` for objects, arrays, functions, etc.
  *
  * @name lang/is_complex.isComplex
+ * @param {unknown} value - The value to check.
  * @returns {boolean} Whether the value is complex.
  * @see {@link lang/is_primitive.isPrimitive}
  */

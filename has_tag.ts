@@ -60,7 +60,7 @@ export interface InferredByTag {
  *
  * @name lang/has_tag.hasTag
  * @param {unknown} value - The value to check.
- * @param {Tag} tag - The expected tag string as returned by {@link tagOf}.
+ * @param {Tag} tag - The expected tag string as returned by {@link lang/tag_of.tagOf}.
  * @returns {value is InferredByTag[T]} Whether the value has the expected tag.
  * @see {@link lang/tag_of.tagOf}
  * @template T
