@@ -1,7 +1,7 @@
-# Contributing to [deno_lang][repository-github-url]
+# Contributing to [deno\_lang][repository-github-url]
 
-Thanks for your interest in contributing to **deno_lang** — every contribution is welcome, and we're genuinely glad
-you're here!
+Thanks for your interest in contributing to **deno\_lang** — every contribution is welcome, and we’re genuinely glad
+you’re here!
 
 This document covers everything you need to know to get started: how to set up your local environment, our code style,
 best practices, and a few things we care about as a team.
@@ -29,7 +29,7 @@ your fork `deno_lang`.
 
 ### 2. Clone your fork
 
-Once you've forked the repo, clone your copy as follows:
+Once you’ve forked the repo, clone your copy as follows:
 
 ```sh
 git clone git@github.com:<your-username>/deno_lang.git && cd deno_lang
@@ -37,7 +37,7 @@ git clone git@github.com:<your-username>/deno_lang.git && cd deno_lang
 
 ### 3. Initialize your local copy
 
-> ⚠️ This is a Deno 2 project — make sure you're using Deno v2.0.0 or newer!
+> ⚠️ This is a Deno 2 project — make sure you’re using Deno v2.2 or newer!
 
 Now run the following command to initialize the project for development:
 
@@ -46,17 +46,17 @@ deno task init
 ```
 
 This will setup your environment and install Git hooks via [lefthook](https://github.com/evilmartians/lefthook) so
-you're ready to contribute. You can rerun `deno task init` anytime to reset your Git hook setup.
+you’re ready to contribute. You can rerun `deno task init` anytime to reset your Git hook setup.
 
 ## Guiding principles
 
 We aim to build an idiomatic, easy-to-understand API without compromising on runtime performance.
 
-We're loosely following the structure of [denoland/std](https://github.com/denoland/std) and on top of that, we follow
+We’re loosely following the structure of [denoland/std](https://github.com/denoland/std) and on top of that, we follow
 these guiding principles:
 
 - Filenames use `snake_case`
-- Everything that's published must be tested
+- Everything that’s published must be tested
 - Test files use the same name as their implementation, with a `_test` suffix
 - Code should be reusable whenever possible
 - Every public API must be clearly documented using [JSDoc](#jsdoc-style-guide)
@@ -107,7 +107,7 @@ Using the command `deno task prompt <prompt> [...args]`, you can generate predef
 value refers to a filename in [`./gpt_prompts`](gpt_prompts) (without the file extension), and `[...args]` are the
 accepted arguments defined by that specific prompt file.
 
-These prompts are optional helpers and not part of the project's automation pipeline.
+These prompts are optional helpers and not part of the project’s automation pipeline.
 
 Generated prompts are copied to the clipboard and open ChatGPT in a new browser window, allowing you to paste the prompt
 directly.
@@ -129,6 +129,7 @@ See the style guide below to keep documentation consistent and clean across the 
 - Internal (non-exported) members should use a `@name` tag with a tilde (`~`), e.g. `@name lang/xyz~internalThing`.
 - `@author`, `@copyright`, and `@license` may only appear in the **file-level header comment** at the top of the module.
 - Wrap all lines at a maximum of 80 characters, except for:
+
   - `@see` URLs
   - inline tags like `{@link ...}`
 
