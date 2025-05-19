@@ -9,6 +9,15 @@ best practices, and a few things we care about as a team.
 Take a few minutes to read through — it helps everyone stay on the same page and helps keep collaboration easy and
 enjoyable.
 
+## Table of contents
+
+Let’s keep it organized:
+
+- [Getting started](#getting-started)
+- [Guiding principles](#guiding-principles)
+- [Tasks](#tasks)
+- [JSDoc style guide](#jsdoc-style-guide)
+
 ## Getting started
 
 This project uses a fork-based workflow — that means contributions should be made via forks and pull requests rather
