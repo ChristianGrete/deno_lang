@@ -38,7 +38,6 @@
     "lint-staged": "deno run -A npm:lint-staged -c ./lint_staged.ts",
     "prompt": "deno run -A ./tasks/prompt.ts",
     "run-p": "deno run -A ./tasks/run.ts -p",
-    "run-s": "deno run -A ./tasks/run.ts -s",
-    "translate": "deno run -A ./tasks/translate.ts"
+    "run-s": "deno run -A ./tasks/run.ts -s"
   }
 }
