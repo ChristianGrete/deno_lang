@@ -1,4 +1,4 @@
-# The History Behind [deno_lang][repository-github-url]
+# The History Behind [deno\_lang][repository-github-url]
 
 A few words from the project's originator, [Christian Grete][repository-owner-profile], about the background and
 motivation behind this project:
@@ -46,7 +46,7 @@ organization to serve as a new identity: [Denoverse][repository-organization-url
 
 More projects are planned to follow under this namespace and organization.
 
-I hope you enjoy working with **deno_lang** — and I’m genuinely happy about every contribution. ❤️
+I hope you enjoy working with **deno\_lang** — and I’m genuinely happy about every contribution. ❤️
 
 Feel free to check out the [contribution guidelines][repositoriy-contributing-url] to learn more about how you can get
 involved.
