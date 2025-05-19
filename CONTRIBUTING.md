@@ -15,6 +15,7 @@ enjoyable.
 - [Guiding principles](#guiding-principles)
 - [Tasks](#tasks)
 - [Prompts](#prompts)
+- [Git hooks](#git-hooks)
 - [JSDoc style guide](#jsdoc-style-guide)
 
 ## Getting started
@@ -113,6 +114,10 @@ Generated prompts are copied to the clipboard and open ChatGPT in a new browser 
 directly.
 
 Developers are responsible for any required licenses and access to appropriate GPT models themselves.
+
+## Git hooks
+
+To-Do. 👀
 
 ## JSDoc style guide
 
