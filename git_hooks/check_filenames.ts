@@ -1,7 +1,8 @@
 /**
- * Enforces `snake_case` naming for files and directories.
+ * Validates that all provided filenames follow the `snake_case` convention.
  *
- * Usage: `deno task check-filenames <files...>`
+ * Used by `lint-staged` to enforce naming rules before commits.
+ * Not intended for direct use as a Deno task.
  */
 
 import { bold, dim, green, italic, red } from "@std/fmt/colors";
