@@ -6,7 +6,7 @@
  * Usage: `deno task test [files...]`
  */
 
-import { bold, dim, red } from "@std/fmt/colors";
+import { bold, dim, green, red } from "@std/fmt/colors";
 import { extname, join } from "@std/path";
 
 import { run } from "./run.ts";
@@ -57,7 +57,7 @@ if (import.meta.main) {
   }
 
   if (tests.size === 0) {
-    console.log("No test files found. Skipping.");
+    console.log(`No tests or testable files provided. ${green("Skipping.")}`);
 
     Deno.exit(0);
   }
