@@ -1,17 +1,26 @@
+/**
+ * Runs all linters on the given files.
+ *
+ * Usage: `deno task lint [files...]`
+ */
+
+import { bold, dim, red } from "@std/fmt/colors";
+
 import { run } from "./run.ts";
 
 if (import.meta.main) {
   const files = Deno.args;
 
   try {
-    await run(["deno", "lint", ...files]);
-    await run(["deno", "task", "eslint", ...files]);
-    await run(["deno", "task", "dprint-check", ...files]);
+    await run(["deno", "lint", ...files], "suppress");
+    await run(["deno", "task", "eslint", ...files], "suppress");
+    await run(["deno", "task", "dprint-check", ...files], "suppress");
   } catch (err) {
     if (err instanceof Error) {
-      console.error(err.message);
+      console.error(`${bold(red("Error"))} ${dim("Failed to run task 'lint':")}`);
+      console.error(red(err.message));
     } else {
-      console.error("✖ An unknown error occurred.");
+      console.error(`${bold(red("Error"))} ${red("An unknown error occurred.")}`);
     }
 
     Deno.exit(1);
