@@ -2,7 +2,7 @@
  * Validates that all provided filenames follow the `snake_case` convention.
  *
  * Used by `lint-staged` to enforce naming rules before commits.
- * Not intended for direct use as a Deno task.
+ * Not intended for direct use as a CLI tool.
  */
 
 import { bold, dim, green, italic, red } from "@std/fmt/colors";
