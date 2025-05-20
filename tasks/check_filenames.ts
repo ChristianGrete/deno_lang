@@ -1,4 +1,10 @@
-import { bold, dim, italic, red } from "@std/fmt/colors";
+/**
+ * Enforces `snake_case` naming for files and directories.
+ *
+ * Usage: `deno task check-filenames <files...>`
+ */
+
+import { bold, dim, green, italic, red } from "@std/fmt/colors";
 import { extname, relative, SEPARATOR } from "@std/path";
 
 const snakeCase = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
@@ -18,7 +24,7 @@ if (import.meta.main) {
     args.some((arg) => [".", "./", "./*", "./**/*", "", "*", "**", "**/*"].includes(arg));
 
   if (isCatchAll) {
-    console.error(bold(red("Error")) + dim(" Invalid argument(s):"));
+    console.error(`${bold(red("Error"))} ${dim("Failed to run task 'check-filenames':")}`);
 
     if (args.length === 0) {
       console.error(red("No arguments provided."));
@@ -56,10 +62,10 @@ if (import.meta.main) {
   }
 
   if (invalid.length > 0) {
-    console.error(bold(red("Error")) + dim(" Invalid filename(s):"));
+    console.error(`${bold(red("Failure"))} ${dim("Invalid filename(s):")}`);
 
     for (const path of invalid) {
-      console.error(dim("-"), path);
+      console.error(`${dim("-")} ${path}`);
     }
 
     console.error(
@@ -72,4 +78,6 @@ if (import.meta.main) {
 
     Deno.exit(1);
   }
+
+  console.log(`${green("Success")} All filenames are valid.`);
 }

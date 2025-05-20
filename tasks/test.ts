@@ -1,3 +1,12 @@
+/**
+ * Runs tests for the given files, or all tests by default.
+ *
+ * If a non-test file is passed, its corresponding *_test.ts file is used (if found).
+ *
+ * Usage: `deno task test [files...]`
+ */
+
+import { bold, dim, red } from "@std/fmt/colors";
 import { extname, join } from "@std/path";
 
 import { run } from "./run.ts";
@@ -7,16 +16,17 @@ if (import.meta.main) {
   const extPattern = /\.ts$/;
 
   const isCatchAll = args.length === 0 ||
-    args.some((arg) => [".", "./", "./*", "./**/*", "", "**", "**/*"].includes(arg));
+    args.some((arg) => [".", "./", "./*", "./**/*", "", "*", "**", "**/*"].includes(arg));
 
   if (isCatchAll) {
     try {
-      await run(["deno", "test"]);
+      await run(["deno", "test"], "suppress");
     } catch (err) {
       if (err instanceof Error) {
-        console.error(err.message);
+        console.error(`${bold(red("Error"))} ${dim("Failed to run task 'test':")}`);
+        console.error(red(err.message));
       } else {
-        console.error("✖ An unknown error occurred.");
+        console.error(`${bold(red("Error"))} ${red("An unknown error occurred.")}`);
       }
 
       Deno.exit(1);
@@ -53,12 +63,13 @@ if (import.meta.main) {
   }
 
   try {
-    await run(["deno", "test", ...Array.from(tests)]);
+    await run(["deno", "test", ...Array.from(tests)], "suppress");
   } catch (err) {
     if (err instanceof Error) {
-      console.error(err.message);
+      console.error(`${bold(red("Error"))} ${dim("Failed to run task 'test':")}`);
+      console.error(red(err.message));
     } else {
-      console.error("✖ An unknown error occurred.");
+      console.error(`${bold(red("Error"))} ${red("An unknown error occurred.")}`);
     }
 
     Deno.exit(1);

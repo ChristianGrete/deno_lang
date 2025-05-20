@@ -47,7 +47,8 @@
   },
   "test": {
     "exclude": [
-      "./tasks/test.ts"
+      "./gpt_prompts",
+      "./tasks"
     ]
   }
 }

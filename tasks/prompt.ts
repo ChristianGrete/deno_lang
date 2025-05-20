@@ -1,11 +1,13 @@
 /**
- * Generic task proxy to call a GPT prompt tool.
+ * Runs a named prompt script from ./gpt_prompts.
  *
  * Usage: `deno task prompt <prompt> <args...>`
  */
 
+import { bold, dim, green, italic, red } from "@std/fmt/colors";
+
 const usage = (code: number): never => {
-  console.error("Usage: deno task prompt <prompt> <args...>");
+  console.error(`${green("Usage:")} deno task prompt ${italic("<prompt> <args...>")}`);
 
   Deno.exit(code);
 };
@@ -25,12 +27,14 @@ if (import.meta.main) {
     const fileInfo = await Deno.stat(promptPath);
 
     if (!fileInfo.isFile) {
-      console.error(`✖ '${promptPath}' exists but is not a file.`);
+      console.error(`${bold(red("Error"))} ${dim("Failed to run task 'prompt':")}`);
+      console.error(red(`Um... '${promptPath}' exists but is not a file?`));
 
       Deno.exit(1);
     }
   } catch {
-    console.error(`✖ '${promptPath}' not found. Make sure the prompt file exists.`);
+    console.error(`${bold(red("Error"))} ${dim("Failed to run task 'prompt':")}`);
+    console.error(red(`File '${promptPath}' not found. Make sure the prompt exists.`));
 
     Deno.exit(1);
   }
