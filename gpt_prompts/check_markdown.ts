@@ -17,11 +17,11 @@ Provide a list of corrections and suggestions for improvement. Do not rewrite th
 
 If there are any factual inaccuracies, note them as well.`;
 
-function usage(): never {
+const usage = (): never => {
   console.error("Usage: deno run -A ./gpt_prompts/check_markdown.ts <filename>");
 
   Deno.exit(1);
-}
+};
 
 if (import.meta.main) {
   const file = Deno.args.join(" ").trim();
