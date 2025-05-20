@@ -25,7 +25,7 @@ if (import.meta.main) {
     args.some((arg) => [".", "./", "./*", "./**/*", "", "*", "**", "**/*"].includes(arg));
 
   if (isCatchAll) {
-    console.error(`${bold(red("Error"))} ${dim("Failed to run task 'check-filenames':")}`);
+    console.error(`${bold(red("Error"))} ${dim("Failed to run hook 'pre-commit':")}`);
 
     if (args.length === 0) {
       console.error(red("No arguments provided."));
