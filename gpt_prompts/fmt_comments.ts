@@ -4,7 +4,7 @@
  * Usage: `deno run -A ./gpt_prompts/fmt_comments.ts <filename>`
  */
 
-import { basename } from "jsr:@std/path";
+import { basename } from "@std/path";
 
 import { copyToClipboard, openChatGpt } from "./general.ts";
 
