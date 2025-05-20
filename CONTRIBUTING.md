@@ -98,6 +98,7 @@ tasks:
 | `deno task prompt <prompt> [args...]` | Generates a specific ChatGPT prompt message and copies the result to the clipboard                |
 | `deno task run-p <tasks...>`          | Shorthand to run tasks in parallel                                                                |
 | `deno task run-s <tasks...>`          | Shorthand to run tasks sequentially                                                               |
+| `deno task test [files...]`           | Runs `deno test` for all tests or only those matching or related to the specified `.ts` files     |
 
 Some additional tasks like `commitlint`, `dprint`, `lefthook` and `lint-staged` are exposed for convenience, but mainly
 serve as internal CLI wrappers.
