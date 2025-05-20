@@ -10,6 +10,7 @@
     "@commitlint/config-conventional": "npm:@commitlint/config-conventional",
     "@commitlint/types": "npm:@commitlint/types",
     "@std/assert": "jsr:@std/assert",
+    "@std/fmt": "jsr:@std/fmt",
     "@std/path": "jsr:@std/path",
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser",
     "eslint": "npm:eslint",

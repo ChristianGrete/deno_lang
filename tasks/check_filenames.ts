@@ -1,3 +1,4 @@
+import { bold, dim, italic, red } from "@std/fmt/colors";
 import { extname, relative, SEPARATOR } from "@std/path";
 
 const snakeCase = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
@@ -14,11 +15,16 @@ const isValidSegment = (segment: string, ext: string): boolean => {
 if (import.meta.main) {
   const args = Deno.args;
   const isCatchAll = args.length === 0 ||
-    args.some((arg) => [".", "./", "./*", "./**/*", "", "**", "**/*"].includes(arg));
+    args.some((arg) => [".", "./", "./*", "./**/*", "", "*", "**", "**/*"].includes(arg));
 
   if (isCatchAll) {
-    console.error("🚫 Catch-all patterns like '.' or '**/*' are not allowed.");
-    console.error("👉 Please provide explicit file paths to check.");
+    console.error(bold(red("Error")) + dim(" Invalid argument(s):"));
+
+    if (args.length === 0) {
+      console.error(red("No arguments provided."));
+    } else {
+      console.error(red("Catch-all patterns like '.' or '**/*' are not allowed."));
+    }
 
     Deno.exit(1);
   }
@@ -50,14 +56,18 @@ if (import.meta.main) {
   }
 
   if (invalid.length > 0) {
-    console.error("✖ Invalid filenames:");
+    console.error(bold(red("Error")) + dim(" Invalid filename(s):"));
 
     for (const path of invalid) {
-      console.error(" -", path);
+      console.error(dim("-"), path);
     }
 
     console.error(
-      "\nOnly snake_case is allowed in paths and filenames, except for .md and extensionless files, which may use UPPER_SNAKE_CASE.",
+      red(
+        `Only ${italic("snake_case")} is allowed, except for '.md' and extensionless files, which may use ${
+          italic("UPPER_SNAKE_CASE")
+        }.`,
+      ),
     );
 
     Deno.exit(1);
