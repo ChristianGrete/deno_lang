@@ -4,15 +4,13 @@
  * Usage: `deno task prompt <prompt> <args...>`
  */
 
-function usage(code: number): never {
+const usage = (code: number): never => {
   console.error("Usage: deno task prompt <prompt> <args...>");
 
   Deno.exit(code);
-}
+};
 
-function isHelpFlag(arg: string): boolean {
-  return ["-h", "--help", "help"].includes(arg.toLowerCase());
-}
+const isHelpFlag = (arg: string): boolean => ["-h", "--help", "help"].includes(arg.toLowerCase());
 
 if (import.meta.main) {
   const [prompt, ...args] = Deno.args;
