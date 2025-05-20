@@ -25,7 +25,6 @@
   },
   "nodeModulesDir": "auto",
   "tasks": {
-    "check-filenames": "deno run -A ./tasks/check_filenames.ts",
     "commitlint": "deno run -A npm:@commitlint/cli -g ./commitlint.ts",
     "dprint": "deno run -A npm:dprint",
     "dprint-check": "deno task dprint check",
