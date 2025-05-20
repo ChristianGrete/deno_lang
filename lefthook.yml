@@ -1,7 +1,10 @@
 commit-msg:
-  scripts:
+  commands:
     lint-commit-message:
       run: deno task commitlint --edit {1}
+
+output:
+  - execution_out
 
 post-commit:
   commands:
