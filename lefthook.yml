@@ -1,14 +1,14 @@
 commit-msg:
-  commands:
-    commitlint:
+  scripts:
+    lint-commit-message:
       run: deno task commitlint --edit {1}
 
 post-commit:
   commands:
-    thanks:
+    say-thanks:
       run: deno run -A ./git_hooks/post_commit.ts
 
 pre-commit:
   commands:
-    lint-staged:
+    check-staged-files:
       run: deno task lint-staged
