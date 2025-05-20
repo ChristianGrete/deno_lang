@@ -21,11 +21,11 @@ Do not wrap or split links, URLs, Markdown, or inline tags like @link, @see, {@l
 
 Output only the updated TypeScript code - with no explanations or extra text.`;
 
-function usage(): never {
+const usage = (): never => {
   console.error("Usage: deno run -A ./gpt_prompts/fmt_comments.ts <filename>");
 
   Deno.exit(1);
-}
+};
 
 if (import.meta.main) {
   const file = Deno.args.join(" ").trim();

@@ -7,7 +7,7 @@
  * Usage: `deno run -A ./gpt_prompts/prepare_prompt.ts "<prompt text>"`
  */
 
-export async function copyToClipboard(text: string): Promise<void> {
+export const copyToClipboard = async (text: string): Promise<void> => {
   const os = Deno.build.os;
   const encoder = new TextEncoder();
   const input = encoder.encode(text);
@@ -39,9 +39,9 @@ export async function copyToClipboard(text: string): Promise<void> {
   } else {
     throw new Error("Unsupported OS for clipboard copy");
   }
-}
+};
 
-export async function openChatGpt(): Promise<void> {
+export const openChatGpt = async (): Promise<void> => {
   const url = "https://chatgpt.com";
   const canOpen = Deno.build.os === "darwin" || Deno.build.os === "windows";
 
@@ -55,7 +55,7 @@ export async function openChatGpt(): Promise<void> {
   } else {
     console.log(`✔ Prompt is in your clipboard. Open ${url} and paste it manually.`);
   }
-}
+};
 
 if (import.meta.main) {
   const text = Deno.args.join(" ").trim();

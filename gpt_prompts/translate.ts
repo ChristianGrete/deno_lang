@@ -12,15 +12,13 @@ The content is intended for a Deno-based TypeScript project. Make descriptions s
 
 Output only the translated text in a Markdown code block - with no explanations or extra text.`;
 
-function usage(code: number): never {
+const usage = (code: number): never => {
   console.error("Usage: deno run -A ./gpt_prompts/translate.ts <text>");
 
   Deno.exit(code);
-}
+};
 
-function isHelpFlag(arg: string): boolean {
-  return ["-h", "--help", "help"].includes(arg.toLowerCase());
-}
+const isHelpFlag = (arg: string): boolean => ["-h", "--help", "help"].includes(arg.toLowerCase());
 
 if (import.meta.main) {
   const text = Deno.args.join(" ").trim();
