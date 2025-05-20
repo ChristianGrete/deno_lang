@@ -9,6 +9,8 @@
     "@commitlint/cli": "npm:@commitlint/cli",
     "@commitlint/config-conventional": "npm:@commitlint/config-conventional",
     "@commitlint/types": "npm:@commitlint/types",
+    "@std/assert": "jsr:@std/assert",
+    "@std/path": "jsr:@std/path",
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser",
     "eslint": "npm:eslint",
     "eslint-plugin-import": "npm:eslint-plugin-import",
@@ -38,6 +40,12 @@
     "lint-staged": "deno run -A npm:lint-staged -c ./lint_staged.ts",
     "prompt": "deno run -A ./tasks/prompt.ts",
     "run-p": "deno run -A ./tasks/run.ts -p",
-    "run-s": "deno run -A ./tasks/run.ts -s"
+    "run-s": "deno run -A ./tasks/run.ts -s",
+    "test": "deno run -A ./tasks/test.ts"
+  },
+  "test": {
+    "exclude": [
+      "./tasks/test.ts"
+    ]
   }
 }

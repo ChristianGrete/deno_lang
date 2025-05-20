@@ -12,4 +12,6 @@ try {
   } else {
     console.error("✖ An unknown error occurred.");
   }
+
+  Deno.exit(1);
 }
