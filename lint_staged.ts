@@ -1,7 +1,7 @@
 import type { Configuration } from "lint-staged";
 
 const config: Configuration = {
-  "*": "deno task check-filenames",
+  "*": "deno run -A ./git_hooks/check_filenames.ts",
   "*.{md,yml}": "deno task dprint-fmt",
   "*.json": ["deno task eslint-fix", "deno task dprint-fmt"],
   "*.ts": ["deno check", "deno lint --fix", "deno task eslint-fix", "deno task dprint-fmt", "deno task test"],
