@@ -1,4 +1,4 @@
-import { assertThrows } from "jsr:@std/assert";
+import { assertThrows } from "@std/assert";
 
 import { validateStringArg } from "./validate_string_arg.ts";
 

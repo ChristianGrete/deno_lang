@@ -1,4 +1,4 @@
-import { assert } from "jsr:@std/assert";
+import { assert } from "@std/assert";
 
 import { isInstance } from "./is_instance.ts";
 
