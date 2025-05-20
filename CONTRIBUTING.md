@@ -118,7 +118,18 @@ Developers are responsible for any required licenses and access to appropriate G
 
 ## Git hooks
 
-To-Do. 👀
+We use [lefthook](https://github.com/evilmartians/lefthook) to manage Git hooks. All hooks are defined in
+[`./lefthook.yml`](lefthook.yml).
+
+Run `deno task init` (or specifically `deno task install:hooks`) to install them.
+
+More complex logic is handled in hook-specific scripts under [`./git_hooks`](git_hooks).
+
+| Hook          | Purpose                                                                                                                                  |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `commit-msg`  | Checks commit messages for [Conventional Commit](https://conventionalcommits.org) format using [`commitlint`](https://commitlint.js.org) |
+| `post-commit` | You'll need to contribute to see that                                                                                                    |
+| `pre-commit`  | Typechecks, lints, formats and tests staged files via [`lint-staged`](https://github.com/lint-staged/lint-staged)                        |
 
 ## JSDoc style guide
 
