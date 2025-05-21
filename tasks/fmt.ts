@@ -14,7 +14,7 @@ if (import.meta.main) {
   try {
     await run(["deno", "lint", "-q", "--fix", ...files]);
     await run(["deno", "task", "eslint-fix", "--quiet", ...files]);
-    await run(["deno", "task", "dprint-fmt", "-L warn", ...files]);
+    await run(["deno", "task", "dprint-fmt", "-L=warn", ...files]);
   } catch (err: unknown) {
     if (err instanceof Error) {
       console.error(`${bold(red("Error"))} ${red("Failed to run task 'fmt':")}`);
