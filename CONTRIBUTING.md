@@ -16,6 +16,7 @@ enjoyable.
 - [Tasks](#tasks)
 - [Prompts](#prompts)
 - [Git hooks](#git-hooks)
+- [Linters and formatters](#linters-and-formatters)
 - [JSDoc style guide](#jsdoc-style-guide)
 
 ## Getting started
@@ -130,6 +131,28 @@ More complex logic is handled in hook-specific scripts under [`./git_hooks`](git
 | `commit-msg`  | Checks commit messages for [Conventional Commit](https://conventionalcommits.org) format using [`commitlint`](https://commitlint.js.org) |
 | `post-commit` | You'll need to contribute to see that                                                                                                    |
 | `pre-commit`  | Typechecks, lints, formats and tests staged files via [`lint-staged`](https://github.com/lint-staged/lint-staged)                        |
+
+## Linters and formatters
+
+To keep our codebase consistent and minimize unnecessary diffs, we aggregate multiple linters and formatters into a
+single, layered workflow. We start with the default formatting of `deno fmt`, extended to a maximum line length of 120
+characters. Every additional rule is designed to complement this foundation without causing conflicts — we follow a
+**progressive enhancement** philosophy.
+
+In order, we run:
+
+- `deno lint` / `deno lint --fix` to enforce and apply common Deno conventions
+- `eslint` / `eslint --fix` for additional custom rules, such as alphabetical sorting of imports, exports, and object
+  keys
+- `dprint check` / `dprint fmt` for verifying and applying Deno-compatible formatting rules
+
+Additionally, before every commit, `lint-staged` checks all staged filenames to ensure `snake_case` conventions are
+followed. All staged `.ts` files are type-checked using `deno check`. If successful, tests are run and the commit
+message is validated using `commitlint` to ensure compliance with the Conventional Commits spec.
+
+JSDoc comments are also linted to some extent and should not exceed 80 characters per line. To help with this, there's a
+predefined ChatGPT prompt available via `deno task prompt fmt_comments <file>` that formats all JSDoc comments in a
+file. A final review is still required afterward to ensure ChatGPT hasn’t snuck in any little Easter eggs.
 
 ## JSDoc style guide
 
