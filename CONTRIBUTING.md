@@ -17,7 +17,9 @@ enjoyable.
 - [Prompts](#prompts)
 - [Git hooks](#git-hooks)
 - [Linters and formatters](#linters-and-formatters)
+- [Dependencies](#dependencies)
 - [JSDoc style guide](#jsdoc-style-guide)
+- [Testing strategy](#testing-strategy)
 
 ## Getting started
 
@@ -154,6 +156,16 @@ JSDoc comments are also linted to some extent and should not exceed 80 character
 predefined ChatGPT prompt available via `deno task prompt fmt_comments <file>` that formats all JSDoc comments in a
 file. A final review is still required afterward to ensure ChatGPT hasn’t snuck in any little Easter eggs.
 
+## Dependencies
+
+We do not allow any Node.js or npm runtime dependencies in published modules intended as part of the public API. All
+imports must either reference local files or use absolute URLs.
+
+For build scripts, configuration, or development tooling, imports from the npm registry (e.g. via `npm:` or `jsr:`
+prefixes) are allowed. However, **Node.js built-in modules must not be imported** — any `node:`-prefixed imports are
+explicitly disallowed, regardless of context. Import maps may be used for development purposes, but must not leak into
+the public API surface or affect published packages.
+
 ## JSDoc style guide
 
 See the style guide below to keep documentation consistent and clean across the project.
@@ -190,6 +202,11 @@ See the style guide below to keep documentation consistent and clean across the 
  * @returns {boolean} Whether the value has the expected tag.
  */
 ```
+
+## Testing strategy
+
+We aim for 100% unit test coverage on all public APIs using `Deno.test`. Integration tests or cross-environment testing
+(such as in-browser environments) are planned for future iterations, but are not currently implemented.
 
 ---
 
