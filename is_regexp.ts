@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is a regular expression.
  *
+ * This uses `Object.prototype.toString` to ensure reliable detection of
+ * RegExp instances, even across realms.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author André Cruz <andremiguelcruz@msn.com>
  * @author Christian Grete <webmaster@christiangrete.com>
@@ -16,6 +19,12 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Checks whether a value is a regular expression.
+ *
+ * @example
+ * isRegExp(/abc/); // true
+ * isRegExp(new RegExp("abc")); // true
+ * isRegExp("/abc/"); // false
+ * isRegExp({}); // false
  *
  * @name lang/is_regexp.isRegExp
  * @param {unknown} _value - The value to check.

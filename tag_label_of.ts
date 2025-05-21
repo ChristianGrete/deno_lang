@@ -1,7 +1,9 @@
 /**
- * Utility module for retrieving the tag label of a value (e.g. `"[object Array]"`).
+ * Utility module for retrieving the tag label of a value (e.g.
+ * `"[object Array]"`).
  *
- * The result is based on `Object.prototype.toString.call(value)` and can be customized via `Symbol.toStringTag`.
+ * The result is based on `Object.prototype.toString.call(value)` and may be
+ * customized via `Symbol.toStringTag`.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -17,7 +19,7 @@ const { toString } = Object.prototype;
 /**
  * Built-in tag labels defined in the ECMAScript specification.
  *
- * @name lang/tag_label_of.BuiltinTagLabels
+ * @name lang/tag_label_of~BuiltinTagLabels
  * @see {@link https://tc39.es/ecma262/#sec-object.prototype.tostring|ECMA-262 Spec}
  */
 export type BuiltinTagLabels =
@@ -35,7 +37,7 @@ export type BuiltinTagLabels =
 /**
  * Additional tag labels supported in modern JavaScript.
  *
- * @name lang/tag_label_of.ExtendedTagLabels
+ * @name lang/tag_label_of~ExtendedTagLabels
  */
 export type ExtendedTagLabels =
   | "[object BigInt]"
@@ -47,19 +49,19 @@ export type ExtendedTagLabels =
 /**
  * Tag labels for `null` and `undefined`.
  *
- * @name lang/tag_label_of.NullOrUndefinedTagLabels
+ * @name lang/tag_label_of~NullOrUndefinedTagLabels
  */
 export type NullOrUndefinedTagLabels = "[object Null]" | "[object Undefined]";
 
 /**
  * All supported tag labels as returned by {@link tagLabelOf}.
  *
- * @name lang/tag_label_of.TagLabel
+ * @name lang/tag_label_of~TagLabel
  */
 export type TagLabel = BuiltinTagLabels | ExtendedTagLabels | NullOrUndefinedTagLabels | string;
 
 /**
- * Internal impementation of {@link tagLabelOf}.
+ * Internal implementation of {@link tagLabelOf}.
  *
  * @name lang/tag_label_of~getTagLabel
  */
@@ -67,6 +69,11 @@ export const getTagLabel = toString.call.bind(toString) as (value: unknown) => T
 
 /**
  * Returns the tag label of a value (e.g. `"[object Array]"`).
+ *
+ * @example
+ * tagLabelOf([]); // "[object Array]"
+ * tagLabelOf(null); // "[object Null]"
+ * tagLabelOf(Object.create(null)); // "[object Object]"
  *
  * @name lang/tag_label_of.tagLabelOf
  * @param {unknown} value - The value to inspect.

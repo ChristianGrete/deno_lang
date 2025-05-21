@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is a boolean.
  *
+ * Uses `Object.prototype.toString`, which is more reliable for detecting
+ * primitive booleans than a direct `typeof` check.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author André Cruz <andremiguelcruz@msn.com>
  * @author Christian Grete <webmaster@christiangrete.com>
@@ -15,6 +18,12 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Checks whether a value is a boolean.
+ *
+ * @example
+ * isBoolean(true); // true
+ * isBoolean(false); // true
+ * isBoolean("true"); // false
+ * isBoolean(0); // false
  *
  * @name lang/is_boolean.isBoolean
  * @param {unknown} _value - The value to check.

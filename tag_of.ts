@@ -1,7 +1,8 @@
 /**
  * Utility module for extracting the tag of a value (e.g. `"Array"`).
  *
- * The result is based on the internal tag used by `Object.prototype.toString`, minus the surrounding "[object ...]".
+ * The result is based on the internal tag used by
+ * `Object.prototype.toString`, minus the surrounding `"[object ...]"`.
  *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Max Nordlund <max.nordlund@gmail.com>
@@ -19,7 +20,7 @@ import { getTagLabel } from "./tag_label_of.ts";
 /**
  * Built-in tags defined in the ECMAScript specification.
  *
- * @name lang/tag_of.BuiltinTags
+ * @name lang/tag_of~BuiltinTags
  * @see {@link https://tc39.es/ecma262/#sec-object.prototype.tostring|ECMA-262 Spec}
  */
 export type BuiltinTags =
@@ -37,26 +38,26 @@ export type BuiltinTags =
 /**
  * Additional tags supported in modern JavaScript.
  *
- * @name lang/tag_of.ExtendedTags
+ * @name lang/tag_of~ExtendedTags
  */
 export type ExtendedTags = "BigInt" | "Map" | "Promise" | "Set" | "Symbol";
 
 /**
  * Tags for `null` and `undefined`.
  *
- * @name lang/tag_of.NullOrUndefinedTags
+ * @name lang/tag_of~NullOrUndefinedTags
  */
 export type NullOrUndefinedTags = "Null" | "Undefined";
 
 /**
  * All supported tags as returned by {@link tagOf}.
  *
- * @name lang/tag_of.Tag
+ * @name lang/tag_of~Tag
  */
 export type Tag = BuiltinTags | ExtendedTags | NullOrUndefinedTags | string;
 
 /**
- * Internal impementation of {@link tagOf}.
+ * Internal implementation of {@link tagOf}.
  *
  * @name lang/tag_of~getTag
  */
@@ -64,6 +65,11 @@ export const getTag = (value: unknown): Tag => getTagLabel(value).slice(8, -1);
 
 /**
  * Extracts the tag (e.g. `"Array"`, `"Date"`, `"Map"`) of a given value.
+ *
+ * @example
+ * tagOf([]); // "Array"
+ * tagOf(null); // "Null"
+ * tagOf(Object.create(null)); // "Object"
  *
  * @name lang/tag_of.tagOf
  * @param {unknown} value - The value to inspect.

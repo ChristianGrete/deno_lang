@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value has the expected runtime type.
  *
+ * This wraps {@link lang/type_of.typeOf} and acts as a type guard for common
+ * runtime types like "array", "function" or "null".
+ *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
  * @copyright © 2025 Christian Grete
@@ -20,7 +23,7 @@ import { getType, type Type } from "./type_of.ts";
  *
  * Used as type predicate by {@link isType}.
  *
- * @name lang/is_type.InferredByType
+ * @name lang/is_type~InferredByType
  */
 export interface InferredByType {
   arguments: Arguments;
@@ -44,6 +47,12 @@ export interface InferredByType {
 
 /**
  * Checks whether a value is of the expected runtime type.
+ *
+ * @example
+ * isType([], "array"); // true
+ * isType(null, "null"); // true
+ * isType(() => {}, "function"); // true
+ * isType("hi", "object"); // false
  *
  * @name lang/is_type.isType
  * @param {unknown} value - The value to check.

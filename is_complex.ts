@@ -1,5 +1,9 @@
 /**
- * Utility module for checking whether a value is a complex (non-primitive) value.
+ * Utility module for checking whether a value is a complex (non-primitive)
+ * value.
+ *
+ * This is the logical inverse of {@link lang/is_primitive.isPrimitive}.
+ * Returns `true` for objects, arrays, functions, and other non-primitives.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -13,9 +17,15 @@ import { unsetPrototype } from "./internal/mod.ts";
 import { isPrimitive } from "./is_primitive.ts";
 
 /**
- * Checks whether a value is complex (i.e. not a primitive like string, number, etc.).
+ * Checks whether a value is complex (i.e. not a primitive like string,
+ * number, etc.).
  *
- * Returns `true` for objects, arrays, functions, etc.
+ * @example
+ * isComplex({}); // true
+ * isComplex([]); // true
+ * isComplex(() => {}); // true
+ * isComplex("hello"); // false
+ * isComplex(null); // false
  *
  * @name lang/is_complex.isComplex
  * @param {unknown} value - The value to check.

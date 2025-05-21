@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is an array.
  *
+ * This is a minimal extension of the native `Array.isArray`,
+ * with type narrowing and error handling for defensive use.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -13,7 +16,7 @@
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 
 /**
- * Internal impementation of {@link isArray}.
+ * Internal implementation of {@link isArray}.
  *
  * @name lang/is_array~nativeIsArray
  */
@@ -21,6 +24,11 @@ export const { isArray: nativeIsArray } = Array;
 
 /**
  * Checks whether a value is an array.
+ *
+ * @example
+ * isArray([]); // true
+ * isArray("hello"); // false
+ * isArray({ length: 1 }); // false
  *
  * @name lang/is_array.isArray
  * @param {unknown} value - The value to check.

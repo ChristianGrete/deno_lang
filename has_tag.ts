@@ -1,6 +1,6 @@
 /**
- * Utility module for checking whether a value has the expected tag
- * (e.g. `"Array"`, `"Date"`, `"Map"`).
+ * Utility module for checking whether a value has the expected tag (e.g.
+ * `"Array"`, `"Date"`, `"Map"`).
  *
  * Tags are derived from `Object.prototype.toString`, based on either the
  * value’s internal `[[Class]]` or a custom `Symbol.toStringTag` property.

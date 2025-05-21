@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is a finite number.
  *
+ * This combines `Object.prototype.toString` with `Number.isFinite`, making it
+ * safer than the global `isFinite`.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -14,6 +17,13 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Checks whether a value is a finite number.
+ *
+ * @example
+ * isFinite(42); // true
+ * isFinite(-3.14); // true
+ * isFinite(Infinity); // false
+ * isFinite(NaN); // false
+ * isFinite("42"); // false
  *
  * @name lang/is_finite.isFinite
  * @param {unknown} value - The value to check.

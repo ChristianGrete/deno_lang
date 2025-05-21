@@ -1,5 +1,7 @@
 /**
- * Shortcut alias for {@link lang/instance_of.instanceOf} using idiomatic isX-style naming.
+ * Idiomatic alias for {@link lang/instance_of.instanceOf}.
+ *
+ * Provides a more expressive `isX`-style name for consistency across modules.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>

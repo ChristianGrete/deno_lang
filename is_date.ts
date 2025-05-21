@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is a date object.
  *
+ * This uses `Object.prototype.toString` to ensure reliable detection of
+ * `Date` instances, even across realms.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -14,6 +17,12 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Checks whether a value is a date object.
+ *
+ * @example
+ * isDate(new Date()); // true
+ * isDate("2024-01-01"); // false
+ * isDate(Date.now()); // false
+ * isDate({}); // false
  *
  * @name lang/is_date.isDate
  * @param {unknown} _value - The value to check.

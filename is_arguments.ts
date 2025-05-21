@@ -30,7 +30,6 @@ export type Arguments = ArrayLike<unknown>;
  * (function () {
  *   isArguments(arguments); // true
  * })();
- *
  * isArguments([]); // false
  * isArguments({ length: 2 }); // false
  *
