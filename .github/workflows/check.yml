@@ -1,0 +1,31 @@
+name: Check
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: Typecheck, Lint and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: "^2.2"
+
+      - name: Install Dependencies
+        run: deno install --frozen
+
+      - name: Check Types
+        run: deno check -q
+
+      - name: Run Linters
+        run: deno task lint
+
+      - name: Run Tests
+        run: deno test -q --fail-fast --parallel

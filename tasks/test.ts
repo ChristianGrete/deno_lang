@@ -20,7 +20,7 @@ if (import.meta.main) {
 
   if (isCatchAll) {
     try {
-      await run(["deno", "test"], "suppress");
+      await run(["deno", "test", "--parallel"], "suppress");
     } catch (err) {
       if (err instanceof Error) {
         console.error(`${bold(red("Error"))} ${dim("Failed to run task 'test':")}`);
@@ -63,7 +63,7 @@ if (import.meta.main) {
   }
 
   try {
-    await run(["deno", "test", ...Array.from(tests)], "suppress");
+    await run(["deno", "test", "--parallel", ...Array.from(tests)], "suppress");
   } catch (err) {
     if (err instanceof Error) {
       console.error(`${bold(red("Error"))} ${dim("Failed to run task 'test':")}`);
