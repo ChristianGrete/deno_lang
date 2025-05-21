@@ -18,6 +18,7 @@ enjoyable.
 - [Git hooks](#git-hooks)
 - [Linters and formatters](#linters-and-formatters)
 - [Dependencies](#dependencies)
+- [Coding conventions](#coding-conventions)
 - [JSDoc style guide](#jsdoc-style-guide)
 - [Testing strategy](#testing-strategy)
 
@@ -165,6 +166,16 @@ For build scripts, configuration, or development tooling, imports from the npm r
 prefixes) are allowed. However, **Node.js built-in modules must not be imported** — any `node:`-prefixed imports are
 explicitly disallowed, regardless of context. Import maps may be used for development purposes, but must not leak into
 the public API surface or affect published packages.
+
+## Coding conventions
+
+All public APIs must be defined using named `function` declarations — this improves readability, stack traces, and
+consistency across modules. Internal helpers that are not part of the public API should generally be written as
+anonymous arrow functions where appropriate. These may still be exported, e.g. for reuse across internal modules, but
+are not meant for use by external consumers.
+
+Code should aim to be reusable and free of duplication. If a behavior is repeated across multiple modules, consider
+moving it to a shared internal utility. Favor simplicity and maintainability over cleverness or premature optimization.
 
 ## JSDoc style guide
 
