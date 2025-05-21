@@ -50,6 +50,12 @@ Deno.test("typeOf() correctly identifies boxed primitive wrappers", () => {
   }
 });
 
+Deno.test("typeOf() falls back to 'object' if tag label is unknown", () => {
+  const exotic = { [Symbol.toStringTag]: "Unicorn" };
+
+  assertEquals(typeOf(exotic), "object");
+});
+
 Deno.test("typeOf() throws on invalid number of arguments", () => {
   // @ts-expect-error - test no args
   assertThrows(() => typeOf(), TypeError);

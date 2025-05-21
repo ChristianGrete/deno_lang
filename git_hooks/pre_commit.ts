@@ -11,6 +11,12 @@ import { extname, relative, SEPARATOR } from "@std/path";
 const snakeCase = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
 const upperSnakeCase = /^[A-Z0-9]+(?:_[A-Z0-9]+)*$/;
 
+/**
+ * Filenames that are explicitly allowed to bypass `snake_case` enforcement.
+ * These are common dotfiles or config files with legacy naming conventions.
+ */
+const allowedFilenames = new Set([".editorconfig", ".eslintrc", ".gitignore", ".gitattributes", ".npmrc", ".nvmrc"]);
+
 const isValidSegment = (segment: string, ext: string): boolean => {
   const name = segment.replace(ext, "");
 
@@ -51,9 +57,10 @@ if (import.meta.main) {
         const part = parts[i];
         const ext = i === parts.length - 1 ? extname(part) : "";
 
+        if (allowedFilenames.has(part)) break;
+
         if (!isValidSegment(part, ext)) {
           invalid.push(path);
-
           break;
         }
       }
