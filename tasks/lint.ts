@@ -14,7 +14,7 @@ if (import.meta.main) {
   try {
     await run(["deno", "lint", "-q", ...files]);
     await run(["deno", "task", "eslint", "--quiet", ...files]);
-    await run(["deno", "task", "dprint-check", "-L warn", ...files]);
+    await run(["deno", "task", "dprint-check", "-L=warn", ...files]);
   } catch (err: unknown) {
     if (err instanceof Error) {
       console.error(`${bold(red("Error"))} ${dim("Failed to run task 'lint':")}`);
