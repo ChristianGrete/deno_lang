@@ -7,7 +7,7 @@
 import { bold, dim, green, italic, red } from "@std/fmt/colors";
 
 const usage = (code: number): never => {
-  console.error(`${green("Usage:")} deno task prompt ${italic("<prompt> <args...>")}`);
+  console.info(`${green("Usage:")} deno task prompt ${italic("<prompt> <args...>")}`);
 
   Deno.exit(code);
 };

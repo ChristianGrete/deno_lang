@@ -7,6 +7,8 @@
  * Usage: `deno run -A ./gpt_prompts/prepare_prompt.ts "<prompt text>"`
  */
 
+import { bold, dim, green, italic, red } from "@std/fmt/colors";
+
 export const copyToClipboard = async (text: string): Promise<void> => {
   const os = Deno.build.os;
   const encoder = new TextEncoder();
@@ -51,9 +53,10 @@ export const openChatGpt = async (): Promise<void> => {
 
     await p.output();
 
-    console.log("✔ Opened ChatGPT in your browser. Just paste and go!");
+    console.log(`${green("Success")} Opened ChatGPT in your browser. Just paste and go!`);
   } else {
-    console.log(`✔ Prompt is in your clipboard. Open ${url} and paste it manually.`);
+    console.log(`${green("Success")} ${dim("Prompt is in your clipboard:")}`);
+    console.log(`Open ${url} and paste it manually.`);
   }
 };
 
@@ -61,14 +64,23 @@ if (import.meta.main) {
   const text = Deno.args.join(" ").trim();
 
   if (!text) {
-    console.error("Usage: deno run -A ./gpt_prompts/prepare_prompt.ts <prompt text>");
+    console.info(`${green("Usage:")} deno run -A ./gpt_prompts/prepare_prompt.ts ${italic("<prompt text>")}`);
 
     Deno.exit(1);
   }
 
-  await copyToClipboard(text);
+  try {
+    await copyToClipboard(text);
 
-  console.log("✔ Prompt copied to clipboard.");
+    console.log(`${green("Success")} Copied ChatGPT prompt to clipboard.`);
 
-  await openChatGpt();
+    await openChatGpt();
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      console.error(`${bold(red("Error"))} ${dim("Failed to run prompt 'general':")}`);
+      console.error(red(err.message));
+    } else {
+      console.error(`${bold(red("Error"))} ${red("An unknown error occurred.")}`);
+    }
+  }
 }
