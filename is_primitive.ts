@@ -17,14 +17,25 @@
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 
+const { freeze } = Object;
+const types = ["bigint", "boolean", "null", "number", "string", "symbol", "undefined"] as const;
+
 /**
- * Set of all primitive `typeof` return values.
+ * Any primitive runtime type.
+ *
+ * @name lang/is_primitive.PrimitiveType
+ */
+export type PrimitiveType = typeof types[number];
+
+/**
+ * Set of all primitive runtime types.
  *
  * Used internally by {@link isPrimitive}.
  *
- * @name lang/is_primitive~primitiveTypes
+ * @name lang/is_primitive.primitiveTypes
+ * @readonly
  */
-export const primitiveTypes = new Set(["bigint", "boolean", "number", "string", "symbol"]);
+export const primitiveTypes: ReadonlySet<PrimitiveType> = freeze(new Set(types));
 
 /**
  * Checks whether a value is a primitive (i.e. not an object or function).
@@ -43,7 +54,7 @@ export const primitiveTypes = new Set(["bigint", "boolean", "number", "string", 
 export function isPrimitive(value: unknown): boolean {
   validateArgsLength(arguments);
 
-  return value == null || primitiveTypes.has(typeof value);
+  return value == null || (primitiveTypes as ReadonlySet<string>).has(typeof value);
 }
 
 unsetPrototype(isPrimitive);

@@ -25,7 +25,7 @@ import { getTag, type Tag } from "./tag_of.ts";
  *
  * Used as type predicate by {@link hasTag}.
  *
- * @name lang/has_tag~InferredByTag
+ * @name lang/has_tag.InferredByTag
  */
 export interface InferredByTag {
   Arguments: Arguments;

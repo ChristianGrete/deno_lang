@@ -21,7 +21,7 @@ import type { Func } from "./is_function.ts";
  *
  * Used as the return type by {@link isConstructor}.
  *
- * @name lang/is_constructor~Constructor
+ * @name lang/is_constructor.Constructor
  */
 export type Constructor = new (...args: unknown[]) => unknown; // eslint-disable-line unused-imports/no-unused-vars
 

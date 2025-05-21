@@ -23,7 +23,7 @@ import { getType, type Type } from "./type_of.ts";
  *
  * Used as type predicate by {@link isType}.
  *
- * @name lang/is_type~InferredByType
+ * @name lang/is_type.InferredByType
  */
 export interface InferredByType {
   arguments: Arguments;
