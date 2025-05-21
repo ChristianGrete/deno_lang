@@ -9,21 +9,14 @@ import { bold, dim, green, italic, red } from "@std/fmt/colors";
 import { extname, relative, SEPARATOR } from "@std/path";
 
 const snakeCase = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
-const upperSnakeCase = /^[A-Z0-9]+(?:_[A-Z0-9]+)*$/;
 
 /**
  * Filenames that are explicitly allowed to bypass `snake_case` enforcement.
- * These are common dotfiles or config files with legacy naming conventions.
+ * These include standardized filenames like `README.md`, `LICENSE`, or dotfiles.
  */
-const allowedFilenames = new Set([".editorconfig", ".eslintrc", ".gitignore", ".gitattributes", ".npmrc", ".nvmrc"]);
+const allowedFilenames = new Set([".editorconfig", ".gitignore", "CONTRIBUTING.md", "HISTORY.md", "README.md"]);
 
-const isValidSegment = (segment: string, ext: string): boolean => {
-  const name = segment.replace(ext, "");
-
-  if (ext === ".md" || ext === "") return snakeCase.test(name) || upperSnakeCase.test(name);
-
-  return snakeCase.test(name);
-};
+const isValidSegment = (segment: string, ext: string): boolean => snakeCase.test(segment.replace(ext, ""));
 
 if (import.meta.main) {
   const args = Deno.args;
@@ -76,13 +69,7 @@ if (import.meta.main) {
       console.error(`${dim("-")} ${path}`);
     }
 
-    console.error(
-      red(
-        `Only ${italic("snake_case")} is allowed, except for '.md' and extensionless files, which may use ${
-          italic("UPPER_SNAKE_CASE")
-        }.`,
-      ),
-    );
+    console.error(red(`Only ${italic("snake_case")} is allowed. Exceptions must be explicitly defined.`));
 
     Deno.exit(1);
   }
