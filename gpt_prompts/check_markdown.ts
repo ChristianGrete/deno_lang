@@ -4,6 +4,7 @@
  * Usage: `deno run -A ./gpt_prompts/check_markdown.ts <filename>`
  */
 
+import { bold, dim, green, italic, red } from "@std/fmt/colors";
 import { basename } from "@std/path";
 
 import { copyToClipboard, openChatGpt } from "./general.ts";
@@ -18,7 +19,7 @@ Provide a list of corrections and suggestions for improvement. Do not rewrite th
 If there are any factual inaccuracies, note them as well.`;
 
 const usage = (): never => {
-  console.error("Usage: deno run -A ./gpt_prompts/check_markdown.ts <filename>");
+  console.info(`${green("Usage:")} deno run -A ./gpt_prompts/check_markdown.ts ${italic("<filename>")}`);
 
   Deno.exit(1);
 };
@@ -27,7 +28,7 @@ if (import.meta.main) {
   const file = Deno.args.join(" ").trim();
 
   if (!file || !file.endsWith(".md")) {
-    console.error("✖ Please provide a valid .md file.");
+    console.error(`${bold(red("Error"))} ${red("Please provide a valid .md file.")}`);
 
     usage();
   }
@@ -40,14 +41,15 @@ if (import.meta.main) {
 
     await copyToClipboard(prompt);
 
-    console.log(`✔ Copied ChatGPT prompt for '${basename(file)}' to clipboard.`);
+    console.log(`${green("Success")} Copied ChatGPT prompt for '${basename(file)}' to clipboard.`);
 
     await openChatGpt();
   } catch (err: unknown) {
     if (err instanceof Error) {
-      console.error("✖ Error:", err.message);
+      console.error(`${bold(red("Error"))} ${dim("Failed to run prompt 'check_markdown':")}`);
+      console.error(red(err.message));
     } else {
-      console.error("✖ Unknown error:", err);
+      console.error(`${bold(red("Error"))} ${red("An unknown error occurred.")}`);
     }
 
     Deno.exit(1);

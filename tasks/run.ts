@@ -6,7 +6,7 @@
  * Usage: `deno task run -p|-s <tasks...>`
  */
 
-import { green, italic } from "@std/fmt/colors";
+import { bold, dim, green, italic, red } from "@std/fmt/colors";
 
 export type Mode = "quiet" | "silent" | "suppress";
 
@@ -34,7 +34,7 @@ if (import.meta.main) {
   const isSerial = mode === "-s";
 
   if (!isSerial && !isParallel) {
-    console.error(`${green("Usage:")} deno task run -p|-s ${italic("<tasks...>")}`);
+    console.info(`${green("Usage:")} deno task run -p|-s ${italic("<tasks...>")}`);
 
     Deno.exit(1);
   }
@@ -43,11 +43,35 @@ if (import.meta.main) {
 
   if (isSerial) {
     for (const task of args) {
-      await runTask(task);
+      try {
+        await runTask(task);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          console.error(`${bold(red("Error"))} ${dim(`Failed to run task '${task}' in series:`)}`);
+          console.error(red(err.message));
+        } else {
+          console.error(`${bold(red("Error"))} ${red("An unknown error occurred.")}`);
+        }
+
+        Deno.exit(1);
+      }
     }
   } else {
     const results = await Promise.allSettled(args.map(runTask));
-    const hasFailure = results.some((r) => r.status === "rejected");
+
+    let hasFailure = false;
+
+    results.forEach((result, i) => {
+      if (result.status === "rejected") {
+        if (!hasFailure) hasFailure = true;
+
+        const task = args[i];
+        const reason = result.reason instanceof Error ? result.reason.message : String(result.reason);
+
+        console.error(`${bold(red("Error"))} ${dim(`Failed to run task '${task}' in parallel:`)}`);
+        console.error(red(reason));
+      }
+    });
 
     if (hasFailure) Deno.exit(1);
   }

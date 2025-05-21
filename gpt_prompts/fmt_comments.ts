@@ -4,6 +4,7 @@
  * Usage: `deno run -A ./gpt_prompts/fmt_comments.ts <filename>`
  */
 
+import { bold, dim, green, italic, red } from "@std/fmt/colors";
 import { basename } from "@std/path";
 
 import { copyToClipboard, openChatGpt } from "./general.ts";
@@ -22,7 +23,7 @@ Do not wrap or split links, URLs, Markdown, or inline tags like @link, @see, {@l
 Output only the updated TypeScript code - with no explanations or extra text.`;
 
 const usage = (): never => {
-  console.error("Usage: deno run -A ./gpt_prompts/fmt_comments.ts <filename>");
+  console.info(`${green("Usage:")} deno run -A ./gpt_prompts/fmt_comments.ts ${italic("<filename>")}`);
 
   Deno.exit(1);
 };
@@ -31,7 +32,7 @@ if (import.meta.main) {
   const file = Deno.args.join(" ").trim();
 
   if (!file || !file.endsWith(".ts")) {
-    console.error("✖ Please provide a valid .ts file.");
+    console.error(`${bold(red("Error"))} ${red("Please provide a valid .ts file.")}`);
 
     usage();
   }
@@ -44,14 +45,15 @@ if (import.meta.main) {
 
     await copyToClipboard(prompt);
 
-    console.log(`✔ Copied ChatGPT prompt for '${basename(file)}' to clipboard.`);
+    console.log(`${green("Success")} Copied ChatGPT prompt for '${basename(file)}' to clipboard.`);
 
     await openChatGpt();
   } catch (err: unknown) {
     if (err instanceof Error) {
-      console.error("✖ Error:", err.message);
+      console.error(`${bold(red("Error"))} ${dim("Failed to run prompt 'fmt_comments':")}`);
+      console.error(red(err.message));
     } else {
-      console.error("✖ Unknown error:", err);
+      console.error(`${bold(red("Error"))} ${red("An unknown error occurred.")}`);
     }
 
     Deno.exit(1);
