@@ -23,7 +23,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  *
  * Used as the return type by {@link isFunction}.
  *
- * @name lang/is_function~Func
+ * @name lang/is_function.Func
  */
 export type Func = (...args: unknown[]) => unknown; // eslint-disable-line unused-imports/no-unused-vars
 

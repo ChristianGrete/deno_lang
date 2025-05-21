@@ -17,12 +17,12 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 const { toString } = Object.prototype;
 
 /**
- * Built-in tag labels defined in the ECMAScript specification.
+ * A built-in tag label as defined in the ECMAScript specification.
  *
- * @name lang/tag_label_of~BuiltinTagLabels
+ * @name lang/tag_label_of.BuiltinTagLabel
  * @see {@link https://tc39.es/ecma262/#sec-object.prototype.tostring|ECMA-262 Spec}
  */
-export type BuiltinTagLabels =
+export type BuiltinTagLabel =
   | "[object Arguments]"
   | "[object Array]"
   | "[object Boolean]"
@@ -35,11 +35,11 @@ export type BuiltinTagLabels =
   | "[object String]";
 
 /**
- * Additional tag labels supported in modern JavaScript.
+ * An additional tag label supported in modern JavaScript.
  *
- * @name lang/tag_label_of~ExtendedTagLabels
+ * @name lang/tag_label_of.ExtendedTagLabel
  */
-export type ExtendedTagLabels =
+export type ExtendedTagLabel =
   | "[object BigInt]"
   | "[object Map]"
   | "[object Promise]"
@@ -47,18 +47,18 @@ export type ExtendedTagLabels =
   | "[object Symbol]";
 
 /**
- * Tag labels for `null` and `undefined`.
+ * A tag label for `null` or `undefined`.
  *
- * @name lang/tag_label_of~NullOrUndefinedTagLabels
+ * @name lang/tag_label_of.NullOrUndefinedTagLabel
  */
-export type NullOrUndefinedTagLabels = "[object Null]" | "[object Undefined]";
+export type NullOrUndefinedTagLabel = "[object Null]" | "[object Undefined]";
 
 /**
- * All supported tag labels as returned by {@link tagLabelOf}.
+ * Any tag label as returned by {@link tagLabelOf}.
  *
- * @name lang/tag_label_of~TagLabel
+ * @name lang/tag_label_of.TagLabel
  */
-export type TagLabel = BuiltinTagLabels | ExtendedTagLabels | NullOrUndefinedTagLabels | string;
+export type TagLabel = BuiltinTagLabel | ExtendedTagLabel | NullOrUndefinedTagLabel | string;
 
 /**
  * Internal implementation of {@link tagLabelOf}.

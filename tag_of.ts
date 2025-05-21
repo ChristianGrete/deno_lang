@@ -18,12 +18,12 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 import { getTagLabel } from "./tag_label_of.ts";
 
 /**
- * Built-in tags defined in the ECMAScript specification.
+ * A built-in tag as defined in the ECMAScript specification.
  *
- * @name lang/tag_of~BuiltinTags
+ * @name lang/tag_of.BuiltinTag
  * @see {@link https://tc39.es/ecma262/#sec-object.prototype.tostring|ECMA-262 Spec}
  */
-export type BuiltinTags =
+export type BuiltinTag =
   | "Arguments"
   | "Array"
   | "Boolean"
@@ -36,25 +36,25 @@ export type BuiltinTags =
   | "String";
 
 /**
- * Additional tags supported in modern JavaScript.
+ * An additional tag supported in modern JavaScript.
  *
- * @name lang/tag_of~ExtendedTags
+ * @name lang/tag_of.ExtendedTag
  */
-export type ExtendedTags = "BigInt" | "Map" | "Promise" | "Set" | "Symbol";
+export type ExtendedTag = "BigInt" | "Map" | "Promise" | "Set" | "Symbol";
 
 /**
- * Tags for `null` and `undefined`.
+ * A tag for `null` or `undefined`.
  *
- * @name lang/tag_of~NullOrUndefinedTags
+ * @name lang/tag_of.NullOrUndefinedTag
  */
-export type NullOrUndefinedTags = "Null" | "Undefined";
+export type NullOrUndefinedTag = "Null" | "Undefined";
 
 /**
- * All supported tags as returned by {@link tagOf}.
+ * Any tag as returned by {@link tagOf}.
  *
- * @name lang/tag_of~Tag
+ * @name lang/tag_of.Tag
  */
-export type Tag = BuiltinTags | ExtendedTags | NullOrUndefinedTags | string;
+export type Tag = BuiltinTag | ExtendedTag | NullOrUndefinedTag | string;
 
 /**
  * Internal implementation of {@link tagOf}.

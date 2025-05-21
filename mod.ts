@@ -20,21 +20,21 @@ export { type Func, isFunction } from "./is_function.ts";
 export { isInstance } from "./is_instance.ts";
 export { isInteger } from "./is_integer.ts";
 export { isObject, type Obj } from "./is_object.ts";
-export { isPrimitive, primitiveTypes } from "./is_primitive.ts";
+export { isPrimitive, type PrimitiveType, primitiveTypes } from "./is_primitive.ts";
 export { isRegExp } from "./is_regexp.ts";
 export { type InferredByType, isType } from "./is_type.ts";
 export {
-  type BuiltinTagLabels,
-  type ExtendedTagLabels,
-  type NullOrUndefinedTagLabels,
+  type BuiltinTagLabel,
+  type ExtendedTagLabel,
+  type NullOrUndefinedTagLabel,
   type TagLabel,
   tagLabelOf,
 } from "./tag_label_of.ts";
-export { type BuiltinTags, type ExtendedTags, type NullOrUndefinedTags, type Tag, tagOf } from "./tag_of.ts";
+export { type BuiltinTag, type ExtendedTag, type NullOrUndefinedTag, type Tag, tagOf } from "./tag_of.ts";
 export {
-  type BuiltinTypes,
-  type ExtendedTypes,
-  type NullOrUndefinedTypes,
+  type BuiltinType,
+  type ExtendedType,
+  type NullOrUndefinedType,
   type Type,
   typeByTagLabel,
   typeOf,

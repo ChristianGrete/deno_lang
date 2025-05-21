@@ -24,7 +24,7 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
  * Includes both standard constructors and hybrid functions like `Date` or
  * `RegExp`.
  *
- * @name lang/instance_of~Constructable
+ * @name lang/instance_of.Constructable
  * @template Instance
  */
 export type Constructable<Instance = unknown> =

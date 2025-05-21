@@ -19,7 +19,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Represents an array-like `arguments` list.
  *
- * @name lang/is_arguments~Arguments
+ * @name lang/is_arguments.Arguments
  */
 export type Arguments = ArrayLike<unknown>;
 

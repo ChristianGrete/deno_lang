@@ -26,12 +26,12 @@ import { getTagLabel, type TagLabel } from "./tag_label_of.ts";
 const { freeze } = Object;
 
 /**
- * Built-in runtime types defined in the ECMAScript specification.
+ * A built-in runtime type as defined in the ECMAScript specification.
  *
- * @name lang/type_of~BuiltinTypes
+ * @name lang/type_of.BuiltinType
  * @see {@link https://tc39.es/ecma262/#sec-object.prototype.tostring|ECMA-262 Spec}
  */
-export type BuiltinTypes =
+export type BuiltinType =
   | "arguments"
   | "array"
   | "boolean"
@@ -44,32 +44,32 @@ export type BuiltinTypes =
   | "string";
 
 /**
- * Additional runtime types supported in modern JavaScript.
+ * An additional runtime type supported in modern JavaScript.
  *
- * @name lang/type_of~ExtendedTypes
+ * @name lang/type_of.ExtendedType
  */
-export type ExtendedTypes = "bigint" | "map" | "promise" | "set" | "symbol";
+export type ExtendedType = "bigint" | "map" | "promise" | "set" | "symbol";
 
 /**
- * Runtime types for `null` and `undefined`.
+ * A runtime type for `null` or `undefined`.
  *
- * @name lang/type_of~NullOrUndefinedTypes
+ * @name lang/type_of.NullOrUndefinedType
  */
-export type NullOrUndefinedTypes = "null" | "undefined";
+export type NullOrUndefinedType = "null" | "undefined";
 
 /**
- * All supported runtime types as returned by {@link typeOf}.
+ * Any runtime type as returned by {@link typeOf}.
  *
  * @name lang/type_of~Type
  */
-export type Type = BuiltinTypes | ExtendedTypes | NullOrUndefinedTypes;
+export type Type = BuiltinType | ExtendedType | NullOrUndefinedType;
 
 /**
  * Mapping from tag label strings to runtime type strings.
  *
  * Used by {@link typeOf}.
  *
- * @name lang/type_of~typeByTagLabel
+ * @name lang/type_of.typeByTagLabel
  * @readonly
  */
 export const typeByTagLabel = freeze(
@@ -98,7 +98,7 @@ export const typeByTagLabel = freeze(
  * @name lang/type_of~getType
  */
 export const getType = (value: unknown): Type => {
-  if (value == null) return (value + "") as NullOrUndefinedTypes;
+  if (value == null) return (value + "") as NullOrUndefinedType;
 
   const type = typeof value;
 
