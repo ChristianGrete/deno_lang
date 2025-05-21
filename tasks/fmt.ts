@@ -12,9 +12,9 @@ if (import.meta.main) {
   const files = Deno.args;
 
   try {
-    await run(["deno", "lint", "--fix", ...files], "suppress");
-    await run(["deno", "task", "eslint-fix", ...files], "suppress");
-    await run(["deno", "task", "dprint-fmt", ...files], "suppress");
+    await run(["deno", "lint", "-q", "--fix", ...files]);
+    await run(["deno", "task", "eslint-fix", "--quiet", ...files]);
+    await run(["deno", "task", "dprint-fmt", "-L warn", ...files]);
   } catch (err: unknown) {
     if (err instanceof Error) {
       console.error(`${bold(red("Error"))} ${red("Failed to run task 'fmt':")}`);
