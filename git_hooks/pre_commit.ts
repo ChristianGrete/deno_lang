@@ -14,7 +14,15 @@ const snakeCase = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
  * Filenames that are explicitly allowed to bypass `snake_case` enforcement.
  * These include standardized filenames like `README.md`, `LICENSE`, or dotfiles.
  */
-const allowedFilenames = new Set([".editorconfig", ".gitignore", "CONTRIBUTING.md", "HISTORY.md", "README.md"]);
+const allowedFilenames = new Set([
+  ".editorconfig",
+  ".github",
+  ".gitignore",
+  "CODEOWNERS",
+  "CONTRIBUTING.md",
+  "HISTORY.md",
+  "README.md",
+]);
 
 const isValidSegment = (segment: string, ext: string): boolean => snakeCase.test(segment.replace(ext, ""));
 
