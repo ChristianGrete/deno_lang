@@ -38,8 +38,8 @@ export type Constructable<Instance = unknown> =
  *
  * @example
  * instanceOf(new Date(), Date); // true
- * instanceOf(/abc/, RegExp);    // true
- * instanceOf({}, Date);         // false
+ * instanceOf(/abc/, RegExp); // true
+ * instanceOf({}, Date); // false
  *
  * @name lang/instance_of.instanceOf
  * @param {unknown} value - The value to check.

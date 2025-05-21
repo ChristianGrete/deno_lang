@@ -1,7 +1,11 @@
 /**
  * Utility module for determining the runtime type of a value.
  *
- * Uses tag-based detection for accurate results beyond `typeof`.
+ * This uses tag-based detection for accurate results beyond `typeof`.
+ *
+ * It returns a normalized string that matches all standard TypeScript
+ * types which can be distinguished at runtime, including `null`, `array`,
+ * `map`, and more.
  *
  * @author Valerio Proietti <kamicane@gmail.com>
  * @author Christoph Nakazawa <christoph.pojer@gmail.com>
@@ -24,7 +28,7 @@ const { freeze } = Object;
 /**
  * Built-in runtime types defined in the ECMAScript specification.
  *
- * @name lang/type_of.BuiltinTypes
+ * @name lang/type_of~BuiltinTypes
  * @see {@link https://tc39.es/ecma262/#sec-object.prototype.tostring|ECMA-262 Spec}
  */
 export type BuiltinTypes =
@@ -42,21 +46,21 @@ export type BuiltinTypes =
 /**
  * Additional runtime types supported in modern JavaScript.
  *
- * @name lang/type_of.ExtendedTypes
+ * @name lang/type_of~ExtendedTypes
  */
 export type ExtendedTypes = "bigint" | "map" | "promise" | "set" | "symbol";
 
 /**
  * Runtime types for `null` and `undefined`.
  *
- * @name lang/type_of.NullOrUndefinedTypes
+ * @name lang/type_of~NullOrUndefinedTypes
  */
 export type NullOrUndefinedTypes = "null" | "undefined";
 
 /**
  * All supported runtime types as returned by {@link typeOf}.
  *
- * @name lang/type_of.Type
+ * @name lang/type_of~Type
  */
 export type Type = BuiltinTypes | ExtendedTypes | NullOrUndefinedTypes;
 
@@ -65,7 +69,7 @@ export type Type = BuiltinTypes | ExtendedTypes | NullOrUndefinedTypes;
  *
  * Used by {@link typeOf}.
  *
- * @name lang/type_of.typeByTagLabel
+ * @name lang/type_of~typeByTagLabel
  * @readonly
  */
 export const typeByTagLabel = freeze(
@@ -89,7 +93,7 @@ export const typeByTagLabel = freeze(
 );
 
 /**
- * Internal impementation of {@link typeOf}.
+ * Internal implementation of {@link typeOf}.
  *
  * @name lang/type_of~getType
  */
@@ -103,6 +107,12 @@ export const getType = (value: unknown): Type => {
 
 /**
  * Determines the runtime type of a value.
+ *
+ * @example
+ * typeOf([]); // "array"
+ * typeOf(null); // "null"
+ * typeOf(() => {}); // "function"
+ * typeOf("hi"); // "string"
  *
  * @name lang/type_of.typeOf
  * @param {unknown} value - The value to check.

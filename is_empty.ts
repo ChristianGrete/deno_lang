@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is considered empty.
  *
+ * Returns `true` for `null`, `undefined`, empty arrays, strings, maps,
+ * sets, or plain objects without own enumerable properties.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -14,6 +17,14 @@ import { boundTypeOf, hasOwnProperty, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Checks whether a value is considered empty.
+ *
+ * @example
+ * isEmpty(null); // true
+ * isEmpty([]); // true
+ * isEmpty(""); // true
+ * isEmpty({}); // true
+ * isEmpty([1, 2]); // false
+ * isEmpty(new Map([[1, 2]])); // false
  *
  * @name lang/is_empty.isEmpty
  * @param {unknown} value - The value to check.

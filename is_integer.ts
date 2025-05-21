@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is an integer.
  *
+ * Accepts both primitive numbers and `Number` objects. Uses type check and
+ * `Number.isInteger()` for safe detection.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -16,6 +19,12 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * Checks whether a value is an integer number.
  *
  * Accepts both primitive numbers and `Number` objects.
+ *
+ * @example
+ * isInteger(42); // true
+ * isInteger(new Number(3)); // true
+ * isInteger(3.14); // false
+ * isInteger("42"); // false
  *
  * @name lang/is_integer.isInteger
  * @param {unknown} value - The value to check.

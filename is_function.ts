@@ -1,6 +1,10 @@
 /**
  * Utility module for checking whether a value is a function.
  *
+ * Uses `Object.prototype.toString` to ensure reliable detection of callable
+ * functions, including those with special internal prototypes (e.g. async or
+ * generator functions).
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author André Cruz <andremiguelcruz@msn.com>
  * @author Christian Grete <webmaster@christiangrete.com>
@@ -19,12 +23,18 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  *
  * Used as the return type by {@link isFunction}.
  *
- * @name lang/is_function.Func
+ * @name lang/is_function~Func
  */
 export type Func = (...args: unknown[]) => unknown; // eslint-disable-line unused-imports/no-unused-vars
 
 /**
  * Checks whether a value is a function.
+ *
+ * @example
+ * isFunction(() => {}); // true
+ * isFunction(async function () {}); // true
+ * isFunction(function* () {}); // true
+ * isFunction("hello"); // false
  *
  * @name lang/is_function.isFunction
  * @param {unknown} _value - The value to check.

@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is an object.
  *
+ * This uses `Object.prototype.toString` to ensure reliable detection of
+ * generic objects. Excludes `null`, arrays and all primitive types.
+ *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author André Cruz <andremiguelcruz@msn.com>
  * @author Christian Grete <webmaster@christiangrete.com>
@@ -17,12 +20,19 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Represents any non-null object with string, number, or symbol keys.
  *
- * @name lang/is_object.Obj
+ * @name lang/is_object~Obj
  */
 export type Obj = Record<PropertyKey, unknown>;
 
 /**
  * Checks whether a value is an object.
+ *
+ * @example
+ * isObject({}); // true
+ * isObject(Object.create(null)); // true
+ * isObject(null); // false
+ * isObject([]); // false
+ * isObject("hello"); // false
  *
  * @name lang/is_object.isObject
  * @param {unknown} _value - The value to check.

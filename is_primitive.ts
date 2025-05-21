@@ -1,6 +1,9 @@
 /**
  * Utility module for checking whether a value is a primitive value.
  *
+ * This includes `null`, `undefined`, and values whose `typeof` result is
+ * `"bigint"`, `"boolean"`, `"number"`, `"string"`, or `"symbol"`.
+ *
  * @author Garrick Cheung <garrick@garrickcheung.com>
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
@@ -19,12 +22,19 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
  *
  * Used internally by {@link isPrimitive}.
  *
- * @name lang/is_primitive.primitiveTypes
+ * @name lang/is_primitive~primitiveTypes
  */
 export const primitiveTypes = new Set(["bigint", "boolean", "number", "string", "symbol"]);
 
 /**
  * Checks whether a value is a primitive (i.e. not an object or function).
+ *
+ * @example
+ * isPrimitive(null); // true
+ * isPrimitive(undefined); // true
+ * isPrimitive(42); // true
+ * isPrimitive("hello"); // true
+ * isPrimitive({}); // false
  *
  * @name lang/is_primitive.isPrimitive
  * @param {unknown} value - The value to check.

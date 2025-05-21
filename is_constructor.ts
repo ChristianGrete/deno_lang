@@ -1,5 +1,10 @@
 /**
- * Utility module for checking whether a value is a constructor function or class.
+ * Utility module for checking whether a value is a constructor function or
+ * class.
+ *
+ * Unlike a plain function, a constructor must be callable via `new` and
+ * define a `.prototype` property. This check safely detects both classes
+ * and constructor functions.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -16,12 +21,20 @@ import type { Func } from "./is_function.ts";
  *
  * Used as the return type by {@link isConstructor}.
  *
- * @name lang/is_constructor.Constructor
+ * @name lang/is_constructor~Constructor
  */
 export type Constructor = new (...args: unknown[]) => unknown; // eslint-disable-line unused-imports/no-unused-vars
 
 /**
  * Checks whether a value is a constructor function or class.
+ *
+ * @example
+ * class Foo {}
+ * function Bar() {}
+ * isConstructor(Foo); // true
+ * isConstructor(Bar); // true
+ * isConstructor(() => {}); // false
+ * isConstructor({}); // false
  *
  * @name lang/is_constructor.isConstructor
  * @param {unknown} value - The value to check.
