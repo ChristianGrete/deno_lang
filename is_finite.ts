@@ -16,6 +16,13 @@
 import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
+ * Internal implementation of {@link isFinite}.
+ *
+ * @name lang/is_finite~nativeIsFinite
+ */
+export const { isFinite: nativeIsFinite } = Number;
+
+/**
  * Checks whether a value is a finite number.
  *
  * @example
@@ -30,7 +37,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * @returns {value is number} Whether the value is a finite number.
  */
 export function isFinite(value: unknown): value is number {
-  return boundTypeOf(arguments) === "number" && Number.isFinite(value);
+  return boundTypeOf(arguments) === "number" && nativeIsFinite(value);
 }
 
 unsetPrototype(isFinite);

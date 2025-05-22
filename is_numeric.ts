@@ -18,8 +18,7 @@
  */
 
 import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
-
-const { isFinite } = Number;
+import { nativeIsFinite } from "./is_finite.ts";
 
 /**
  * Represents a finite number or a string that can be coerced to one.
@@ -48,9 +47,9 @@ export type Numeric = number | string;
 export function isNumeric(value: unknown): value is Numeric {
   const type = boundTypeOf(arguments);
 
-  if (type === "number") return isFinite(value);
+  if (type === "number") return nativeIsFinite(value);
 
-  if (type === "string" && value !== "" && value === (value as string).trim()) return isFinite(Number(value));
+  if (type === "string" && value !== "" && value === (value as string).trim()) return nativeIsFinite(Number(value));
 
   return false;
 }

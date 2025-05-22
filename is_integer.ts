@@ -16,6 +16,13 @@
 import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
+ * Internal implementation of {@link isInteger}.
+ *
+ * @name lang/is_integer~nativeIsInteger
+ */
+export const { isInteger: nativeIsInteger } = Number;
+
+/**
  * Checks whether a value is an integer number.
  *
  * Accepts both primitive numbers and `Number` objects.
@@ -35,7 +42,7 @@ export function isInteger(value: unknown): value is number {
 
   const number = typeof value === "number" ? value : (value as number).valueOf();
 
-  return Number.isInteger(number);
+  return nativeIsInteger(number);
 }
 
 unsetPrototype(isInteger);

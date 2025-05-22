@@ -17,6 +17,13 @@
 import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
+ * Internal implementation of {@link isNaN}.
+ *
+ * @name lang/is_nan~nativeIsNaN
+ */
+export const { isNaN: nativeIsNaN } = Number;
+
+/**
  * Checks whether a value is exactly the `NaN` value.
  *
  * Unlike the global `isNaN()`, this does not coerce the input and only returns
@@ -38,7 +45,7 @@ export function isNaN(value: unknown): value is number {
 
   const number = typeof value === "number" ? value : (value as number).valueOf();
 
-  return Number.isNaN(number);
+  return nativeIsNaN(number);
 }
 
 unsetPrototype(isNaN);
