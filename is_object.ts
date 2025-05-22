@@ -20,6 +20,8 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Represents any non-null object with string, number, or symbol keys.
  *
+ * Used as type predicate by {@link isObject}.
+ *
  * @name lang/is_object.Obj
  */
 export type Obj = Record<PropertyKey, unknown>;

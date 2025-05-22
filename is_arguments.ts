@@ -19,6 +19,8 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 /**
  * Represents an array-like `arguments` list.
  *
+ * Used as type predicate by {@link isArguments}.
+ *
  * @name lang/is_arguments.Arguments
  */
 export type Arguments = ArrayLike<unknown>;

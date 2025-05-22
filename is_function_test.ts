@@ -1,6 +1,6 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
-import { isFunction } from "./is_function.ts";
+import { type Func, isFunction } from "./is_function.ts";
 
 Deno.test("isFunction() returns true for function values", () => {
   assert(isFunction(function () {}));
@@ -20,6 +20,16 @@ Deno.test("isFunction() returns false for non-function values", () => {
   assertFalse(isFunction([]));
   assertFalse(isFunction(/regex/));
   assertFalse(isFunction(new Date()));
+});
+
+Deno.test("isFunction() acts as a type guard", () => {
+  const maybeFn: unknown = () => {};
+
+  if (isFunction(maybeFn)) {
+    const definitelyFn: Func = maybeFn;
+
+    assertStrictEquals(typeof definitelyFn, "function");
+  }
 });
 
 Deno.test("isFunction() throws on invalid number of arguments", () => {

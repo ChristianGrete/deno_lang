@@ -25,11 +25,12 @@ Deno.test("isBoolean() returns false for non-boolean values", () => {
 });
 
 Deno.test("isBoolean() acts as a type guard", () => {
-  const val: unknown = Math.random() > 0.5 ? true : "nope";
-  if (isBoolean(val)) {
-    // TypeScript should now know this is boolean
-    const result: boolean = val;
-    assertStrictEquals(typeof result, "boolean");
+  const maybeBool: unknown = false;
+
+  if (isBoolean(maybeBool)) {
+    const definitelyBool: boolean = maybeBool;
+
+    assertStrictEquals(typeof definitelyBool, "boolean");
   }
 });
 

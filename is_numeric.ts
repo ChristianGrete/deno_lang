@@ -22,7 +22,9 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 const { isFinite } = Number;
 
 /**
- * A finite number or a string that can be coerced to one.
+ * Represents a finite number or a string that can be coerced to one.
+ *
+ * Used as type predicate by {@link isNumeric}.
  *
  * @name lang/is_numeric.Numeric
  */

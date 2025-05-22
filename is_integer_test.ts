@@ -42,6 +42,7 @@ Deno.test("isInteger() acts as a type guard", () => {
 
   if (isInteger(maybeInt)) {
     const definitelyInt: number = maybeInt;
+
     assertStrictEquals(typeof definitelyInt, "number");
   }
 });

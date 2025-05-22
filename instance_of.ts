@@ -19,10 +19,12 @@
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 
 /**
- * A constructable function or class used by {@link instanceOf}.
+ * Represents a constructable function or class.
  *
  * Includes both standard constructors and hybrid functions like `Date` or
  * `RegExp`.
+ *
+ * Used as type predicate by {@link instanceOf}.
  *
  * @name lang/instance_of.Constructable
  * @template Instance

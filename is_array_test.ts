@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
 import { isArray } from "./is_array.ts";
 
@@ -29,6 +29,16 @@ Deno.test("isArray() returns false for array-like but non-array objects", functi
   assertFalse(isArray(new Map()));
   assertFalse(isArray(new Uint8Array(3)));
   // assertFalse(isArray(document?.querySelectorAll?.("div") ?? {}));
+});
+
+Deno.test("isArray() acts as a type guard", () => {
+  const maybeArr: unknown = [];
+
+  if (isArray(maybeArr)) {
+    const definitelyArr: unknown[] = maybeArr;
+
+    assertStrictEquals(Array.isArray(definitelyArr), true);
+  }
 });
 
 Deno.test("isArray() throws on invalid number of arguments", () => {

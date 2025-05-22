@@ -21,7 +21,7 @@ import { getType, type Type } from "./type_of.ts";
 /**
  * Mapping from runtime type strings to their corresponding TypeScript types.
  *
- * Used as type predicate by {@link isType}.
+ * Used to infer type predicates in {@link isType}.
  *
  * @name lang/is_type.InferredByType
  */

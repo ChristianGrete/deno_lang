@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
 import { isRegExp } from "./is_regexp.ts";
 
@@ -30,7 +30,18 @@ Deno.test("isRegExp() returns false for non-RegExp values", () => {
 
 Deno.test("isRegExp() does not detect proxied regular expressions", () => {
   const proxy = new Proxy(/abc/, {});
+
   assertFalse(isRegExp(proxy)); // current implementation can't detect this
+});
+
+Deno.test("isRegExp() acts as a type guard", () => {
+  const maybeRegExp: unknown = /abc/;
+
+  if (isRegExp(maybeRegExp)) {
+    const definitelyRegExp: RegExp = maybeRegExp;
+
+    assertStrictEquals(Object.prototype.toString.call(definitelyRegExp), "[object RegExp]");
+  }
 });
 
 Deno.test("isRegExp() throws on invalid number of arguments", () => {

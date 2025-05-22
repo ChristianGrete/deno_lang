@@ -26,11 +26,12 @@ Deno.test("isFinite() returns false for non-number values", () => {
 });
 
 Deno.test("isFinite() acts as a type guard", () => {
-  const maybeNumber: unknown = 3.14;
+  const maybeNum: unknown = 3.14;
 
-  if (isFinite(maybeNumber)) {
-    const definitelyNumber: number = maybeNumber;
-    assertStrictEquals(typeof definitelyNumber, "number");
+  if (isFinite(maybeNum)) {
+    const definitelyNum: number = maybeNum;
+
+    assertStrictEquals(typeof definitelyNum, "number");
   }
 });
 

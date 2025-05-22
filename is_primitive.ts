@@ -21,6 +21,18 @@ const { freeze } = Object;
 const types = ["bigint", "boolean", "null", "number", "string", "symbol", "undefined"] as const;
 
 /**
+ * Represents a runtime primitive value.
+ *
+ * Includes `null`, `undefined`, and all values whose `typeof` result
+ * is `"bigint"`, `"boolean"`, `"number"`, `"string"`, or `"symbol"`.
+ *
+ * Used as type predicate by {@link isPrimitive}.
+ *
+ * @name lang/is_primitive.Primitive
+ */
+export type Primitive = bigint | boolean | null | number | string | symbol | undefined;
+
+/**
  * Any primitive runtime type.
  *
  * @name lang/is_primitive.PrimitiveType
@@ -49,9 +61,9 @@ export const primitiveTypes: ReadonlySet<PrimitiveType> = freeze(new Set(types))
  *
  * @name lang/is_primitive.isPrimitive
  * @param {unknown} value - The value to check.
- * @returns {boolean} Whether the value is primitive.
+ * @returns {value is Primitive} Whether the value is primitive.
  */
-export function isPrimitive(value: unknown): boolean {
+export function isPrimitive(value: unknown): value is Primitive {
   validateArgsLength(arguments);
 
   return value == null || (primitiveTypes as ReadonlySet<string>).has(typeof value);

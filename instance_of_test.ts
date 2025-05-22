@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
 import { instanceOf } from "./instance_of.ts";
 
@@ -40,8 +40,10 @@ Deno.test("instanceOf() narrows types when true", () => {
   const maybeDate: unknown = new Date();
 
   if (instanceOf(maybeDate, Date)) {
-    assert(maybeDate instanceof Date);
-    assert(typeof maybeDate.getTime === "function");
+    const definitelyDate: Date = maybeDate;
+
+    assert(definitelyDate instanceof Date);
+    assertStrictEquals(typeof definitelyDate.getTime, "function");
   }
 });
 

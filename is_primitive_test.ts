@@ -1,6 +1,6 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
-import { isPrimitive, type PrimitiveType, primitiveTypes } from "./is_primitive.ts";
+import { isPrimitive, type Primitive, type PrimitiveType, primitiveTypes } from "./is_primitive.ts";
 
 Deno.test("isPrimitive() returns true for primitive values", () => {
   assert(isPrimitive(undefined));
@@ -30,6 +30,16 @@ Deno.test("isPrimitive() returns false for non-primitive objects", () => {
   assertFalse(isPrimitive(Promise.resolve()));
 });
 
+Deno.test("isPrimitive() narrows types when true", () => {
+  const maybePrimitive: unknown = false;
+
+  if (isPrimitive(maybePrimitive)) {
+    const definitelyPrimitive: Primitive = maybePrimitive;
+
+    assertStrictEquals(typeof definitelyPrimitive, "boolean");
+  }
+});
+
 Deno.test("isPrimitive() throws on invalid number of arguments", () => {
   // @ts-expect-error - test intentional invalid usage
   assertThrows(() => isPrimitive(), TypeError);
@@ -39,7 +49,7 @@ Deno.test("isPrimitive() throws on invalid number of arguments", () => {
 });
 
 Deno.test("primitiveTypes contains the correct typeof values", () => {
-  for (const type of ["bigint", "boolean", "number", "string", "symbol"] as PrimitiveType[]) {
+  for (const type of ["bigint", "boolean", "null", "number", "string", "symbol", "undefined"] as PrimitiveType[]) {
     assert(primitiveTypes.has(type));
   }
 
