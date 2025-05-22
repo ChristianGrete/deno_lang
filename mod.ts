@@ -19,6 +19,7 @@ export { isFinite } from "./is_finite.ts";
 export { type Func, isFunction } from "./is_function.ts";
 export { isInstance } from "./is_instance.ts";
 export { isInteger } from "./is_integer.ts";
+export { isNaN } from "./is_nan.ts";
 export { isNumeric, type Numeric } from "./is_numeric.ts";
 export { isObject, type Obj } from "./is_object.ts";
 export { isPrimitive, type PrimitiveType, primitiveTypes } from "./is_primitive.ts";
