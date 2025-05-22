@@ -60,7 +60,7 @@ export type NullOrUndefinedType = "null" | "undefined";
 /**
  * Any runtime type as returned by {@link typeOf}.
  *
- * @name lang/type_of~Type
+ * @name lang/type_of.Type
  */
 export type Type = BuiltinType | ExtendedType | NullOrUndefinedType;
 
