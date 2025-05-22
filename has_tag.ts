@@ -23,7 +23,7 @@ import { getTag, type Tag } from "./tag_of.ts";
 /**
  * Mapping from tag strings to their corresponding TypeScript types.
  *
- * Used as type predicate by {@link hasTag}.
+ * Used to infer type predicates in {@link hasTag}.
  *
  * @name lang/has_tag.InferredByTag
  */

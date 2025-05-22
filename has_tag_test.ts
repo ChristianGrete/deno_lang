@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
 import { hasTag } from "./has_tag.ts";
 
@@ -26,6 +26,16 @@ Deno.test("hasTag() returns false for mismatched tags", () => {
 Deno.test("hasTag() returns false for unknown or custom tags", () => {
   assertFalse(hasTag([], "Foobar"));
   assertFalse(hasTag({}, "HTMLDivElement"));
+});
+
+Deno.test("hasTag() narrows types when true", () => {
+  const maybeNum: unknown = 42;
+
+  if (hasTag(maybeNum, "Number")) {
+    const definitelyNum: number = maybeNum;
+
+    assertStrictEquals(typeof definitelyNum, "number");
+  }
 });
 
 Deno.test("hasTag() throws on invalid arguments", () => {

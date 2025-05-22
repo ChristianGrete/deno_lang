@@ -17,9 +17,9 @@ import { boundTypeOf, hasOwnProperty, unsetPrototype } from "./internal/mod.ts";
 import type { Func } from "./is_function.ts";
 
 /**
- * A constructor function or class.
+ * Represents a constructor function or class.
  *
- * Used as the return type by {@link isConstructor}.
+ * Used as type predicate by {@link isConstructor}.
  *
  * @name lang/is_constructor.Constructor
  */

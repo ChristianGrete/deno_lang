@@ -1,6 +1,6 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
-import { isObject } from "./is_object.ts";
+import { isObject, type Obj } from "./is_object.ts";
 
 Deno.test("isObject() returns true for plain objects", () => {
   assert(isObject({}));
@@ -27,6 +27,16 @@ Deno.test("isObject() returns false for built-in non-plain objects", () => {
   assertFalse(isObject(new Map()));
   assertFalse(isObject(new Set()));
   assertFalse(isObject(Promise.resolve()));
+});
+
+Deno.test("isObject() acts as a type guard", () => {
+  const maybeObj: unknown = { a: 1, b: 2 };
+
+  if (isObject(maybeObj)) {
+    const definitelyObj: Obj = maybeObj;
+
+    assertStrictEquals(definitelyObj instanceof Object, true);
+  }
 });
 
 Deno.test("isObject() throws on invalid number of arguments", () => {

@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
 import { isType } from "./is_type.ts";
 
@@ -37,6 +37,16 @@ Deno.test("isType() returns false for mismatched types", () => {
   assertFalse(isType({}, "array"));
   assertFalse(isType(() => {}, "object"));
   assertFalse(isType(null, "object"));
+});
+
+Deno.test("isType() narrows types when true", () => {
+  const maybeBool: unknown = true;
+
+  if (isType(maybeBool, "boolean")) {
+    const definitelyBool: boolean = maybeBool;
+
+    assertStrictEquals(typeof definitelyBool, "boolean");
+  }
 });
 
 Deno.test("isType() throws on invalid arguments", () => {

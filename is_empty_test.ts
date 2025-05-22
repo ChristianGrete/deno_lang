@@ -40,6 +40,7 @@ Deno.test("isEmpty() returns false for objects with own properties", () => {
 Deno.test("isEmpty() ignores inherited properties", () => {
   const proto = { x: 1 };
   const obj = Object.create(proto);
+
   assert(isEmpty(obj));
 });
 

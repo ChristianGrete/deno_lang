@@ -19,9 +19,9 @@
 import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
- * A function with any arguments and return type.
+ * Represents a function with any arguments and return type.
  *
- * Used as the return type by {@link isFunction}.
+ * Used as type predicate by {@link isFunction}.
  *
  * @name lang/is_function.Func
  */

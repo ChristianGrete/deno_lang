@@ -20,6 +20,7 @@ Deno.test("isDate() acts as a type guard", () => {
 
   if (isDate(maybeDate)) {
     const definitelyDate: Date = maybeDate;
+
     assertStrictEquals(definitelyDate instanceof Date, true);
   }
 });

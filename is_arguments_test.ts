@@ -1,4 +1,4 @@
-import { assert, assertFalse, assertThrows } from "@std/assert";
+import { assert, assertFalse, assertStrictEquals, assertThrows } from "@std/assert";
 
 import { type Arguments, isArguments } from "./is_arguments.ts";
 
@@ -8,6 +8,7 @@ function getArgs(..._: unknown[]): Arguments {
 
 Deno.test("isArguments() returns true for an arguments object", () => {
   const args = getArgs("foo", 123, false);
+
   assert(isArguments(args));
 });
 
@@ -33,6 +34,16 @@ Deno.test("isArguments() returns false for non-argument objects", () => {
   assertFalse(isArguments(new Date()));
   assertFalse(isArguments(/x/));
   assertFalse(isArguments(new Map()));
+});
+
+Deno.test("isArguments() acts as a type guard", function () {
+  const maybeArgs: unknown = arguments;
+
+  if (isArguments(maybeArgs)) {
+    const definitelyArgs: Arguments = maybeArgs;
+
+    assertStrictEquals(Object.prototype.toString.call(definitelyArgs), "[object Arguments]");
+  }
 });
 
 Deno.test("isArguments() throws on invalid number of arguments", () => {

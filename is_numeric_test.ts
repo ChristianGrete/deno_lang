@@ -56,11 +56,12 @@ Deno.test("isNumeric() returns false for non-numeric values", () => {
 });
 
 Deno.test("isNumeric() acts as a type guard", () => {
-  const maybeNumeric: unknown = "42";
+  const maybeNum: unknown = "42";
 
-  if (isNumeric(maybeNumeric)) {
-    const definitelyNumeric: Numeric = maybeNumeric;
-    assertStrictEquals(typeof definitelyNumeric === "number" || typeof definitelyNumeric === "string", true);
+  if (isNumeric(maybeNum)) {
+    const definitelyNum: Numeric = maybeNum;
+
+    assertStrictEquals(typeof definitelyNum === "number" || typeof definitelyNum === "string", true);
   }
 });
 
