@@ -1,8 +1,8 @@
 /**
  * Utility module for checking whether a value is a boolean.
  *
- * Uses `Object.prototype.toString`, which is more reliable for detecting
- * primitive booleans than a direct `typeof` check.
+ * Uses `Object.prototype.toString` to ensure reliable detection of boolean
+ * values, including wrapped booleans (e.g. `new Boolean(true)`).
  *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author André Cruz <andremiguelcruz@msn.com>
