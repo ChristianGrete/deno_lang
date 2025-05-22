@@ -42,6 +42,7 @@ Deno.test("isNaN() acts as a type guard", () => {
 
   if (isNaN(maybeNum)) {
     const definitelyNum: number = maybeNum;
+
     assertStrictEquals(typeof definitelyNum, "number");
   }
 });
