@@ -15,6 +15,11 @@ Deno.test("isArrayLike() returns true for valid array-like values", () => {
 });
 
 Deno.test("isArrayLike() returns false for non-array-like values", () => {
+  const fakeWindow = { self: null as unknown, window: null as unknown };
+
+  fakeWindow.window = fakeWindow;
+  fakeWindow.self = fakeWindow;
+
   assertFalse(isArrayLike(null));
   assertFalse(isArrayLike(undefined));
   assertFalse(isArrayLike(true));
@@ -22,6 +27,7 @@ Deno.test("isArrayLike() returns false for non-array-like values", () => {
   assertFalse(isArrayLike({ length: -1 }));
   assertFalse(isArrayLike({ length: 2 })); // missing indexed props
   assertFalse(isArrayLike(() => {}));
+  assertFalse(isArrayLike(fakeWindow));
   assertFalse(isArrayLike(globalThis));
 });
 

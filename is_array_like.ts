@@ -23,6 +23,7 @@
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 import { nativeIsArray } from "./is_array.ts";
+import { hasWindowLikeShape } from "./is_window.ts";
 
 /**
  * Internal implementation of {@link isArrayLike}.
@@ -32,7 +33,7 @@ import { nativeIsArray } from "./is_array.ts";
 export const hasArrayLikeShape = (value: unknown): boolean => {
   if (nativeIsArray(value)) return true;
 
-  if (value == null || typeof value === "function" || value === globalThis) return false;
+  if (value == null || typeof value === "function" || hasWindowLikeShape(value) || value === globalThis) return false;
 
   const { length } = value as { length?: unknown };
 
