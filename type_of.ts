@@ -8,7 +8,11 @@
  * `map`, and more.
  *
  * @author Valerio Proietti <kamicane@gmail.com>
+ * @author John Resig <jeresig@gmail.com>
+ * @author Robert Katić <robert.katic@gmail.com>
  * @author Christoph Nakazawa <christoph.pojer@gmail.com>
+ * @author Sebastian Burkhard <sebi.burkhard@gmail.com>
+ * @author Richard Gibson <richard.gibson@gmail.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
  * @copyright © 2025 Christian Grete
@@ -16,6 +20,7 @@
  * @module lang/type_of
  * @see {@link https://github.com/mootools/mootools-core/blob/1.2.6/Source/Core/Core.js#L259|mootools-core@1.2.6/Core/Core.$type}
  * @see {@link https://github.com/mootools/mootools-core/blob/1.6.0/Source/Core/Core.js#L32|mootools-core@1.6.0/Core/Core.typeOf}
+ * @see {@link https://github.com/jquery/jquery/blob/3.7.1/src/core/toType.js|jquery@3.7.1/core.toType}
  * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/typeOf.js|mout-lang-type@0.6.0/lang/typeOf}
  */
 
