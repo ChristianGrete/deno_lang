@@ -21,8 +21,8 @@
  * @copyright © 2025 Christian Grete
  * @license MIT
  * @module lang/to_array
- * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/toArray.js|mout@1.2.4/lang/toArray}
  * @see {@link https://github.com/jquery/jquery/blob/3.7.1/src/core.js#L309|jquery@3.7.1/core.makeArray}
+ * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/toArray.js|mout@1.2.4/lang/toArray}
  */
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";

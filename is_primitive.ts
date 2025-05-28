@@ -5,7 +5,6 @@
  * `"bigint"`, `"boolean"`, `"number"`, `"string"`, or `"symbol"`.
  *
  * @author Garrick Cheung <garrick@garrickcheung.com>
- * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
  * @copyright © 2025 Christian Grete

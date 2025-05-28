@@ -18,6 +18,7 @@ const allowedFilenames = new Set([
   ".editorconfig",
   ".github",
   ".gitignore",
+  "AUTHORS.txt",
   "CODEOWNERS",
   "CONTRIBUTING.md",
   "HISTORY.md",

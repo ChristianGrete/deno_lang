@@ -8,6 +8,7 @@
  *
  * @author Valerio Proietti <kamicane@gmail.com>
  * @author Christoph Nakazawa <christoph.pojer@gmail.com>
+ * @author Olmo Maldonado <olmo.maldonado@gmail.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
  * @copyright © 2025 Christian Grete

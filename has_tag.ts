@@ -11,7 +11,7 @@
  * @copyright © 2025 Christian Grete
  * @license MIT
  * @module lang/has_tag
- * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/isKind.js|mout-lang-type@0.6.0/lang/isKind}
+ * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/isKind.js|mout@1.2.4/lang/isKind}
  */
 
 import { unsetPrototype, validateArgsLength, validateStringArg } from "./internal/mod.ts";

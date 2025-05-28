@@ -6,6 +6,7 @@
  *
  * @author John Resig <jeresig@gmail.com>
  * @author Rafaël Blais Masson <rafbmasson@gmail.com>
+ * @author Michał Gołębiowski-Owczarek <m.goleb@gmail.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
  * @copyright © 2025 Christian Grete

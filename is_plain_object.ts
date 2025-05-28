@@ -5,8 +5,13 @@
  * `null`, such as those created by `{}`, `new Object()`, or
  * `Object.create(null)`.
  *
+ * @author Yehuda Katz <wycats@gmail.com>
+ * @author Robert Katić <robert.katic@gmail.com>
+ * @author John Resig <jeresig@gmail.com>
+ * @author Rick Waldron <waldron.rick@gmail.com>
  * @author Conrad Zimmerman <me@conradz.com>
  * @author Miller Medeiros <miller@millermedeiros.com>
+ * @author Timmy Willison <4timmywil@gmail.com>
  * @author Richard Gibson <richard.gibson@gmail.com>
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>

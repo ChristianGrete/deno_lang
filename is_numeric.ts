@@ -7,6 +7,8 @@
  * for `NaN`, `Infinity`, or strings that cannot be parsed to numbers.
  *
  * @author Dave Methvin <dave.methvin@gmail.com>
+ * @author Richard Gibson <richard.gibson@gmail.com>
+ * @author Liza Ramo Sessler <liza.h.ramo@gmail.com>
  * @author Timmy Willison <4timmywil@gmail.com>
  * @author Steve Mao <maochenyan@gmail.com>
  * @author Christian Grete <webmaster@christiangrete.com>
