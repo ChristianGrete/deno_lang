@@ -1,0 +1,34 @@
+# Authors
+
+Authors ordered by first contribution.
+
+| Date       | Handle          | Name                        | Email                        |
+| ---------- | --------------- | --------------------------- | ---------------------------- |
+| 2006-12-12 | @kamicane       | Valerio Proietti            | kamicane@gmail.com           |
+| 2006-12-17 | @cbeyls         | Christophe Beyls            | software@digitalia.be        |
+| 2006-12-23 | @jeresig        | John Resig                  | jeresig@gmail.com            |
+| 2007-03-26 | @digitarald     | Harald Kirschner            | hi@harald.me                 |
+| 2007-09-20 | @ibolmo         | Olmo Maldonado              | olmo.maldonado@gmail.com     |
+| 2008-04-24 | @jzaefferer     | Jörn Zaefferer              | joern.zaefferer@gmail.com    |
+| 2008-04-25 | @flesler        | Ariel Flesler               | aflesler@gmail.com           |
+| 2009-07-16 | @wycats         | Yehuda Katz                 | wycats@gmail.com             |
+| 2009-11-09 | @rkatic         | Robert Katić                | robert.katic@gmail.com       |
+| 2010-03-08 | @cpojer         | Christoph Nakazawa          | christoph.pojer@gmail.com    |
+| 2011-07-25 | @rwaldron       | Rick Waldron                | waldron.rick@gmail.com       |
+| 2011-10-12 | @dmethvin       | Dave Methvin                | dave.methvin@gmail.com       |
+| 2011-10-14 | @anutron        | Aaron Newton                | git@clientcide.com           |
+| 2011-10-31 | @millermedeiros | Miller Medeiros             | miller@millermedeiros.com    |
+| 2011-12-06 | @rafbm          | Rafaël Blais Masson         | rafbmasson@gmail.com         |
+| 2012-01-25 | @satazor        | André Cruz                  | andremiguelcruz@msn.com      |
+| 2012-12-10 | @gibson042      | Richard Gibson              | richard.gibson@gmail.com     |
+| 2012-12-23 | @hasclass       | Sebastian Burkhard          | sebi.burkhard@gmail.com      |
+| 2013-01-11 | @conradz        | Conrad Zimmerman            | me@conradz.com               |
+| 2013-02-11 | @arian          | Arian Stolwijk              | stolwijk.arian@gmail.com     |
+| 2013-04-04 | @mgol           | Michał Gołębiowski-Owczarek | m.goleb@gmail.com            |
+| 2014-05-18 | @GCheung55      | Garrick Cheung              | garrick@garrickcheung.com    |
+| 2015-04-30 | @timmywil       | Timmy Willison              | 4timmywil@gmail.com          |
+| 2015-07-27 | @mr21           | Thomas Tortorini            | thomastortorini@gmail.com    |
+| 2015-09-06 | @ChristianGrete | Christian Grete             | webmaster@christiangrete.com |
+| 2015-10-17 | @LizaLemons     | Liza Ramo Sessler           | liza.h.ramo@gmail.com        |
+| 2016-01-25 | @stevemao       | Steve Mao                   | maochenyan@gmail.com         |
+| 2017-03-05 | @maxnordlund    | Max Nordlund                | max.nordlund@gmail.com       |
