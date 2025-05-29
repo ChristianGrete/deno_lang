@@ -15,6 +15,7 @@
  * @author John Resig <jeresig@gmail.com>
  * @author Robert Katić <robert.katic@gmail.com>
  * @author Aaron Newton <git@clientcide.com>
+ * @author Dave Methvin <dave.methvin@gmail.com>
  * @author Sebastian Burkhard <sebi.burkhard@gmail.com>
  * @author Arian Stolwijk <stolwijk.arian@gmail.com>
  * @author Richard Gibson <richard.gibson@gmail.com>
@@ -23,9 +24,9 @@
  * @copyright © 2025 Christian Grete
  * @license MIT
  * @module lang/type_of
- * @see {@link https://github.com/jquery/jquery/blob/3.7.1/src/core/toType.js|jquery@3.7.1/core.toType}
  * @see {@link https://github.com/mootools/mootools-core/blob/1.2.6/Source/Core/Core.js#L259|mootools-core@1.2.6/Core/Core.$type}
  * @see {@link https://github.com/mootools/mootools-core/blob/1.6.0/Source/Core/Core.js#L32|mootools-core@1.6.0/Core/Core.typeOf}
+ * @see {@link https://github.com/jquery/jquery/blob/3.7.1/src/core/toType.js|jquery@3.7.1/core.toType}
  * @see {@link https://github.com/ChristianGrete/mout-lang-type/blob/v0.6.0/src/lang/typeOf.js|mout-lang-type@0.6.0/lang/typeOf}
  */
 
