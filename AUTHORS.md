@@ -47,9 +47,6 @@ To all of you: **thank you** — for your code, your ideas, and the memories of 
 links to your original implementations in the relevant files, and listed as co-authors in the project’s commit history.
 ❤️
 
-Thanks also to [OpenAI](https://github.com/OPENAI) and ChatGPT for providing an exceptional pair programmer that
-contributed significantly to both productivity and code quality. 🦾
-
 ---
 
 Copyright © 2025 ([MIT][repository-license-url]) [Christian Grete][repository-owner-url] for
