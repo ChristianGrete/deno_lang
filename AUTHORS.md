@@ -12,36 +12,36 @@ based on their first contribution.
 
 The list below is a chronological snapshot of that journey:
 
-| Name                        | Handle                                               | Date               |
-| --------------------------- | ---------------------------------------------------- | ------------------ |
-| Valerio Proietti            | [@kamicane](https://github.com/kamicane)             | December 12, 2006  |
-| Christophe Beyls            | [@cbeyls](https://github.com/cbeyls)                 | December 17, 2006  |
-| John Resig                  | [@jeresig](https://github.com/jeresig)               | December 23, 2006  |
-| Harald Kirschner            | [@digitarald](https://github.com/digitarald)         | March 26, 2007     |
-| Olmo Maldonado              | [@ibolmo](https://github.com/ibolmo)                 | September 20, 2007 |
-| Jörn Zaefferer              | [@jzaefferer](https://github.com/jzaefferer)         | April 24, 2008     |
-| Ariel Flesler               | [@flesler](https://github.com/flesler)               | April 25, 2008     |
-| Yehuda Katz                 | [@wycats](https://github.com/wycats)                 | July 16, 2009      |
-| Robert Katić                | [@rkatic](https://github.com/rkatic)                 | November 9, 2009   |
-| Christoph Nakazawa          | [@cpojer](https://github.com/cpojer)                 | March 8, 2010      |
-| Rick Waldron                | [@rwaldron](https://github.com/rwaldron)             | July 25, 2011      |
-| Dave Methvin                | [@dmethvin](https://github.com/dmethvin)             | October 12, 2011   |
-| Aaron Newton                | [@anutron](https://github.com/anutron)               | October 14, 2011   |
-| Miller Medeiros             | [@millermedeiros](https://github.com/millermedeiros) | October 31, 2011   |
-| Rafaël Blais Masson         | [@rafbm](https://github.com/rafbm)                   | December 6, 2011   |
-| André Cruz                  | [@satazor](https://github.com/satazor)               | January 25, 2012   |
-| Richard Gibson              | [@gibson042](https://github.com/gibson042)           | December 10, 2012  |
-| Sebastian Burkhard          | [@hasclass](https://github.com/hasclass)             | December 23, 2012  |
-| Conrad Zimmerman            | [@conradz](https://github.com/conradz)               | January 11, 2013   |
-| Arian Stolwijk              | [@arian](https://github.com/arian)                   | February 11, 2013  |
-| Michał Gołębiowski-Owczarek | [@mgol](https://github.com/mgol)                     | April 4, 2013      |
-| Garrick Cheung              | [@GCheung55](https://github.com/GCheung55)           | May 18, 2014       |
-| Timmy Willison              | [@timmywil](https://github.com/timmywil)             | April 30, 2015     |
-| Thomas Tortorini            | [@mr21](https://github.com/mr21)                     | July 27, 2015      |
-| Christian Grete             | [@ChristianGrete](https://github.com/ChristianGrete) | September 6, 2015  |
-| Liza Ramo Sessler           | [@LizaLemons](https://github.com/LizaLemons)         | October 17, 2015   |
-| Steve Mao                   | [@stevemao](https://github.com/stevemao)             | January 25, 2016   |
-| Max Nordlund                | [@maxnordlund](https://github.com/maxnordlund)       | March 5, 2017      |
+| Handle                                               | Name                        | Date               |
+| ---------------------------------------------------- | --------------------------- | ------------------ |
+| [@kamicane](https://github.com/kamicane)             | Valerio Proietti            | December 12, 2006  |
+| [@cbeyls](https://github.com/cbeyls)                 | Christophe Beyls            | December 17, 2006  |
+| [@jeresig](https://github.com/jeresig)               | John Resig                  | December 23, 2006  |
+| [@digitarald](https://github.com/digitarald)         | Harald Kirschner            | March 26, 2007     |
+| [@ibolmo](https://github.com/ibolmo)                 | Olmo Maldonado              | September 20, 2007 |
+| [@jzaefferer](https://github.com/jzaefferer)         | Jörn Zaefferer              | April 24, 2008     |
+| [@flesler](https://github.com/flesler)               | Ariel Flesler               | April 25, 2008     |
+| [@wycats](https://github.com/wycats)                 | Yehuda Katz                 | July 16, 2009      |
+| [@rkatic](https://github.com/rkatic)                 | Robert Katić                | November 9, 2009   |
+| [@cpojer](https://github.com/cpojer)                 | Christoph Nakazawa          | March 8, 2010      |
+| [@rwaldron](https://github.com/rwaldron)             | Rick Waldron                | July 25, 2011      |
+| [@dmethvin](https://github.com/dmethvin)             | Dave Methvin                | October 12, 2011   |
+| [@anutron](https://github.com/anutron)               | Aaron Newton                | October 14, 2011   |
+| [@millermedeiros](https://github.com/millermedeiros) | Miller Medeiros             | October 31, 2011   |
+| [@rafbm](https://github.com/rafbm)                   | Rafaël Blais Masson         | December 6, 2011   |
+| [@satazor](https://github.com/satazor)               | André Cruz                  | January 25, 2012   |
+| [@gibson042](https://github.com/gibson042)           | Richard Gibson              | December 10, 2012  |
+| [@hasclass](https://github.com/hasclass)             | Sebastian Burkhard          | December 23, 2012  |
+| [@conradz](https://github.com/conradz)               | Conrad Zimmerman            | January 11, 2013   |
+| [@arian](https://github.com/arian)                   | Arian Stolwijk              | February 11, 2013  |
+| [@mgol](https://github.com/mgol)                     | Michał Gołębiowski-Owczarek | April 4, 2013      |
+| [@GCheung55](https://github.com/GCheung55)           | Garrick Cheung              | May 18, 2014       |
+| [@timmywil](https://github.com/timmywil)             | Timmy Willison              | April 30, 2015     |
+| [@mr21](https://github.com/mr21)                     | Thomas Tortorini            | July 27, 2015      |
+| [@ChristianGrete](https://github.com/ChristianGrete) | Christian Grete             | September 6, 2015  |
+| [@LizaLemons](https://github.com/LizaLemons)         | Liza Ramo Sessler           | October 17, 2015   |
+| [@stevemao](https://github.com/stevemao)             | Steve Mao                   | January 25, 2016   |
+| [@maxnordlund](https://github.com/maxnordlund)       | Max Nordlund                | March 5, 2017      |
 
 To all of you: **thank you** — for your code, your ideas, and the memories of an entire era. You’re credited with inline
 links to your original implementations in the relevant files, and listed as co-authors in the project’s commit history.
