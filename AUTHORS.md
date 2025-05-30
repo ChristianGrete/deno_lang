@@ -10,7 +10,7 @@ To express our gratitude to the original authors of these functions across the v
 commit histories by hand — using `git blame` and good old-fashioned detective work — to track down each original author
 based on their first contribution.
 
-The list below is a chronological snapshot of that journey:
+Here’s a scroll through history, in chronological order:
 
 | Handle                                               | Name                        | Date               |
 | ---------------------------------------------------- | --------------------------- | ------------------ |
@@ -43,9 +43,10 @@ The list below is a chronological snapshot of that journey:
 | [@stevemao](https://github.com/stevemao)             | Steve Mao                   | January 25, 2016   |
 | [@maxnordlund](https://github.com/maxnordlund)       | Max Nordlund                | March 5, 2017      |
 
-To all of you: **thank you** — for your code, your ideas, and the memories of an entire era. You’re credited with inline
-links to your original implementations in the relevant files, and listed as co-authors in the project’s commit history.
-❤️
+To all of you: **thank you** — for your code, your ideas, and the memories of an entire era. ❤️
+
+We’ve linked the original implementations in each relevant file, listed their authors chronologically, and credited each
+of you as a co-author in our commit history.
 
 ---
 
