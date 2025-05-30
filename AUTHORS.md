@@ -1,7 +1,7 @@
 # The legends behind the code
 
-[**deno\_lang**][repository-github-url] draws inspiration from some of the most iconic JavaScript utilities of the past
-— most notably `typeOf` and `instanceOf` from [MooTools Core](https://github.com/mootools/mootools-core), `$.type` from
+**deno\_lang** draws inspiration from some of the most iconic JavaScript utilities of the past — most notably `typeOf`
+and `instanceOf` from [MooTools Core](https://github.com/mootools/mootools-core), `$.type` from
 [jQuery](https://github.com/jquery/jquery), and the [`mout/lang`](https://github.com/mout/mout/tree/master/src/lang)
 collection. It also builds upon [`mout-lang-type`](https://github.com/ChristianGrete/mout-lang-type), an unofficial
 extension module that was itself inspired by the type-checking patterns found in MooTools and jQuery.
@@ -53,7 +53,6 @@ Copyright © 2025 ([MIT][repository-license-url]) [Christian Grete][repository-o
 [Denoverse][repository-organization-url] and [contributors][repository-contributors-url]
 
 [repository-contributors-url]: https://github.com/denoverse/lang/graphs/contributors
-[repository-github-url]: https://github.com/denoverse/lang
 [repository-license-url]: LICENSE
 [repository-organization-url]: https://github.com/denoverse
 [repository-owner-url]: https://christiangrete.com

@@ -74,7 +74,7 @@ involved.
 
 ## Special thanks
 
-A big **thank you** to the [original authors](AUTHORS.md) of the libraries that inspired this project. ❤️
+A big _thank you_ to the [original authors](AUTHORS.md) of the libraries that inspired this project. ❤️
 
 Thanks also to [OpenAI](https://github.com/OPENAI) and ChatGPT for providing an exceptional pair programmer that
 contributed significantly to both productivity and code quality. 🦾
