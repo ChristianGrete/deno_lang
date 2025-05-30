@@ -1,4 +1,4 @@
-# The History Behind [deno\_lang][repository-github-url]
+# The history behind [deno\_lang][repository-github-url]
 
 A few words from the project's originator, [Christian Grete][repository-owner-profile], about the background and
 motivation behind this project:

@@ -1,34 +1,62 @@
-# Authors
+# The legends behind the code
 
-Authors ordered by first contribution.
+[**deno\_lang**][repository-github-url] draws inspiration from some of the most iconic JavaScript utilities of the past
+— most notably `typeOf` and `instanceOf` from [MooTools Core](https://github.com/mootools/mootools-core), `$.type` from
+[jQuery](https://github.com/jquery/jquery), and the [`mout/lang`](https://github.com/mout/mout/tree/master/src/lang)
+collection. It also builds upon [`mout-lang-type`](https://github.com/ChristianGrete/mout-lang-type), an unofficial
+extension module that was itself inspired by the type-checking patterns found in MooTools and jQuery.
 
-| Date       | Name                        | Handle                                               |
-| ---------- | --------------------------- | ---------------------------------------------------- |
-| 2006-12-12 | Valerio Proietti            | [@kamicane](https://github.com/kamicane)             |
-| 2006-12-17 | Christophe Beyls            | [@cbeyls](https://github.com/cbeyls)                 |
-| 2006-12-23 | John Resig                  | [@jeresig](https://github.com/jeresig)               |
-| 2007-03-26 | Harald Kirschner            | [@digitarald](https://github.com/digitarald)         |
-| 2007-09-20 | Olmo Maldonado              | [@ibolmo](https://github.com/ibolmo)                 |
-| 2008-04-24 | Jörn Zaefferer              | [@jzaefferer](https://github.com/jzaefferer)         |
-| 2008-04-25 | Ariel Flesler               | [@flesler](https://github.com/flesler)               |
-| 2009-07-16 | Yehuda Katz                 | [@wycats](https://github.com/wycats)                 |
-| 2009-11-09 | Robert Katić                | [@rkatic](https://github.com/rkatic)                 |
-| 2010-03-08 | Christoph Nakazawa          | [@cpojer](https://github.com/cpojer)                 |
-| 2011-07-25 | Rick Waldron                | [@rwaldron](https://github.com/rwaldron)             |
-| 2011-10-12 | Dave Methvin                | [@dmethvin](https://github.com/dmethvin)             |
-| 2011-10-14 | Aaron Newton                | [@anutron](https://github.com/anutron)               |
-| 2011-10-31 | Miller Medeiros             | [@millermedeiros](https://github.com/millermedeiros) |
-| 2011-12-06 | Rafaël Blais Masson         | [@rafbm](https://github.com/rafbm)                   |
-| 2012-01-25 | André Cruz                  | [@satazor](https://github.com/satazor)               |
-| 2012-12-10 | Richard Gibson              | [@gibson042](https://github.com/gibson042)           |
-| 2012-12-23 | Sebastian Burkhard          | [@hasclass](https://github.com/hasclass)             |
-| 2013-01-11 | Conrad Zimmerman            | [@conradz](https://github.com/conradz)               |
-| 2013-02-11 | Arian Stolwijk              | [@arian](https://github.com/arian)                   |
-| 2013-04-04 | Michał Gołębiowski-Owczarek | [@mgol](https://github.com/mgol)                     |
-| 2014-05-18 | Garrick Cheung              | [@GCheung55](https://github.com/GCheung55)           |
-| 2015-04-30 | Timmy Willison              | [@timmywil](https://github.com/timmywil)             |
-| 2015-07-27 | Thomas Tortorini            | [@mr21](https://github.com/mr21)                     |
-| 2015-09-06 | Christian Grete             | [@ChristianGrete](https://github.com/ChristianGrete) |
-| 2015-10-17 | Liza Ramo Sessler           | [@LizaLemons](https://github.com/LizaLemons)         |
-| 2016-01-25 | Steve Mao                   | [@stevemao](https://github.com/stevemao)             |
-| 2017-03-05 | Max Nordlund                | [@maxnordlund](https://github.com/maxnordlund)       |
+To express our gratitude to the original authors of these functions across the various libraries, we went through the
+commit histories by hand — using `git blame` and good old-fashioned detective work — to track down each original author
+based on their first contribution.
+
+The list below is a chronological snapshot of that journey:
+
+| Date               | Name                        | GitHub handle                                        |
+| ------------------ | --------------------------- | ---------------------------------------------------- |
+| December 12, 2006  | Valerio Proietti            | [@kamicane](https://github.com/kamicane)             |
+| December 17, 2006  | Christophe Beyls            | [@cbeyls](https://github.com/cbeyls)                 |
+| December 23, 2006  | John Resig                  | [@jeresig](https://github.com/jeresig)               |
+| March 26, 2007     | Harald Kirschner            | [@digitarald](https://github.com/digitarald)         |
+| September 20, 2007 | Olmo Maldonado              | [@ibolmo](https://github.com/ibolmo)                 |
+| April 24, 2008     | Jörn Zaefferer              | [@jzaefferer](https://github.com/jzaefferer)         |
+| April 25, 2008     | Ariel Flesler               | [@flesler](https://github.com/flesler)               |
+| July 16, 2009      | Yehuda Katz                 | [@wycats](https://github.com/wycats)                 |
+| November 9, 2009   | Robert Katić                | [@rkatic](https://github.com/rkatic)                 |
+| March 8, 2010      | Christoph Nakazawa          | [@cpojer](https://github.com/cpojer)                 |
+| July 25, 2011      | Rick Waldron                | [@rwaldron](https://github.com/rwaldron)             |
+| October 12, 2011   | Dave Methvin                | [@dmethvin](https://github.com/dmethvin)             |
+| October 14, 2011   | Aaron Newton                | [@anutron](https://github.com/anutron)               |
+| October 31, 2011   | Miller Medeiros             | [@millermedeiros](https://github.com/millermedeiros) |
+| December 6, 2011   | Rafaël Blais Masson         | [@rafbm](https://github.com/rafbm)                   |
+| January 25, 2012   | André Cruz                  | [@satazor](https://github.com/satazor)               |
+| December 10, 2012  | Richard Gibson              | [@gibson042](https://github.com/gibson042)           |
+| December 23, 2012  | Sebastian Burkhard          | [@hasclass](https://github.com/hasclass)             |
+| January 11, 2013   | Conrad Zimmerman            | [@conradz](https://github.com/conradz)               |
+| February 11, 2013  | Arian Stolwijk              | [@arian](https://github.com/arian)                   |
+| April 4, 2013      | Michał Gołębiowski-Owczarek | [@mgol](https://github.com/mgol)                     |
+| May 18, 2014       | Garrick Cheung              | [@GCheung55](https://github.com/GCheung55)           |
+| April 30, 2015     | Timmy Willison              | [@timmywil](https://github.com/timmywil)             |
+| July 27, 2015      | Thomas Tortorini            | [@mr21](https://github.com/mr21)                     |
+| September 6, 2015  | Christian Grete             | [@ChristianGrete](https://github.com/ChristianGrete) |
+| October 17, 2015   | Liza Ramo Sessler           | [@LizaLemons](https://github.com/LizaLemons)         |
+| January 25, 2016   | Steve Mao                   | [@stevemao](https://github.com/stevemao)             |
+| March 5, 2017      | Max Nordlund                | [@maxnordlund](https://github.com/maxnordlund)       |
+
+To all of you: **thank you** — for your code, your ideas, and the memories of an entire era. You’re credited with inline
+links to your original implementations in the relevant files, and listed as co-authors in the project’s commit history.
+❤️
+
+Thanks also to [OpenAI](https://github.com/OPENAI) and ChatGPT for providing an exceptional pair programmer that
+contributed significantly to both productivity and code quality. 🦾
+
+---
+
+Copyright © 2025 ([MIT][repository-license-url]) [Christian Grete][repository-owner-url] for
+[Denoverse][repository-organization-url] and [contributors][repository-contributors-url]
+
+[repository-contributors-url]: https://github.com/denoverse/lang/graphs/contributors
+[repository-github-url]: https://github.com/denoverse/lang
+[repository-license-url]: LICENSE
+[repository-organization-url]: https://github.com/denoverse
+[repository-owner-url]: https://christiangrete.com
