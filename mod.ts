@@ -18,6 +18,7 @@ export { isComplex } from "./is_complex.ts";
 export { type Constructor, isConstructor } from "./is_constructor.ts";
 export { isDate } from "./is_date.ts";
 export { isEmpty } from "./is_empty.ts";
+export { isError } from "./is_error.ts";
 export { isFinite } from "./is_finite.ts";
 export { isFloat } from "./is_float.ts";
 export { type Func, isFunction } from "./is_function.ts";
