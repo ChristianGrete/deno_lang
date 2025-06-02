@@ -24,6 +24,7 @@ export { isFloat } from "./is_float.ts";
 export { type Func, isFunction } from "./is_function.ts";
 export { isInstance } from "./is_instance.ts";
 export { isInteger } from "./is_integer.ts";
+export { isMap } from "./is_map.ts";
 export { isNaN } from "./is_nan.ts";
 export { isNull } from "./is_null.ts";
 export { isNumber } from "./is_number.ts";
