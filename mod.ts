@@ -31,6 +31,7 @@ export { isNumeric, type Numeric } from "./is_numeric.ts";
 export { isObject, type Obj } from "./is_object.ts";
 export { isPlainObject } from "./is_plain_object.ts";
 export { isPrimitive, type Primitive, type PrimitiveType, primitiveTypes } from "./is_primitive.ts";
+export { isPromise } from "./is_promise.ts";
 export { isRegExp } from "./is_regexp.ts";
 export { isString } from "./is_string.ts";
 export { isSymbol } from "./is_symbol.ts";
