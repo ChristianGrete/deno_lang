@@ -49,9 +49,13 @@ export function toNumber(value: unknown, strict = false): number {
 
   if (type === "string") {
     const str = (value as string).trim();
+
     if (str === "") return 0;
+
     if (strict && !strictNumberPattern.test(str)) return NaN;
+
     const parsed = parseFloat(str);
+
     return isNaN(parsed) ? NaN : parsed;
   }
 
