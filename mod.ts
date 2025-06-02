@@ -11,6 +11,7 @@ export { type Constructable, instanceOf } from "./instance_of.ts";
 export { is } from "./is.ts";
 export { type Arguments, isArguments } from "./is_arguments.ts";
 export { isArray } from "./is_array.ts";
+export { isArrayLike } from "./is_array_like.ts";
 export { isBoolean } from "./is_boolean.ts";
 export { isComplex } from "./is_complex.ts";
 export { type Constructor, isConstructor } from "./is_constructor.ts";
@@ -31,6 +32,7 @@ export { isRegExp } from "./is_regexp.ts";
 export { isString } from "./is_string.ts";
 export { type InferredByType, isType } from "./is_type.ts";
 export { isUndefined } from "./is_undefined.ts";
+export { isWindow } from "./is_window.ts";
 export { isnt } from "./isnt.ts";
 export {
   type BuiltinTagLabel,
@@ -40,6 +42,8 @@ export {
   tagLabelOf,
 } from "./tag_label_of.ts";
 export { type BuiltinTag, type ExtendedTag, type NullOrUndefinedTag, type Tag, tagOf } from "./tag_of.ts";
+export { type ArrayFrom, toArray } from "./to_array.ts";
+export { toNumber } from "./to_number.ts";
 export {
   type BuiltinType,
   type ExtendedType,
