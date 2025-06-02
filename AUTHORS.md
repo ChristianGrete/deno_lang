@@ -43,7 +43,7 @@ Here’s a scroll through history, in chronological order:
 | [@stevemao](https://github.com/stevemao)             | Steve Mao                   | January 25, 2016   |
 | [@maxnordlund](https://github.com/maxnordlund)       | Max Nordlund                | March 5, 2017      |
 
-To all of you: **thank you** — for your code, your ideas, and the memories of an entire era. ❤️
+To all of you: **THANK YOU** — for your code, your ideas, and the memories of an entire era. ❤️
 
 We’ve linked the original implementations in each relevant file, listed their authors chronologically, and credited each
 of you as a co-author in our commit history.
