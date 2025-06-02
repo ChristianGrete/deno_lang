@@ -18,6 +18,7 @@ export { type Constructor, isConstructor } from "./is_constructor.ts";
 export { isDate } from "./is_date.ts";
 export { isEmpty } from "./is_empty.ts";
 export { isFinite } from "./is_finite.ts";
+export { isFloat } from "./is_float.ts";
 export { type Func, isFunction } from "./is_function.ts";
 export { isInstance } from "./is_instance.ts";
 export { isInteger } from "./is_integer.ts";
