@@ -44,6 +44,7 @@ export {
 export { type BuiltinTag, type ExtendedTag, type NullOrUndefinedTag, type Tag, tagOf } from "./tag_of.ts";
 export { type ArrayFrom, toArray } from "./to_array.ts";
 export { toNumber } from "./to_number.ts";
+export { toString } from "./to_string.ts";
 export {
   type BuiltinType,
   type ExtendedType,

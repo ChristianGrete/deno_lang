@@ -9,9 +9,12 @@ function getArguments(_x: string, _y: string): ArrayLike<string> {
 Deno.test("toArray() returns a shallow copy for arrays", () => {
   const original = [1, 2, 3];
   const result = toArray(original);
+
   assertEquals(result, [1, 2, 3]);
+
   // ensure it is a copy
   result[0] = 999;
+
   assertEquals(original[0], 1);
 });
 
@@ -45,6 +48,7 @@ Deno.test("toArray() falls back to wrapping when slicing fails", () => {
   };
 
   const result = toArray(evil);
+
   assertEquals(result.length, 1);
   assertStrictEquals(result[0], evil);
 });
