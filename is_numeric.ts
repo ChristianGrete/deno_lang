@@ -2,9 +2,9 @@
  * Utility module for checking whether a value is numeric (i.e. a finite
  * number or a string that can be coerced to a finite number).
  *
- * This function behaves similarly to `jQuery.isNumeric` in version 3.x,
- * returning `true` for values like `"42"`, `"0xFF"`, or `8e5`, and `false`
- * for `NaN`, `Infinity`, or strings that cannot be parsed to numbers.
+ * This implementation returns `true` for values like `"42"`, `"0xFF"`, or
+ * `8e5`, and `false` for `NaN`, `Infinity`, or strings that cannot be parsed
+ * to numbers.
  *
  * @author Dave Methvin <dave.methvin@gmail.com>
  * @author Richard Gibson <richard.gibson@gmail.com>
