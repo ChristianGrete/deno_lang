@@ -33,6 +33,7 @@ export { isPlainObject } from "./is_plain_object.ts";
 export { isPrimitive, type Primitive, type PrimitiveType, primitiveTypes } from "./is_primitive.ts";
 export { isRegExp } from "./is_regexp.ts";
 export { isString } from "./is_string.ts";
+export { isSymbol } from "./is_symbol.ts";
 export { type InferredByType, isType } from "./is_type.ts";
 export { isUndefined } from "./is_undefined.ts";
 export { isWindow } from "./is_window.ts";
