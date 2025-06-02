@@ -19,6 +19,7 @@ const allowedFilenames = new Set([
   ".github",
   ".gitignore",
   "AUTHORS.md",
+  "CODE_OF_CONDUCT.md",
   "CODEOWNERS",
   "CONTRIBUTING.md",
   "HISTORY.md",
