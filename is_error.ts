@@ -18,7 +18,7 @@
 import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
- * Checks whether a value is an error.
+ * Checks whether a value is an error object.
  *
  * This includes all standard error types and custom subclasses of `Error`.
  *

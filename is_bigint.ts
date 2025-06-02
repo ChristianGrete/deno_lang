@@ -1,11 +1,8 @@
 /**
  * Utility module for checking whether a value is a big integer.
  *
- * Accepts both primitive big integer values and boxed `BigInt` objects. Uses
- * internal type checking to reliably detect both.
- *
- * Big integers are values created using the `BigInt()` function, such as `123n`.
- * Note that `new BigInt()` is not allowed in JavaScript, but `Object(123n)` is.
+ * Uses `Object.prototype.toString` to ensure reliable detection of big integer
+ * values, including wrapped ones (e.g. `Object(42n)`).
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
