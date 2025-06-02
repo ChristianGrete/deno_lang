@@ -12,6 +12,7 @@ export { is } from "./is.ts";
 export { type Arguments, isArguments } from "./is_arguments.ts";
 export { isArray } from "./is_array.ts";
 export { isArrayLike } from "./is_array_like.ts";
+export { isBigInt } from "./is_bigint.ts";
 export { isBoolean } from "./is_boolean.ts";
 export { isComplex } from "./is_complex.ts";
 export { type Constructor, isConstructor } from "./is_constructor.ts";
