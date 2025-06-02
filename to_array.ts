@@ -1,13 +1,11 @@
 /**
  * Utility module for converting any value into an array.
  *
- * This method replicates historical behavior from libraries like `jQuery` and
- * `mout`, including edge case handling for values like `String`, `RegExp`,
- * `Function`, and the global object, which expose a `.length` but should be
- * treated as single elements.
- *
  * If the value is array-like, its contents will be copied into a new array.
  * Otherwise, the value is wrapped in a single-element array.
+ *
+ * Unlike `Array.from`, this handles non-iterables like `null`, `RegExp` or
+ * `Function` without throwing.
  *
  * @author John Resig <jeresig@gmail.com>
  * @author Jörn Zaefferer <joern.zaefferer@gmail.com>

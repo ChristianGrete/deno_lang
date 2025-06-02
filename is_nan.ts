@@ -26,9 +26,6 @@ export const { isNaN: nativeIsNaN } = Number;
 /**
  * Checks whether a value is exactly the `NaN` value.
  *
- * Unlike the global `isNaN()`, this does not coerce the input and only returns
- * true for the special `NaN` value of type number.
- *
  * @example
  * isNaN(NaN); // true
  * isNaN(new Number(NaN)); // true

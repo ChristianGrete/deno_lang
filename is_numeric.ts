@@ -32,8 +32,9 @@ import { nativeIsFinite } from "./is_finite.ts";
 export type Numeric = number | string;
 
 /**
- * Checks whether a value is numeric (i.e. a finite number or a string that
- * can be coerced to one).
+ * Checks whether a value is numeric.
+ *
+ * A numeric value is a finite number or a string that can be coerced to one.
  *
  * @example
  * isNumeric(42); // true

@@ -25,8 +25,6 @@ export const { isInteger: nativeIsInteger } = Number;
 /**
  * Checks whether a value is an integer number.
  *
- * Accepts both primitive numbers and `Number` objects.
- *
  * @example
  * isInteger(42); // true
  * isInteger(new Number(3)); // true

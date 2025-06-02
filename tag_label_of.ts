@@ -2,8 +2,9 @@
  * Utility module for retrieving the tag label of a value (e.g.
  * `"[object Array]"`).
  *
- * The result is based on `Object.prototype.toString.call(value)` and may be
- * customized via `Symbol.toStringTag`.
+ * The result reflects the output of `Object.prototype.toString.call(value)`
+ * and may differ from the intrinsic type if a custom `Symbol.toStringTag`
+ * is defined.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -74,6 +75,7 @@ export const getTagLabel = toString.call.bind(toString) as (value: unknown) => T
  * tagLabelOf([]); // "[object Array]"
  * tagLabelOf(null); // "[object Null]"
  * tagLabelOf(Object.create(null)); // "[object Object]"
+ * tagLabelOf({ [Symbol.toStringTag]: "Whatever" }); // "[object Whatever]"
  *
  * @name lang/tag_label_of.tagLabelOf
  * @param {unknown} value - The value to inspect.

@@ -5,9 +5,8 @@
  * non-negative integer `.length` and corresponding index access. This includes
  * arrays, strings, `arguments`, `NodeList` objects, and similar structures.
  *
- * This implementation follows jQuery's heuristics, including a check for the
- * existence of the last indexed element to filter out objects that only pretend
- * to be array-like.
+ * This implementation filters out objects that only appear to be array-like but
+ * don't behave like iterable structures.
  *
  * @author Richard Gibson <richard.gibson@gmail.com>
  * @author Rick Waldron <waldron.rick@gmail.com>
@@ -41,8 +40,10 @@ export const hasArrayLikeShape = (value: unknown): boolean => {
 };
 
 /**
- * Checks whether a value is array-like (e.g. has a numeric `.length` and index
- * access).
+ * Checks whether a value is array-like.
+ *
+ * An array-like value has a non-negative `.length` and accessible numeric
+ * indices.
  *
  * @example
  * isArrayLike([]); // true

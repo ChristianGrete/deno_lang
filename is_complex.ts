@@ -17,8 +17,9 @@ import { unsetPrototype } from "./internal/mod.ts";
 import { isPrimitive } from "./is_primitive.ts";
 
 /**
- * Checks whether a value is complex (i.e. not a primitive like string,
- * number, etc.).
+ * Checks whether a value is complex.
+ *
+ * A complex value is any non-primitive, such as an object, array, or function.
  *
  * @example
  * isComplex({}); // true
