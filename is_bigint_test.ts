@@ -8,7 +8,7 @@ Deno.test("isBigInt() returns true for primitive bigint values", () => {
   assert(isBigInt(BigInt("123456789123456789")));
 });
 
-Deno.test("isBigInt() returns true for wrapped bigint objects", () => {
+Deno.test("isBigInt() returns true for boxed bigint objects", () => {
   assert(isBigInt(Object(42n)));
   assert(isBigInt(Object(BigInt("9999"))));
 });

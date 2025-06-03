@@ -15,6 +15,19 @@ Deno.test("toString() converts primitives to strings", () => {
   assertStrictEquals(toString(Symbol("x")), "Symbol(x)");
 });
 
+Deno.test("toString() handles boxed primitives", () => {
+  assertStrictEquals(toString(Object(42)), "42");
+  assertStrictEquals(toString(new Number(3.14)), "3.14");
+
+  assertStrictEquals(toString(Object(true)), "true");
+  assertStrictEquals(toString(new Boolean(false)), "false");
+
+  assertStrictEquals(toString(Object("abc")), "abc");
+  assertStrictEquals(toString(new String("xyz")), "xyz");
+
+  assertStrictEquals(toString(Object(Symbol("foo"))), "Symbol(foo)");
+});
+
 Deno.test("toString() converts objects to strings via String()", () => {
   assertStrictEquals(toString({}), "[object Object]");
   assertStrictEquals(toString([1, 2, 3]), "1,2,3");

@@ -8,8 +8,8 @@ Deno.test("isSymbol() returns true for primitive symbols", () => {
   assert(isSymbol(Symbol.iterator));
 });
 
-Deno.test("isSymbol() returns true for wrapped symbols", () => {
-  assert(isSymbol(Object(Symbol("wrapped"))));
+Deno.test("isSymbol() returns true for boxed symbols", () => {
+  assert(isSymbol(Object(Symbol("boxed"))));
 });
 
 Deno.test("isSymbol() returns false for non-symbol values", () => {

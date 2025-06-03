@@ -13,7 +13,7 @@
  * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/toString.js|mout@1.2.4/lang/toString}
  */
 
-import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
+import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
 /**
  * Converts a value into a string.
@@ -29,7 +29,9 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
  * @returns {string} The resulting string.
  */
 export function toString(value: unknown): string {
-  validateArgsLength(arguments);
+  const type = boundTypeOf(arguments);
+
+  if (type === "symbol" && typeof value !== "symbol") return (value as symbol).toString();
 
   return value == null ? "" : String(value);
 }

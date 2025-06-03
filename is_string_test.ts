@@ -6,7 +6,7 @@ Deno.test("isString() returns true for strings", () => {
   assert(isString(""));
   assert(isString("hello"));
   assert(isString(String("test")));
-  assert(isString(new String("wrapped")));
+  assert(isString(new String("boxed")));
 });
 
 Deno.test("isString() returns false for non-string values", () => {
