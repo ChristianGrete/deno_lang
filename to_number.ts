@@ -1,9 +1,8 @@
 /**
  * Utility module for converting a value into a number.
  *
- * This implementation normalizes common edge cases and avoids pitfalls of
- * JavaScript's `Number()` casting, such as converting `[4]` to `4` or
- * `"123abc"` to `123`.
+ * Normalizes common edge cases and avoids pitfalls of JavaScript's `Number()`
+ * casting, such as converting `[4]` to `4` or `"123abc"` to `123`.
  *
  * Falsy values like `null`, `undefined`, `false`, and empty strings return `0`.
  * Arrays and unsupported types return `NaN`. Strings are parsed using
