@@ -1,8 +1,9 @@
 /**
  * Utility module for converting a value into a number.
  *
- * Normalizes common edge cases and avoids pitfalls of JavaScript's `Number()`
- * casting, such as converting `[4]` to `4` or `"123abc"` to `123`.
+ * This implementation normalizes common edge cases and avoids pitfalls of
+ * JavaScript's `Number()` casting, such as converting `[4]` to `4` or
+ * `"123abc"` to `123`.
  *
  * Falsy values like `null`, `undefined`, `false`, and empty strings return `0`.
  * Arrays and unsupported types return `NaN`. Strings are parsed using
@@ -24,23 +25,11 @@ const { isNaN } = Number;
 const strictNumberPattern = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
 
 /**
- * Converts a value into a number.
+ * Internal implementation of {@link toNumber}.
  *
- * @example
- * toNumber("123"); // 123
- * toNumber("123abc"); // 123
- * toNumber("123abc", true); // NaN
- * toNumber([4]); // NaN
- * toNumber(null); // 0
- *
- * @name lang/to_number.toNumber
- * @param {unknown} value - The value to convert.
- * @param {boolean} [strict=false] - If `true`, only fully valid numbers are accepted.
- * @returns {number} The numeric result or `NaN` if conversion is not safe.
+ * @name lang/to_number~makeNumber
  */
-export function toNumber(value: unknown, strict = false): number {
-  validateArgsLength(arguments, 1, 2);
-
+export const makeNumber = (value: unknown, strict = false): number => {
   const type = getType(value);
 
   if (type === "number") return value as number;
@@ -62,6 +51,27 @@ export function toNumber(value: unknown, strict = false): number {
   if (type === "array" || type === "bigint" || type === "symbol") return NaN;
 
   return Number(value);
+};
+
+/**
+ * Converts a value into a number.
+ *
+ * @example
+ * toNumber("123"); // 123
+ * toNumber("123abc"); // 123
+ * toNumber("123abc", true); // NaN
+ * toNumber([4]); // NaN
+ * toNumber(null); // 0
+ *
+ * @name lang/to_number.toNumber
+ * @param {unknown} value - The value to convert.
+ * @param {boolean} [strict=false] - Whether only fully valid numbers are accepted.
+ * @returns {number} The numeric result or `NaN` if conversion is not safe.
+ */
+export function toNumber(value: unknown, strict = false): number {
+  validateArgsLength(arguments, 1, 2);
+
+  return makeNumber(value, strict);
 }
 
 unsetPrototype(toNumber);
