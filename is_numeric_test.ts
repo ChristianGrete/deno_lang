@@ -29,6 +29,7 @@ Deno.test("isNumeric() returns false for non-numeric strings", () => {
   assertFalse(isNumeric(""));
   assertFalse(isNumeric("   ")); // whitespace only
   assertFalse(isNumeric(" 42 ")); // whitespace-padded numeric string
+  assertFalse(isNumeric("123abc"));
   assertFalse(isNumeric("abcdefghijklm1234567890"));
   assertFalse(isNumeric("7.2acdgs"));
   assertFalse(isNumeric("\t\t")); // tab-only
