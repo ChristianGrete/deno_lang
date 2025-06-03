@@ -37,7 +37,7 @@ export type Numeric = number | string;
  *
  * @name lang/is_numeric~isNumberLike
  */
-const isNumberLike = (value: unknown): boolean => {
+export const isNumberLike = (value: unknown): boolean => {
   const type = getType(value);
 
   if (type === "number") return nativeIsFinite(value);

@@ -17,6 +17,10 @@ Deno.test("toNumber() returns 0 for nullish, false, and empty string values", ()
   assertStrictEquals(toNumber("   "), 0);
 });
 
+Deno.test("toNumber() returns 1 for `true` (fast-path)", () => {
+  assertStrictEquals(toNumber(true), 1);
+});
+
 Deno.test("toNumber() parses strings using parseFloat by default", () => {
   assertStrictEquals(toNumber("123"), 123);
   assertStrictEquals(toNumber("3.14"), 3.14);
@@ -24,6 +28,7 @@ Deno.test("toNumber() parses strings using parseFloat by default", () => {
   assertStrictEquals(toNumber("8e5"), 800000);
   assertStrictEquals(toNumber("123abc"), 123); // parseFloat behavior
   assertStrictEquals(toNumber("not a number"), NaN);
+  assertStrictEquals(toNumber("   42  "), 42); // still OK (trimmed)
 });
 
 Deno.test("toNumber() uses strict parsing when `strict` is true", () => {
@@ -33,7 +38,7 @@ Deno.test("toNumber() uses strict parsing when `strict` is true", () => {
   assertStrictEquals(toNumber("123abc", true), NaN);
   assertStrictEquals(toNumber("abc123", true), NaN);
   assertStrictEquals(toNumber("1.2.3", true), NaN);
-  assertStrictEquals(toNumber("   42  ", true), 42); // still OK (trimmed)
+  assertStrictEquals(toNumber("   42  ", true), NaN); // strict disallows whitespace-padded numbers
 });
 
 Deno.test("toNumber() returns NaN for arrays and unsupported types", () => {

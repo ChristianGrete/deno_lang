@@ -15,7 +15,7 @@
  */
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
-import { makeNumber } from "./to_number.ts";
+import { numberFrom } from "./to_number.ts";
 
 const { floor } = Math;
 
@@ -37,7 +37,7 @@ const { floor } = Math;
 export function toInteger(value: unknown, strict = false): number {
   validateArgsLength(arguments, 1, 2);
 
-  return floor(makeNumber(value, strict));
+  return floor(numberFrom(value, strict));
 }
 
 unsetPrototype(toInteger);

@@ -18,29 +18,31 @@
  */
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
+import { isNumberLike } from "./is_numeric.ts";
 import { getType } from "./type_of.ts";
 
 const { isNaN } = Number;
-const strictNumberPattern = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
 
 /**
  * Internal implementation of {@link toNumber}.
  *
- * @name lang/to_number~makeNumber
+ * @name lang/to_number~numberFrom
  */
-export const makeNumber = (value: unknown, strict = false): number => {
+export const numberFrom = (value: unknown, strict = false): number => {
+  if (strict) return isNumberLike(value) ? Number(value) : NaN;
+
+  if (value === true) return 1;
+
+  if (value === false || value === "" || value == null) return 0;
+
   const type = getType(value);
 
   if (type === "number") return value as number;
-
-  if (value == null || value === false || value === "") return 0;
 
   if (type === "string") {
     const str = (value as string).trim();
 
     if (str === "") return 0;
-
-    if (strict && !strictNumberPattern.test(str)) return NaN;
 
     const parsed = parseFloat(str);
 
@@ -70,7 +72,7 @@ export const makeNumber = (value: unknown, strict = false): number => {
 export function toNumber(value: unknown, strict = false): number {
   validateArgsLength(arguments, 1, 2);
 
-  return makeNumber(value, strict);
+  return numberFrom(value, strict);
 }
 
 unsetPrototype(toNumber);
