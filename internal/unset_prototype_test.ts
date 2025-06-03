@@ -20,6 +20,7 @@ Deno.test("unsetPrototype() makes prototype non-configurable, non-enumerable, no
   });
 
   const descriptor = Object.getOwnPropertyDescriptor(func, "prototype");
+
   assertEquals(descriptor?.configurable, false);
   assertEquals(descriptor?.enumerable, false);
   assertEquals(descriptor?.writable, false);
