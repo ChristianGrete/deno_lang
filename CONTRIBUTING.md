@@ -13,6 +13,7 @@ enjoyable.
 
 - [Getting started](#getting-started)
 - [Guiding principles](#guiding-principles)
+- [Scope and limitations](#scope-and-limitations)
 - [Tasks](#tasks)
 - [Prompts](#prompts)
 - [Git hooks](#git-hooks)
@@ -81,6 +82,15 @@ these guiding principles:
 - We respect the [Code of Conduct](CODE_OF_CONDUCT.md) and aim to stay open, helpful, and kind to one another
 - Non-native speakers are encouraged to use AI tools for translating into US English
 - We see AI not as a competitor, but as a sparring partner to help us reach the best possible outcome
+
+## Scope and limitations
+
+**deno\_lang** provides runtime type utilities — that means everything here is about identifying, validating, or
+ensuring types at runtime. If it deals with types (not values), it belongs here. If it’s about manipulating data,
+collections, or doing “real work” — it’s probably better off in a separate library.
+
+This isn’t a grab bag for general utilities. We don’t include helpers for arrays, strings, math, or other
+domain-specific logic. Think of this project as the toolbox for type safety — not for working with the types themselves.
 
 ## Tasks
 
