@@ -19,8 +19,9 @@
  * @see {@link https://github.com/jquery/jquery/blob/3.2.1/src/core.js#L222|jquery@3.2.1/core.isNumeric}
  */
 
-import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
+import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
 import { nativeIsFinite } from "./is_finite.ts";
+import { getType } from "./type_of.ts";
 
 /**
  * Represents a finite number or a string that can be coerced to one.
@@ -30,6 +31,21 @@ import { nativeIsFinite } from "./is_finite.ts";
  * @name lang/is_numeric.Numeric
  */
 export type Numeric = number | string;
+
+/**
+ * Internal implementation of {@link isNumeric}.
+ *
+ * @name lang/is_numeric~isNumberLike
+ */
+const isNumberLike = (value: unknown): boolean => {
+  const type = getType(value);
+
+  if (type === "number") return nativeIsFinite(value);
+
+  if (type === "string" && value !== "" && value === (value as string).trim()) return nativeIsFinite(Number(value));
+
+  return false;
+};
 
 /**
  * Checks whether a value is numeric.
@@ -48,13 +64,9 @@ export type Numeric = number | string;
  * @returns {value is Numeric} Whether the value is numeric.
  */
 export function isNumeric(value: unknown): value is Numeric {
-  const type = boundTypeOf(arguments);
+  validateArgsLength(arguments);
 
-  if (type === "number") return nativeIsFinite(value);
-
-  if (type === "string" && value !== "" && value === (value as string).trim()) return nativeIsFinite(Number(value));
-
-  return false;
+  return isNumberLike(value);
 }
 
 unsetPrototype(isNumeric);
