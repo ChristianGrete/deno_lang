@@ -50,6 +50,8 @@ export {
 } from "./tag_label_of.ts";
 export { type BuiltinTag, type ExtendedTag, type NullOrUndefinedTag, type Tag, tagOf } from "./tag_of.ts";
 export { type ArrayFrom, toArray } from "./to_array.ts";
+export { toError } from "./to_error.ts";
+export { toInteger } from "./to_integer.ts";
 export { toNumber } from "./to_number.ts";
 export { toString } from "./to_string.ts";
 export {
