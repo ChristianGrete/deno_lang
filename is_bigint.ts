@@ -24,7 +24,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  *
  * @name lang/is_bigint.isBigInt
  * @param {unknown} _value - The value to check.
- * @returns {_value is bigint} Whether the value is a `bigint`.
+ * @returns {_value is bigint} Whether the value is a big integer.
  * @see {@link lang/type_of.typeOf}
  */
 export function isBigInt(_value: unknown): _value is bigint {

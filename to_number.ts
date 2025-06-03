@@ -66,7 +66,7 @@ export const makeNumber = (value: unknown, strict = false): number => {
  * @name lang/to_number.toNumber
  * @param {unknown} value - The value to convert.
  * @param {boolean} [strict=false] - Whether only fully valid numbers are accepted.
- * @returns {number} The numeric result or `NaN` if conversion is not safe.
+ * @returns {number} The resulting number or `NaN` if conversion is not safe.
  */
 export function toNumber(value: unknown, strict = false): number {
   validateArgsLength(arguments, 1, 2);

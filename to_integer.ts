@@ -31,7 +31,7 @@ const { floor } = Math;
  * @name lang/to_integer.toInteger
  * @param {unknown} value - The value to convert.
  * @param {boolean} [strict=false] - Whether only fully valid numbers are accepted.
- * @returns {number} The floored integer result or `NaN` if conversion is not safe.
+ * @returns {number} The resulting integer or `NaN` if conversion is not safe.
  * @see {@link lang/to_number.toNumber}
  */
 export function toInteger(value: unknown, strict = false): number {

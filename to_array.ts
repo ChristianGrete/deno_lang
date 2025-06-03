@@ -48,7 +48,7 @@ export type ArrayFrom<Value> = Value extends ArrayLike<infer Item> ? Item[] : Va
  *
  * @name lang/to_array.toArray
  * @param {Value} value - The value to convert.
- * @returns {ArrayFrom<Value>} A new array.
+ * @returns {ArrayFrom<Value>} The resulting array.
  * @template Value
  */
 export function toArray<Value = unknown>(value: Value): ArrayFrom<Value> {
