@@ -18,7 +18,7 @@ import { unsetPrototype, validateArgsLength, validateStringArg } from "./interna
 import type { Arguments } from "./is_arguments.ts";
 import type { Func } from "./is_function.ts";
 import type { Obj } from "./is_object.ts";
-import { getTag, type Tag } from "./tag_of.ts";
+import { getTag, type Tag as TagString } from "./tag_of.ts";
 
 /**
  * Mapping from tag strings to their corresponding TypeScript types.
@@ -60,16 +60,16 @@ export interface InferredByTag {
  *
  * @name lang/has_tag.hasTag
  * @param {unknown} value - The value to check.
- * @param {Tag} tag - The expected tag string as returned by {@link lang/tag_of.tagOf}.
- * @returns {value is InferredByTag[T]} Whether the value has the expected tag.
+ * @param {TagString} tag - The expected tag string as returned by {@link lang/tag_of.tagOf}.
+ * @returns {value is InferredByTag[Tag]} Whether the value has the expected tag.
  * @see {@link lang/tag_of.tagOf}
- * @template T
+ * @template Tag
  */
-export function hasTag<T extends keyof InferredByTag>(value: unknown, tag: T): value is InferredByTag[T]; // eslint-disable-line unused-imports/no-unused-vars
+export function hasTag<Tag extends keyof InferredByTag>(value: unknown, tag: Tag): value is InferredByTag[Tag]; // eslint-disable-line unused-imports/no-unused-vars
 
-export function hasTag<T extends string>(value: unknown, tag: T): boolean; // eslint-disable-line unused-imports/no-unused-vars
+export function hasTag<Tag extends string>(value: unknown, tag: Tag): boolean; // eslint-disable-line unused-imports/no-unused-vars
 
-export function hasTag(value: unknown, tag: Tag): boolean {
+export function hasTag(value: unknown, tag: TagString): boolean {
   validateArgsLength(arguments, 2);
   validateStringArg("tag", tag);
 

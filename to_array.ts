@@ -42,7 +42,7 @@ export type ArrayFrom<Value> = Value extends ArrayLike<infer Item> ? Item[] : Va
  *
  * @example
  * toArray([1, 2, 3]); // [1, 2, 3]
- * toArray("hi"); // ["hi"]
+ * toArray("hi"); // ["h", "i"]
  * toArray({ 0: "a", 1: "b", length: 2 }); // ["a", "b"]
  * toArray(null); // []
  *

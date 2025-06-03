@@ -16,7 +16,7 @@ import { unsetPrototype, validateArgsLength, validateStringArg } from "./interna
 import type { Arguments } from "./is_arguments.ts";
 import type { Func } from "./is_function.ts";
 import type { Obj } from "./is_object.ts";
-import { getType, type Type } from "./type_of.ts";
+import { getType, type Type as TypeString } from "./type_of.ts";
 
 /**
  * Mapping from runtime type strings to their corresponding TypeScript types.
@@ -56,12 +56,12 @@ export interface InferredByType {
  *
  * @name lang/is_type.isType
  * @param {unknown} value - The value to check.
- * @param {Type} type - The expected type string as returned by {@link lang/type_of.typeOf}.
- * @returns {value is InferredByType[T]} Whether the value has the expected type.
+ * @param {TypeString} type - The expected type string as returned by {@link lang/type_of.typeOf}.
+ * @returns {value is InferredByType[Type]} Whether the value has the expected type.
  * @see {@link lang/type_of.typeOf}
- * @template T
+ * @template Type
  */
-export function isType<T extends Type>(value: unknown, type: T): value is InferredByType[T] {
+export function isType<Type extends TypeString>(value: unknown, type: Type): value is InferredByType[Type] {
   validateArgsLength(arguments, 2);
   validateStringArg("type", type);
 
