@@ -68,6 +68,7 @@ export const numberFrom = (value: unknown, strict = false): number => {
  * @param {unknown} value - The value to convert.
  * @param {boolean} [strict=false] - Whether only fully valid numbers are accepted.
  * @returns {number} The resulting number or `NaN` if conversion is not safe.
+ * @see {@link lang/is_numeric.isNumeric}
  */
 export function toNumber(value: unknown, strict = false): number {
   validateArgsLength(arguments, 1, 2);
