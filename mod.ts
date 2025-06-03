@@ -53,6 +53,7 @@ export { type ArrayFrom, toArray } from "./to_array.ts";
 export { toError } from "./to_error.ts";
 export { toInteger } from "./to_integer.ts";
 export { toNumber } from "./to_number.ts";
+export { type PromiseFrom, toPromise } from "./to_promise.ts";
 export { toString } from "./to_string.ts";
 export {
   type BuiltinType,
