@@ -21,6 +21,14 @@ import { getType } from "./type_of.ts";
 const resolve = Promise.resolve.bind(Promise);
 
 /**
+ * Determines the return type of {@link toPromise} for a given input type.
+ *
+ * @name lang/to_promise.PromiseFrom
+ * @template Value
+ */
+export type PromiseFrom<Value> = Value extends PromiseLike<infer Resolved> ? Promise<Resolved> : Promise<Value>;
+
+/**
  * Converts a value into a `Promise` object.
  *
  * @example
@@ -30,20 +38,20 @@ const resolve = Promise.resolve.bind(Promise);
  * await toPromise({ then: (res) => res("done") }); // "done"
  *
  * @name lang/to_promise.toPromise
- * @param {Resolved | PromiseLike<Resolved>} value - The value to convert.
- * @returns {Promise<Resolved>} The resulting `Promise` object.
- * @template Resolved
+ * @param {Value} value - The value to convert.
+ * @returns {PromiseFrom<Value>} The resulting `Promise` object.
+ * @template Value
  */
-export function toPromise<Resolved = unknown>(value: unknown): Promise<Resolved> {
+export function toPromise<Value = unknown>(value: Value): PromiseFrom<Value> {
   const type = boundTypeOf(arguments);
 
-  if (type === "promise") return value as Promise<Resolved>;
+  if (type === "promise") return value as PromiseFrom<Value>;
 
-  if (type === "object" && getType((value as Record<string, unknown>).then) === "function") {
-    return resolve(value as PromiseLike<Resolved>);
+  if (type === "object" && getType((value as PromiseLike<Value>).then) === "function") {
+    return resolve(value) as PromiseFrom<Value>;
   }
 
-  return resolve(value as Resolved);
+  return resolve(value) as PromiseFrom<Value>;
 }
 
 unsetPrototype(toPromise);
