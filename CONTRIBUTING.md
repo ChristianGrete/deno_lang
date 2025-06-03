@@ -85,12 +85,12 @@ these guiding principles:
 
 ## Scope and limitations
 
-**deno\_lang** provides runtime type utilities — that means everything here is about identifying, validating, or
-ensuring types at runtime. If it deals with types (not values), it belongs here. If it’s about manipulating data,
-collections, or doing “real work” — it’s probably better off in a separate library.
+We provide runtime type utilities — that means everything in this project is about identifying, validating, or ensuring
+types at runtime. If it deals with types (not values), it belongs here. If it’s about manipulating data, collections, or
+doing “real work” — it’s probably better off in a separate library.
 
 This isn’t a grab bag for general utilities. We don’t include helpers for arrays, strings, math, or other
-domain-specific logic. Think of this project as the toolbox for type safety — not for working with the types themselves.
+domain-specific logic. Think of this as a toolbox for type safety — not for working with the types themselves.
 
 ## Tasks
 
