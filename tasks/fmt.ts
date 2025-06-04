@@ -6,11 +6,11 @@
 
 import { bold, red } from "@std/fmt/colors";
 
-import { filterFilesForLinters } from "./lint.ts";
+import { filterFilesForLinters as filterFilesForFormatters } from "./lint.ts";
 import { run } from "./run.ts";
 
 if (import.meta.main) {
-  const { dprintFiles, eslintFiles, hasNoFiles, lintFiles } = filterFilesForLinters(Deno.args);
+  const { dprintFiles, eslintFiles, hasNoFiles, lintFiles } = filterFilesForFormatters(Deno.args);
 
   try {
     if (hasNoFiles || lintFiles.length > 0) await run(["deno", "lint", "-q", "--fix", ...lintFiles]);
