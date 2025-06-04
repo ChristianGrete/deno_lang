@@ -97,7 +97,7 @@ const getValidatedOptions = <ErrorInstance extends Error>(
  * @param {ToErrorOptions<ErrorInstance>} [options] - An optional configuration object.
  * @returns {ErrorInstance} The resulting error object.
  * @see {@link ToErrorOptions}
- * @template [ErrorInstance=Error] - The type of error object returned.
+ * @template [ErrorInstance=Error] - An optional type of error object returned.
  * @throws {TypeError} If `value` is a symbol (not supported by error constructors).
  */
 export function toError<ErrorInstance extends Error = Error>(
