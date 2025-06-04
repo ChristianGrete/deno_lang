@@ -23,6 +23,7 @@ Here’s a scroll through history, in chronological order:
 | [@flesler](https://github.com/flesler)               | Ariel Flesler               | April 25, 2008     |
 | [@wycats](https://github.com/wycats)                 | Yehuda Katz                 | July 16, 2009      |
 | [@rkatic](https://github.com/rkatic)                 | Robert Katić                | November 9, 2009   |
+| [@geary](https://github.com/geary)                   | Michael Geary               | December 6, 2009   |
 | [@cpojer](https://github.com/cpojer)                 | Christoph Nakazawa          | March 8, 2010      |
 | [@rwaldron](https://github.com/rwaldron)             | Rick Waldron                | July 25, 2011      |
 | [@dmethvin](https://github.com/dmethvin)             | Dave Methvin                | October 12, 2011   |
