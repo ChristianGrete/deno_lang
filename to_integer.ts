@@ -37,7 +37,7 @@ const { floor } = Math;
 export function toInteger(value: unknown, strict = false): number {
   validateArgsLength(arguments, 1, 2);
 
-  return floor(numberFrom(value, strict));
+  return floor(numberFrom(value, { strict }));
 }
 
 unsetPrototype(toInteger);
