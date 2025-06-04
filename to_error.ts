@@ -5,7 +5,9 @@
  * values, error-like objects, and native `Error` instances.
  *
  * In strict mode, non-error input is wrapped with descriptive fallback
- * messages. Symbols are not supported and throw a `TypeError`.
+ * messages. Symbols are not supported and throw a `TypeError`. The optional
+ * `options` object accepts only valid values and silently falls back to safe
+ * defaults for unknown or invalid types.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
