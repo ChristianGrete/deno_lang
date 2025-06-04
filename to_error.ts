@@ -34,8 +34,6 @@ export interface ErrorConstructorOf<ErrorInstance extends Error> extends Omit<Er
   new (message?: string, options?: ErrorOptions): ErrorInstance; // eslint-disable-line unused-imports/no-unused-vars
 }
 
-/* eslint-disable jsdoc/check-template-names, jsdoc/require-template */
-
 /**
  * Options object for customizing behavior of {@link toError}.
  *
@@ -44,9 +42,9 @@ export interface ErrorConstructorOf<ErrorInstance extends Error> extends Omit<Er
  * @name lang/to_error.ToErrorOptions
  * @property {ErrorConstructorOf<ErrorInstance>} [errorConstructor=Error] - An optional custom `Error` constructor to use (e.g. `TypeError`).
  * @property {boolean} [strict=false] - Whether to enforce descriptive fallback messages.
- * @template [ErrorInstance=Error] - The specific `Error` subclass.
+ * @template ErrorInstance - The specific `Error` subclass.
  */
-export interface ToErrorOptions<ErrorInstance extends Error = Error> {
+export interface ToErrorOptions<ErrorInstance extends Error> {
   /**
    * An optional custom `Error` constructor to use (e.g. `TypeError`).
    *
@@ -60,8 +58,6 @@ export interface ToErrorOptions<ErrorInstance extends Error = Error> {
    */
   strict?: boolean;
 }
-
-/* eslint-enable jsdoc/check-template-names, jsdoc/require-template */
 
 /**
  * Local helper to validate and normalize options for {@link toError}.
@@ -103,7 +99,7 @@ const getValidatedOptions = <ErrorInstance extends Error>(
  * @returns {ErrorInstance} The resulting `Error` object.
  * @see {@link ToErrorOptions}
  * @template [ErrorInstance=Error] - The specific `Error` subclass.
- * @throws {TypeError} If `value` is a symbol.
+ * @throws {TypeError} If `value` is a symbol (not supported by `Error` constructors).
  */
 export function toError<ErrorInstance extends Error = Error>(
   value: unknown,
