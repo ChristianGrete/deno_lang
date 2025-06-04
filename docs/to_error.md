@@ -11,6 +11,14 @@ unknown or invalid types.
 
 ---
 
+## Members
+
+- [`type ErrorConstructorOf`](#interface-errorconstructorof)
+- [`toError`](#function-toerror)
+- [`type ToErrorOptions`](#interface-toerroroptions)
+
+---
+
 ## Function: `toError()`
 
 Converts a value into an error object.
