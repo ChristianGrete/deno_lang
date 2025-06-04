@@ -45,7 +45,7 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 
 ### Arguments
 
-| Argument   | Type                            | Default                                      | Description                       |
+| Argument   | Type                            | Default value                                | Description                       |
 | ---------- | ------------------------------- | -------------------------------------------- | --------------------------------- |
 | `value`    | `unknown`                       | _Required_                                   | The value to convert.             |
 | `options?` | `ToErrorOptions<ErrorInstance>` | `{ errorConstructor: Error, strict: false }` | An optional configuration object. |
@@ -54,11 +54,11 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 
 `ErrorInstance` - The resulting error object.
 
-### Templates
+### Type parameters
 
-| Template        | Default | Description                                |
-| --------------- | ------- | ------------------------------------------ |
-| `ErrorInstance` | `Error` | An optional type of error object returned. |
+| Type parameter  | Default value | Description                                |
+| --------------- | ------------- | ------------------------------------------ |
+| `ErrorInstance` | `Error`       | An optional type of error object returned. |
 
 ### Throws
 
@@ -83,16 +83,16 @@ interface ToErrorOptions<ErrorInstance extends Error> {
 
 ### Properties
 
-| Property            | Type                                | Default | Description                                              |
-| ------------------- | ----------------------------------- | ------- | -------------------------------------------------------- |
-| `errorConstructor?` | `ErrorConstructorOf<ErrorInstance>` | `Error` | An optional error constructor to use (e.g. `TypeError`). |
-| `strict?`           | `boolean`                           | `false` | Whether to enforce descriptive fallback messages.        |
+| Property            | Type                                | Default value | Description                                              |
+| ------------------- | ----------------------------------- | ------------- | -------------------------------------------------------- |
+| `errorConstructor?` | `ErrorConstructorOf<ErrorInstance>` | `Error`       | An optional error constructor to use (e.g. `TypeError`). |
+| `strict?`           | `boolean`                           | `false`       | Whether to enforce descriptive fallback messages.        |
 
-### Templates
+### Type parameters
 
-| Template        | Default    | Description                     |
-| --------------- | ---------- | ------------------------------- |
-| `ErrorInstance` | _Required_ | The error object to be created. |
+| Type parameter  | Default value | Description                     |
+| --------------- | ------------- | ------------------------------- |
+| `ErrorInstance` | _Required_    | The error object to be created. |
 
 ---
 
@@ -111,11 +111,11 @@ interface ErrorConstructorOf<ErrorInstance extends Error> extends Omit<ErrorCons
 }
 ```
 
-### Templates
+### Type parameters
 
-| Template        | Default    | Description                     |
-| --------------- | ---------- | ------------------------------- |
-| `ErrorInstance` | _Required_ | The error object to be created. |
+| Type parameter  | Default value | Description                     |
+| --------------- | ------------- | ------------------------------- |
+| `ErrorInstance` | _Required_    | The error object to be created. |
 
 ---
 
