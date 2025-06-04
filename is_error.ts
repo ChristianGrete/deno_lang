@@ -1,12 +1,9 @@
 /**
  * Utility module for checking whether a value is an error object.
  *
- * Accepts both plain `Error` instances and extended error types like
- * `TypeError`, `SyntaxError`, etc. Uses internal type checking to reliably
- * detect them.
- *
- * Note that string-based error messages or primitives are not considered errors
- * by this function.
+ * Detects both generic `Error` instances and extended error types like
+ * `TypeError`, `SyntaxError` or custom error subclasses. This does not include
+ * error-like objects or string-based error messages.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
