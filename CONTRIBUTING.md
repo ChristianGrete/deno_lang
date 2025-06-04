@@ -113,6 +113,7 @@ tasks:
 | `deno task run-p <tasks...>`          | Shorthand to run tasks in parallel                                                                |
 | `deno task run-s <tasks...>`          | Shorthand to run tasks sequentially                                                               |
 | `deno task test [files...]`           | Runs `deno test` for all tests or only those matching or related to the specified `.ts` files     |
+| `deno task watch [--run-tests]`       | Watches for file changes and runs typechecks, formatters, and optionally tests for affected files |
 
 Some additional tasks like `commitlint`, `dprint`, `lefthook` and `lint-staged` are exposed for convenience, but mainly
 serve as internal CLI wrappers.
