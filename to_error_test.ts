@@ -25,7 +25,7 @@ Deno.test("toError() converts strings, numbers, and bigints to Error", () => {
 });
 
 Deno.test("toError() wraps primitives with fallback message in strict mode", () => {
-  const err = toError(false, true);
+  const err = toError(false, { strict: true });
 
   assertStrictEquals(err.message, "Error coerced from boolean");
 });
@@ -46,7 +46,7 @@ Deno.test("toError() extracts message and cause from object", () => {
 });
 
 Deno.test("toError() uses fallback for object in strict mode when message is invalid", () => {
-  const err = toError({ msg: "ignored" }, true);
+  const err = toError({ msg: "ignored" }, { strict: true });
 
   assertStrictEquals(err.message, "Error coerced from non-error object");
 });
@@ -61,10 +61,36 @@ Deno.test("toError() throws on Symbol input", () => {
   assertThrows(() => toError(Symbol("x")), TypeError, "cannot convert symbol");
 });
 
+Deno.test("toError() supports built-in constructors like TypeError", () => {
+  const err = toError("invalid", { errorConstructor: TypeError });
+
+  assertInstanceOf(err, TypeError);
+  assertStrictEquals(err.message, "invalid");
+});
+
+Deno.test("toError() uses custom constructor when provided", () => {
+  class CustomError extends Error {
+    readonly custom = true;
+  }
+
+  const err = toError("boom", { errorConstructor: CustomError as unknown as ErrorConstructor });
+
+  assertInstanceOf(err, CustomError);
+  assertStrictEquals(err.message, "boom");
+  assertEquals((err as CustomError).custom, true);
+});
+
+Deno.test("toError() falls back to default constructor for invalid errorConstructor", () => {
+  const err = toError("fail", { errorConstructor: Function as unknown as ErrorConstructor });
+
+  assertInstanceOf(err, Error);
+  assertStrictEquals(err.message, "fail");
+});
+
 Deno.test("toError() throws on invalid number of arguments", () => {
   // @ts-expect-error - no arguments
   assertThrows(() => toError(), TypeError);
 
   // @ts-expect-error - too many arguments
-  assertThrows(() => toError("fail", true, "extra"), TypeError);
+  assertThrows(() => toError("fail", { strict: true }, "extra"), TypeError);
 });
