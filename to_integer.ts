@@ -14,30 +14,51 @@
  * @module lang/to_integer
  */
 
-import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
-import { numberFrom } from "./to_number.ts";
+import { unsetPrototype, validateArgsLength, validatePlainObjArg, validateStrictOpt } from "./internal/mod.ts";
+import { numberFrom, type ToNumberOptions } from "./to_number.ts";
 
 const { floor } = Math;
+
+/**
+ * Represents a configuration options object.
+ *
+ * Used to configure how values are converted in {@link toInteger}.
+ *
+ * @name lang/to_integer.ToIntegerOptions
+ * @property {boolean} [strict=false] - Whether to enforce exact numeric syntax.
+ */
+export interface ToIntegerOptions extends ToNumberOptions {}
+
+/**
+ * Local helper to validate and normalize options for {@link toInteger}.
+ */
+const getValidatedOptions = (optionalOptions?: ToIntegerOptions): Required<ToIntegerOptions> => {
+  const options = optionalOptions == null ? {} : optionalOptions;
+
+  validatePlainObjArg("options", options);
+
+  return { strict: validateStrictOpt(options.strict) };
+};
 
 /**
  * Converts a value into an integer.
  *
  * @example
  * toInteger("42.9"); // 42
- * toInteger("10.1", true); // 10
+ * toInteger("10.1", { strict: true }); // 10
  * toInteger(null); // 0
  * toInteger([4]); // NaN
  *
  * @name lang/to_integer.toInteger
  * @param {unknown} value - The value to convert.
- * @param {boolean} [strict=false] - Whether only fully valid numbers are accepted.
+ * @param {ToIntegerOptions} [options] - An optional configuration object.
  * @returns {number} The resulting integer or `NaN` if conversion is not safe.
  * @see {@link lang/to_number.toNumber}
  */
-export function toInteger(value: unknown, strict = false): number {
+export function toInteger(value: unknown, options?: ToIntegerOptions): number {
   validateArgsLength(arguments, 1, 2);
 
-  return floor(numberFrom(value, { strict }));
+  return floor(numberFrom(value, getValidatedOptions(options)));
 }
 
 unsetPrototype(toInteger);

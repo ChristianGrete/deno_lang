@@ -16,7 +16,7 @@
  * @module lang/to_error
  */
 
-import { unsetPrototype, validateArgsLength, validatePlainObjArg } from "./internal/mod.ts";
+import { unsetPrototype, validateArgsLength, validatePlainObjArg, validateStrictOpt } from "./internal/mod.ts";
 import { getType } from "./type_of.ts";
 
 /**
@@ -70,14 +70,13 @@ const getValidatedOptions = <ErrorInstance extends Error>(
   validatePlainObjArg("options", options);
 
   const { strict, errorConstructor } = options;
-  const isStrict = getType(strict) === "boolean" ? strict as boolean : false;
   const ErrorCtor =
     getType(errorConstructor) === "function" && errorConstructor?.prototype != null &&
       errorConstructor.prototype instanceof Error
       ? errorConstructor
       : Error;
 
-  return { errorConstructor: ErrorCtor, strict: isStrict };
+  return { errorConstructor: ErrorCtor, strict: validateStrictOpt(strict) };
 };
 
 /* eslint-disable jsdoc/check-template-names, jsdoc/require-template */

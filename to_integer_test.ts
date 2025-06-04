@@ -12,11 +12,11 @@ Deno.test("toInteger() converts strings and numbers into floored integers", () =
 });
 
 Deno.test("toInteger() supports strict parsing for strings", () => {
-  assertStrictEquals(toInteger("123", true), 123);
-  assertStrictEquals(toInteger("3.14", true), 3);
-  assertStrictEquals(toInteger("123abc", true), NaN);
-  assertStrictEquals(toInteger("abc123", true), NaN);
-  assertStrictEquals(toInteger("1.2.3", true), NaN);
+  assertStrictEquals(toInteger("123", { strict: true }), 123);
+  assertStrictEquals(toInteger("3.14", { strict: true }), 3);
+  assertStrictEquals(toInteger("123abc", { strict: true }), NaN);
+  assertStrictEquals(toInteger("abc123", { strict: true }), NaN);
+  assertStrictEquals(toInteger("1.2.3", { strict: true }), NaN);
 });
 
 Deno.test("toInteger() returns 0 for nullish, false, or empty input", () => {

@@ -17,7 +17,7 @@
  * @see {@link https://github.com/mout/mout/blob/v1.2.4/src/lang/toNumber.js|mout@1.2.4/lang/toNumber}
  */
 
-import { unsetPrototype, validateArgsLength, validatePlainObjArg } from "./internal/mod.ts";
+import { unsetPrototype, validateArgsLength, validatePlainObjArg, validateStrictOpt } from "./internal/mod.ts";
 import { isNumberLike } from "./is_numeric.ts";
 import { getType } from "./type_of.ts";
 
@@ -48,10 +48,7 @@ const getValidatedOptions = (optionalOptions?: ToNumberOptions): Required<ToNumb
 
   validatePlainObjArg("options", options);
 
-  const { strict } = options;
-  const isStrict = getType(strict) === "boolean" ? strict as boolean : false;
-
-  return { strict: isStrict };
+  return { strict: validateStrictOpt(options.strict) };
 };
 
 /**

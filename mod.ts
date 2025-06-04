@@ -51,7 +51,7 @@ export {
 export { type BuiltinTag, type ExtendedTag, type NullOrUndefinedTag, type Tag, tagOf } from "./tag_of.ts";
 export { type ArrayFrom, toArray } from "./to_array.ts";
 export { type ErrorConstructorOf, toError, type ToErrorOptions } from "./to_error.ts";
-export { toInteger } from "./to_integer.ts";
+export { toInteger, type ToIntegerOptions } from "./to_integer.ts";
 export { toNumber, type ToNumberOptions } from "./to_number.ts";
 export { type PromiseFrom, toPromise } from "./to_promise.ts";
 export { toString } from "./to_string.ts";
