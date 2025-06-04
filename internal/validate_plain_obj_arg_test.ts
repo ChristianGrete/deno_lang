@@ -25,6 +25,10 @@ Deno.test("validatePlainObjArg() throws for non-plain objects", () => {
   ];
 
   for (const val of invalidValues) {
-    assertThrows(() => validatePlainObjArg("arg", val), TypeError, `Invalid argument 'arg': expected string, got`);
+    assertThrows(
+      () => validatePlainObjArg("arg", val),
+      TypeError,
+      `Invalid argument 'arg': expected plain object, got`,
+    );
   }
 });
