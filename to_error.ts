@@ -1,8 +1,8 @@
 /**
- * Utility module for converting a value into an `Error` object.
+ * Utility module for converting a value into an error object.
  *
  * Converts unknown input into a proper `Error` object. Supports primitive
- * values, error-like objects, and native `Error` instances.
+ * values, error-like objects, and native error instances.
  *
  * In strict mode, non-error input is wrapped with descriptive fallback
  * messages. Symbols are not supported and throw a `TypeError`. The optional
@@ -20,39 +20,39 @@ import { unsetPrototype, validateArgsLength, validatePlainObjArg } from "./inter
 import { getType } from "./type_of.ts";
 
 /**
- * Represents a constructor for custom `Error` subclasses.
+ * Represents the native `Error` constructor and its subclasses.
  *
- * Mimics the built-in `ErrorConstructor`, but allows returning a concrete
- * subclass of `Error` while retaining static members.
+ * Mimics the built-in `ErrorConstructor`, but allows returning a specific error
+ * type like `TypeError` or `RangeError` while retaining static members.
  *
  * Used as return type by {@link toError}.
  *
  * @name lang/to_error.ErrorConstructorOf
- * @template ErrorInstance - The specific `Error` subclass.
+ * @template ErrorInstance - The error object to be created.
  */
 export interface ErrorConstructorOf<ErrorInstance extends Error> extends Omit<ErrorConstructor, "new"> {
   new (message?: string, options?: ErrorOptions): ErrorInstance; // eslint-disable-line unused-imports/no-unused-vars
 }
 
 /**
- * Options object for customizing behavior of {@link toError}.
+ * Represents a configuration options object.
  *
- * Allows strict fallback messaging and custom error constructors.
+ * Used to configure how values are converted in {@link toError}.
  *
  * @name lang/to_error.ToErrorOptions
- * @property {ErrorConstructorOf<ErrorInstance>} [errorConstructor=Error] - An optional custom `Error` constructor to use (e.g. `TypeError`).
+ * @property {ErrorConstructorOf<ErrorInstance>} [errorConstructor=Error] - An optional error constructor to use (e.g. `TypeError`).
  * @property {boolean} [strict=false] - Whether to enforce descriptive fallback messages.
- * @template ErrorInstance - The specific `Error` subclass.
+ * @template ErrorInstance - The error object to be created.
  */
 export interface ToErrorOptions<ErrorInstance extends Error> {
   /**
-   * An optional custom `Error` constructor to use (e.g. `TypeError`).
+   * Optional error constructor to use (e.g. `TypeError` or `RangeError`).
    *
    * @default Error
    */
   errorConstructor?: ErrorConstructorOf<ErrorInstance>;
   /**
-   * Whether to enforce descriptive fallback messages.
+   * Optional flag to enforce descriptive fallback messages.
    *
    * @default false
    */
@@ -83,7 +83,7 @@ const getValidatedOptions = <ErrorInstance extends Error>(
 /* eslint-disable jsdoc/check-template-names, jsdoc/require-template */
 
 /**
- * Converts a value into an `Error` object.
+ * Converts a value into an error object.
  *
  * @example
  * toError(new Error("fail")); // Error: fail
@@ -95,11 +95,11 @@ const getValidatedOptions = <ErrorInstance extends Error>(
  *
  * @name lang/to_error.toError
  * @param {unknown} value - The value to convert.
- * @param {ToErrorOptions<ErrorInstance>} [options] - Optional configuration object.
- * @returns {ErrorInstance} The resulting `Error` object.
+ * @param {ToErrorOptions<ErrorInstance>} [options] - An optional configuration object.
+ * @returns {ErrorInstance} The resulting error object.
  * @see {@link ToErrorOptions}
- * @template [ErrorInstance=Error] - The specific `Error` subclass.
- * @throws {TypeError} If `value` is a symbol (not supported by `Error` constructors).
+ * @template [ErrorInstance=Error] - The type of error object returned.
+ * @throws {TypeError} If `value` is a symbol (not supported by error constructors).
  */
 export function toError<ErrorInstance extends Error = Error>(
   value: unknown,
