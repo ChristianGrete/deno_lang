@@ -2,7 +2,7 @@
  * Provides a safe and type-aware way to convert any value into an array.
  *
  * Converts array-like structures into real arrays and wraps everything else
- * into a single-element array. Unlike `Array.from()`, it won’t throw on `null`,
+ * into a single-element array. Unlike `Array.from()`, it won't throw on `null`,
  * plain objects, or functions - making it safe for unpredictable inputs.
  *
  * @author John Resig <jeresig@gmail.com>
