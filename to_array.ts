@@ -1,11 +1,9 @@
 /**
- * Utility module for converting any value into an array.
+ * Provides a safe and type-aware way to convert any value into an array.
  *
- * If the value is array-like, its contents will be copied into a new array.
- * Otherwise, the value is wrapped in a single-element array.
- *
- * Unlike `Array.from`, this handles non-iterables like `null`, `RegExp` or
- * `Function` without throwing.
+ * Converts array-like structures into real arrays and wraps everything else
+ * into a single-element array. Unlike `Array.from()`, it won’t throw on `null`,
+ * plain objects, or functions - making it safe for unpredictable inputs.
  *
  * @author John Resig <jeresig@gmail.com>
  * @author Jörn Zaefferer <joern.zaefferer@gmail.com>
@@ -30,12 +28,14 @@ const { slice: nativeSlice } = Array.prototype;
 const slice = nativeSlice.call.bind(nativeSlice);
 
 /**
- * Determines the return type of {@link toArray} for a given input type.
+ * Infers the return type of {@link toArray} based on the input type.
  *
  * @name lang/to_array.ArrayFrom
- * @template Value
+ * @template Value - The type to unwrap if array-like, or to wrap if not.
  */
 export type ArrayFrom<Value> = Value extends ArrayLike<infer Item> ? Item[] : Value[];
+
+/* eslint-disable jsdoc/check-template-names, jsdoc/require-template */
 
 /**
  * Converts a value into an array.
@@ -49,7 +49,7 @@ export type ArrayFrom<Value> = Value extends ArrayLike<infer Item> ? Item[] : Va
  * @name lang/to_array.toArray
  * @param {Value} value - The value to convert.
  * @returns {ArrayFrom<Value>} The resulting array.
- * @template Value
+ * @template [Value=unknown] - Inferred type of the `value` argument, defaulting to `unknown`.
  */
 export function toArray<Value = unknown>(value: Value): ArrayFrom<Value> {
   validateArgsLength(arguments);
@@ -64,5 +64,7 @@ export function toArray<Value = unknown>(value: Value): ArrayFrom<Value> {
     return [value] as ArrayFrom<Value>;
   }
 }
+
+/* eslint-enable jsdoc/check-template-names, jsdoc/require-template */
 
 unsetPrototype(toArray);
