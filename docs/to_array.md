@@ -1,4 +1,4 @@
-# lang/to\_array
+# lang/[to\_array](../to_array.ts)
 
 > Provides a safe and type-aware way to convert any value into an array.
 
