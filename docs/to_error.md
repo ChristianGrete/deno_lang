@@ -41,9 +41,9 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 
 ### Arguments
 
-| Argument   | Type                            | Default value                                | Description                       |
+| Argument   | Type                            | Default                                      | Description                       |
 | ---------- | ------------------------------- | -------------------------------------------- | --------------------------------- |
-| `value`    | `unknown`                       | _Required_                                   | The value to convert.             |
+| `value`    | `unknown`                       | –                                            | The value to convert.             |
 | `options?` | `ToErrorOptions<ErrorInstance>` | `{ errorConstructor: Error, strict: false }` | An optional configuration object. |
 
 ### Returns
@@ -52,9 +52,9 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 
 ### Type parameters
 
-| Type parameter  | Type    | Default value | Description                                      |
-| --------------- | ------- | ------------- | ------------------------------------------------ |
-| `ErrorInstance` | `Error` | `Error`       | The error type to return, defaulting to `Error`. |
+| Type parameter  | Constraint | Default | Description                                      |
+| --------------- | ---------- | ------- | ------------------------------------------------ |
+| `ErrorInstance` | `Error`    | `Error` | The error type to return, defaulting to `Error`. |
 
 ### Throws
 
@@ -79,16 +79,16 @@ interface ToErrorOptions<ErrorInstance extends Error> {
 
 ### Properties
 
-| Property            | Type                                | Default value | Description                                                 |
-| ------------------- | ----------------------------------- | ------------- | ----------------------------------------------------------- |
-| `errorConstructor?` | `ErrorConstructorOf<ErrorInstance>` | `Error`       | The constructor to create the error, defaulting to `Error`. |
-| `strict?`           | `boolean`                           | `false`       | Whether to enforce descriptive fallback messages.           |
+| Property            | Type                                | Default | Description                                                 |
+| ------------------- | ----------------------------------- | ------- | ----------------------------------------------------------- |
+| `errorConstructor?` | `ErrorConstructorOf<ErrorInstance>` | `Error` | The constructor to create the error, defaulting to `Error`. |
+| `strict?`           | `boolean`                           | `false` | Whether to enforce descriptive fallback messages.           |
 
 ### Type parameters
 
-| Type parameter  | Type    | Default value | Description                    |
-| --------------- | ------- | ------------- | ------------------------------ |
-| `ErrorInstance` | `Error` | _Required_    | The error type to be returned. |
+| Type parameter  | Constraint | Default | Description                    |
+| --------------- | ---------- | ------- | ------------------------------ |
+| `ErrorInstance` | `Error`    | –       | The error type to be returned. |
 
 ---
 
