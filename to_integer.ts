@@ -1,11 +1,13 @@
 /**
- * Utility module for converting a value into an integer.
+ * Provides a safe and consistent way to convert values into integers.
  *
- * This implementation behaves like {@link lang/to_number.toNumber}, but
- * applies `Math.floor()` to return the nearest lower whole number.
+ * Converts primitives, nullish values, and other common inputs into lower-bound
+ * integers using a combination of type-aware coercion and `Math.floor()`.
+ * Strings with numeric content are parsed, boolean `true` becomes `1`, and
+ * falsy values like `false`, `null`, or `""` become `0`.
  *
- * Falsy values like `null`, `false` or `""` become `0`. Non-numeric input
- * results in `NaN`.
+ * A strict mode is available to disable lossy coercion and enforce exact
+ * numeric syntax. Invalid or non-numeric input results in `NaN`.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -26,6 +28,7 @@ const { floor } = Math;
  *
  * @name lang/to_integer.ToIntegerOptions
  * @property {boolean} [strict=false] - Whether to enforce exact numeric syntax.
+ * @see {@link lang/to_number.ToNumberOptions}
  */
 export interface ToIntegerOptions extends ToNumberOptions {}
 
@@ -52,7 +55,7 @@ const getValidatedOptions = (optionalOptions?: ToIntegerOptions): Required<ToInt
  * @name lang/to_integer.toInteger
  * @param {unknown} value - The value to convert.
  * @param {ToIntegerOptions} [options] - An optional configuration object.
- * @returns {number} The resulting integer or `NaN` if conversion is not safe.
+ * @returns {number} The resulting integer, or `NaN` if conversion isn't safe.
  * @see {@link lang/to_number.toNumber}
  */
 export function toInteger(value: unknown, options?: ToIntegerOptions): number {
