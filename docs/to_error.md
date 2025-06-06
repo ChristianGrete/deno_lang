@@ -52,7 +52,7 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 
 ### Type parameters
 
-| Type parameter  | Constraint | Default | Description                                      |
+| Parameter       | Constraint | Default | Description                                      |
 | --------------- | ---------- | ------- | ------------------------------------------------ |
 | `ErrorInstance` | `Error`    | `Error` | The error type to return, defaulting to `Error`. |
 
@@ -86,7 +86,7 @@ interface ToErrorOptions<ErrorInstance extends Error> {
 
 ### Type parameters
 
-| Type parameter  | Constraint | Default | Description                    |
+| Parameter       | Constraint | Default | Description                    |
 | --------------- | ---------- | ------- | ------------------------------ |
 | `ErrorInstance` | `Error`    | –       | The error type to be returned. |
 

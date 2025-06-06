@@ -35,9 +35,9 @@ toArray(null); // []
 
 ### Arguments
 
-| Argument | Type    | Default value | Description           |
-| -------- | ------- | ------------- | --------------------- |
-| `value`  | `Value` | _Required_    | The value to convert. |
+| Argument | Type    | Default | Description           |
+| -------- | ------- | ------- | --------------------- |
+| `value`  | `Value` | –       | The value to convert. |
 
 ### Returns
 
@@ -45,9 +45,9 @@ toArray(null); // []
 
 ### Type parameters
 
-| Type parameter | Default value | Description                                                     |
-| -------------- | ------------- | --------------------------------------------------------------- |
-| `Value`        | `unknown`     | Inferred type of the `value` argument, defaulting to `unknown`. |
+| Parameter | Constraint | Default   | Description                                                     |
+| --------- | ---------- | --------- | --------------------------------------------------------------- |
+| `Value`   | –          | `unknown` | Inferred type of the `value` argument, defaulting to `unknown`. |
 
 ---
 
@@ -57,9 +57,9 @@ Infers the return type of [`toArray()`](#function-toarray) based on the input ty
 
 ### Type parameters
 
-| Type parameter | Default value | Description                                          |
-| -------------- | ------------- | ---------------------------------------------------- |
-| `Value`        | _Required_    | The type to unwrap if array-like, or to wrap if not. |
+| Parameter | Constraint | Default | Description                                          |
+| --------- | ---------- | ------- | ---------------------------------------------------- |
+| `Value`   | –          | –       | The type to unwrap if array-like, or to wrap if not. |
 
 ---
 
