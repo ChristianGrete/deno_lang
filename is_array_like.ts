@@ -30,8 +30,6 @@ import { hasWindowLikeShape } from "./is_window.ts";
  * @name lang/is_array_like~hasArrayLikeShape
  */
 export const hasArrayLikeShape = (value: unknown): boolean => {
-  if (nativeIsArray(value)) return true;
-
   if (value == null || typeof value === "function" || hasWindowLikeShape(value) || value === globalThis) return false;
 
   const { length } = value as { length?: unknown };
@@ -57,6 +55,8 @@ export const hasArrayLikeShape = (value: unknown): boolean => {
  */
 export function isArrayLike(value: unknown): value is ArrayLike<unknown> {
   validateArgsLength(arguments);
+
+  if (nativeIsArray(value)) return true;
 
   return hasArrayLikeShape(value);
 }

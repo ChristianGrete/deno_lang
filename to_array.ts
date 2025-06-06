@@ -22,6 +22,7 @@
  */
 
 import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
+import { nativeIsArray } from "./is_array.ts";
 import { hasArrayLikeShape } from "./is_array_like.ts";
 
 const { slice: nativeSlice } = Array.prototype;
@@ -33,9 +34,13 @@ const slice = nativeSlice.call.bind(nativeSlice);
  * @name lang/to_array.ArrayFrom
  * @template Value - The type to unwrap if array-like, or to wrap if not.
  */
-export type ArrayFrom<Value> = Value extends ArrayLike<infer Item> ? Item[] : Value[];
+export type ArrayFrom<Value> = [Value] extends [null | undefined] ? []
+  : Value extends ArrayLike<infer Item> ? Item[] : Value[];
 
-/* eslint-disable jsdoc/check-template-names, jsdoc/require-template */
+/**
+ * @ignore
+ */
+export function toArray(value: []): []; // eslint-disable-line unused-imports/no-unused-vars
 
 /**
  * Converts a value into an array.
@@ -51,20 +56,22 @@ export type ArrayFrom<Value> = Value extends ArrayLike<infer Item> ? Item[] : Va
  * @returns {ArrayFrom<Value>} The resulting array.
  * @template [Value=unknown] - Inferred type of the `value` argument, defaulting to `unknown`.
  */
-export function toArray<Value = unknown>(value: Value): ArrayFrom<Value> {
+export function toArray<Value = unknown>(value: Value): ArrayFrom<Value>; // eslint-disable-line unused-imports/no-unused-vars
+
+export function toArray(value: unknown): unknown[] {
   validateArgsLength(arguments);
 
-  if (value == null) return [] as unknown as ArrayFrom<Value>;
+  if (nativeIsArray(value)) return value as unknown[];
 
-  if (!hasArrayLikeShape(value)) return [value] as ArrayFrom<Value>;
+  if (value == null) return [];
+
+  if (!hasArrayLikeShape(value)) return [value];
 
   try {
-    return slice(value) as ArrayFrom<Value>;
+    return slice(value as ArrayLike<unknown>) as unknown[];
   } catch {
-    return [value] as ArrayFrom<Value>;
+    return [value];
   }
 }
-
-/* eslint-enable jsdoc/check-template-names, jsdoc/require-template */
 
 unsetPrototype(toArray);
