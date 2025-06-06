@@ -1,13 +1,11 @@
-# lang/to\_error
+# lang/[to\_error](../to_error.ts)
 
-> Utility module for converting a value into an error object.
+> Provides a safe and type-aware way to coerce any value into an error object.
 
-Converts unknown input into a proper `Error` object. Supports primitive values, error-like objects, and native error
-instances.
+Coerces primitives, plain objects, and error objects into usable error instances. Supports optional fallback behavior
+through configurable options.
 
-In strict mode, non-error input is wrapped with descriptive fallback messages. Symbols are not supported and throw a
-`TypeError`. The optional `options` object accepts only valid values and silently falls back to safe defaults for
-unknown or invalid types.
+Symbols are passed through to the constructor and may result in a `TypeError`, depending on how it handles symbol input.
 
 ---
 
@@ -15,7 +13,6 @@ unknown or invalid types.
 
 - [`toError`](#function-toerror)
 - [`type ToErrorOptions`](#interface-toerroroptions)
-- [`type ErrorConstructorOf`](#interface-errorconstructorof)
 
 ---
 
@@ -37,8 +34,7 @@ import { toError } from "@denoverse/lang/to_error";
 
 toError(new Error("fail")); // Error: fail
 toError("fail"); // Error: fail
-toError({ message: "fail" }); // Error: fail
-toError(Symbol()); // throws TypeError
+toError({ cause: { exitCode: 1 }, message: "fail" }); // Error: fail
 toError("fail", { strict: true }); // Error: Error coerced from string
 toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: invalid
 ```
@@ -52,19 +48,19 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 
 ### Returns
 
-`ErrorInstance` - The resulting error object.
+`ErrorInstance` – The resulting error object.
 
 ### Type parameters
 
-| Type parameter  | Default value | Description                                |
-| --------------- | ------------- | ------------------------------------------ |
-| `ErrorInstance` | `Error`       | An optional type of error object returned. |
+| Type parameter  | Type    | Default value | Description                                      |
+| --------------- | ------- | ------------- | ------------------------------------------------ |
+| `ErrorInstance` | `Error` | `Error`       | The error type to return, defaulting to `Error`. |
 
 ### Throws
 
-| Error       | Description                                                   |
-| ----------- | ------------------------------------------------------------- |
-| `TypeError` | If `value` is a symbol (not supported by error constructors). |
+| Error       | Description                                                          |
+| ----------- | -------------------------------------------------------------------- |
+| `TypeError` | When `value` is a symbol and the error constructor cannot handle it. |
 
 ---
 
@@ -83,39 +79,16 @@ interface ToErrorOptions<ErrorInstance extends Error> {
 
 ### Properties
 
-| Property            | Type                                | Default value | Description                                              |
-| ------------------- | ----------------------------------- | ------------- | -------------------------------------------------------- |
-| `errorConstructor?` | `ErrorConstructorOf<ErrorInstance>` | `Error`       | An optional error constructor to use (e.g. `TypeError`). |
-| `strict?`           | `boolean`                           | `false`       | Whether to enforce descriptive fallback messages.        |
+| Property            | Type                                | Default value | Description                                                 |
+| ------------------- | ----------------------------------- | ------------- | ----------------------------------------------------------- |
+| `errorConstructor?` | `ErrorConstructorOf<ErrorInstance>` | `Error`       | The constructor to create the error, defaulting to `Error`. |
+| `strict?`           | `boolean`                           | `false`       | Whether to enforce descriptive fallback messages.           |
 
 ### Type parameters
 
-| Type parameter  | Default value | Description                     |
-| --------------- | ------------- | ------------------------------- |
-| `ErrorInstance` | _Required_    | The error object to be created. |
-
----
-
-## Interface: `ErrorConstructorOf`
-
-Represents the native `Error` constructor and its subclasses.
-
-Mimics the built-in `ErrorConstructor`, but allows returning a specific error type like `TypeError` or `RangeError`
-while retaining static members.
-
-Used as return type by [`toError()`](#function-toerror).
-
-```ts
-interface ErrorConstructorOf<ErrorInstance extends Error> extends Omit<ErrorConstructor, "new"> {
-  new (message?: string, options?: ErrorOptions): ErrorInstance;
-}
-```
-
-### Type parameters
-
-| Type parameter  | Default value | Description                     |
-| --------------- | ------------- | ------------------------------- |
-| `ErrorInstance` | _Required_    | The error object to be created. |
+| Type parameter  | Type    | Default value | Description                    |
+| --------------- | ------- | ------------- | ------------------------------ |
+| `ErrorInstance` | `Error` | _Required_    | The error type to be returned. |
 
 ---
 

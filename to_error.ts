@@ -1,13 +1,11 @@
 /**
- * Utility module for converting a value into an error object.
+ * Provides a safe and type-aware way to coerce any value into an error object.
  *
- * Converts unknown input into a proper `Error` object. Supports primitive
- * values, error-like objects, and native error instances.
+ * Coerces primitives, plain objects, and error objects into usable error
+ * instances. Supports optional fallback behavior through configurable options.
  *
- * In strict mode, non-error input is wrapped with descriptive fallback
- * messages. Symbols are not supported and throw a `TypeError`. The optional
- * `options` object accepts only valid values and silently falls back to safe
- * defaults for unknown or invalid types.
+ * Symbols are passed through to the constructor and may result in a `TypeError`,
+ * depending on how it handles symbol input.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
@@ -19,20 +17,8 @@
 import { unsetPrototype, validateArgsLength, validatePlainObjArg, validateStrictOpt } from "./internal/mod.ts";
 import { getType } from "./type_of.ts";
 
-/**
- * Represents the native `Error` constructor and its subclasses.
- *
- * Mimics the built-in `ErrorConstructor`, but allows returning a specific error
- * type like `TypeError` or `RangeError` while retaining static members.
- *
- * Used as return type by {@link toError}.
- *
- * @name lang/to_error.ErrorConstructorOf
- * @template ErrorInstance - The error object to be created.
- */
-export interface ErrorConstructorOf<ErrorInstance extends Error> extends Omit<ErrorConstructor, "new"> {
-  new (message?: string, options?: ErrorOptions): ErrorInstance; // eslint-disable-line unused-imports/no-unused-vars
-}
+// deno-lint-ignore no-explicit-any
+type ErrorConstructorOf<ErrorInstance extends Error> = new (..._args: any) => ErrorInstance;
 
 /**
  * Represents a configuration options object.
@@ -40,19 +26,19 @@ export interface ErrorConstructorOf<ErrorInstance extends Error> extends Omit<Er
  * Used to configure how values are converted in {@link toError}.
  *
  * @name lang/to_error.ToErrorOptions
- * @property {ErrorConstructorOf<ErrorInstance>} [errorConstructor=Error] - An optional error constructor to use (e.g. `TypeError`).
+ * @property {ErrorConstructorOf<ErrorInstance>} [errorConstructor=Error] - The constructor to create the error, defaulting to `Error`.
  * @property {boolean} [strict=false] - Whether to enforce descriptive fallback messages.
- * @template ErrorInstance - The error object to be created.
+ * @template {Error} ErrorInstance - The error type to be returned.
  */
 export interface ToErrorOptions<ErrorInstance extends Error> {
   /**
-   * Optional error constructor to use (e.g. `TypeError` or `RangeError`).
+   * The constructor to create the error.
    *
    * @default Error
    */
   errorConstructor?: ErrorConstructorOf<ErrorInstance>;
   /**
-   * Optional flag to enforce descriptive fallback messages.
+   * Whether to enforce descriptive fallback messages.
    *
    * @default false
    */
@@ -87,8 +73,7 @@ const getValidatedOptions = <ErrorInstance extends Error>(
  * @example
  * toError(new Error("fail")); // Error: fail
  * toError("fail"); // Error: fail
- * toError({ message: "fail" }); // Error: fail
- * toError(Symbol()); // throws TypeError
+ * toError({ cause: { exitCode: 1 }, message: "fail" }); // Error: fail
  * toError("fail", { strict: true }); // Error: Error coerced from string
  * toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: invalid
  *
@@ -97,8 +82,8 @@ const getValidatedOptions = <ErrorInstance extends Error>(
  * @param {ToErrorOptions<ErrorInstance>} [options] - An optional configuration object.
  * @returns {ErrorInstance} The resulting error object.
  * @see {@link ToErrorOptions}
- * @template [ErrorInstance=Error] - An optional type of error object returned.
- * @throws {TypeError} If `value` is a symbol (not supported by error constructors).
+ * @template {Error} [ErrorInstance=Error] - The error type to return, defaulting to `Error`.
+ * @throws {TypeError} When `value` is a symbol and the error constructor cannot handle it.
  */
 export function toError<ErrorInstance extends Error = Error>(
   value: unknown,
@@ -111,13 +96,11 @@ export function toError<ErrorInstance extends Error = Error>(
 
   if (type === "error") return value as ErrorInstance;
 
-  if (type === "symbol") throw new TypeError("Invalid argument 'value': cannot convert symbol to error");
-
   if (type !== "object") {
     if (strict) return new ErrorCtor(`Error coerced from ${type}`) as ErrorInstance;
 
-    if (type === "string" || type === "number" || type === "bigint") {
-      return new ErrorCtor(value as string) as ErrorInstance;
+    if (type === "string" || type === "number" || type === "bigint" || type === "symbol") {
+      return new ErrorCtor(value) as ErrorInstance;
     }
 
     return new ErrorCtor() as ErrorInstance;

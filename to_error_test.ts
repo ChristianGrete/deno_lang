@@ -58,7 +58,7 @@ Deno.test("toError() returns Error without message if object has no message (non
 });
 
 Deno.test("toError() throws on Symbol input", () => {
-  assertThrows(() => toError(Symbol("x")), TypeError, "cannot convert symbol");
+  assertThrows(() => toError(Symbol("x")), TypeError);
 });
 
 Deno.test("toError() supports built-in constructors like TypeError", () => {
@@ -70,14 +70,18 @@ Deno.test("toError() supports built-in constructors like TypeError", () => {
 
 Deno.test("toError() uses custom constructor when provided", () => {
   class CustomError extends Error {
+    constructor(input: symbol) {
+      super(input.toString());
+    }
     readonly custom = true;
   }
 
-  const err = toError("boom", { errorConstructor: CustomError as unknown as ErrorConstructor });
+  const sym = Symbol("foo");
+  const err = toError(sym, { errorConstructor: CustomError });
 
   assertInstanceOf(err, CustomError);
-  assertStrictEquals(err.message, "boom");
-  assertEquals((err as CustomError).custom, true);
+  assertStrictEquals(err.message, sym.toString());
+  assertEquals(err.custom, true);
 });
 
 Deno.test("toError() falls back to default constructor for invalid errorConstructor", () => {
