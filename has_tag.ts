@@ -65,9 +65,9 @@ export interface InferredByTag {
  * @see {@link lang/tag_of.tagOf}
  * @template Tag
  */
-export function hasTag<Tag extends keyof InferredByTag>(value: unknown, tag: Tag): value is InferredByTag[Tag]; // eslint-disable-line unused-imports/no-unused-vars
+export function hasTag<Tag extends keyof InferredByTag>(value: unknown, tag: Tag): value is InferredByTag[Tag];
 
-export function hasTag<Tag extends string>(value: unknown, tag: Tag): boolean; // eslint-disable-line unused-imports/no-unused-vars
+export function hasTag<Tag extends string>(value: unknown, tag: Tag): boolean;
 
 export function hasTag(value: unknown, tag: TagString): boolean {
   validateArgsLength(arguments, 2);

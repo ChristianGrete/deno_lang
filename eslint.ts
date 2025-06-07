@@ -1,3 +1,4 @@
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import type { ESLint, Linter } from "eslint";
 import importPlugin from "eslint-plugin-import";
@@ -12,6 +13,7 @@ const config: Linter.Config[] = [{
   files: ["**/*.ts"],
   languageOptions: { parser: tsParser, parserOptions: { ecmaVersion: "latest", sourceType: "module" } },
   plugins: {
+    "@typescript-eslint": tsPlugin as unknown as ESLint.Plugin,
     "import": importPlugin,
     "jsdoc": jsdocPlugin,
     "simple-import-sort": simpleImportSortPlugin,

@@ -32,9 +32,9 @@ import { unsetPrototype, validateArgsLength } from "./internal/mod.ts";
  */
 export type Constructable<Instance = unknown> =
   // deno-lint-ignore no-explicit-any
-  | (new (...args: any[]) => Instance) // eslint-disable-line unused-imports/no-unused-vars
+  | (new (...args: any[]) => Instance)
   // deno-lint-ignore no-explicit-any
-  | ((...args: any[]) => Instance); // eslint-disable-line unused-imports/no-unused-vars
+  | ((...args: any[]) => Instance);
 
 /**
  * Checks whether a value is an instance of the given constructor or function.

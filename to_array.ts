@@ -26,7 +26,7 @@ import { nativeIsArray } from "./is_array.ts";
 import { hasArrayLikeShape } from "./is_array_like.ts";
 
 const { slice: nativeSlice } = Array.prototype;
-const slice = nativeSlice.call.bind(nativeSlice) as (_value: ArrayLike<unknown>) => unknown[];
+const slice = nativeSlice.call.bind(nativeSlice) as (value: ArrayLike<unknown>) => unknown[];
 
 /**
  * Infers the return type of {@link toArray} based on the input type.
@@ -40,7 +40,7 @@ export type ArrayFrom<Value> = [Value] extends [null | undefined] ? []
 /**
  * @ignore
  */
-export function toArray(value: []): []; // eslint-disable-line unused-imports/no-unused-vars
+export function toArray(value: []): [];
 
 /**
  * Converts a value into an array.
@@ -56,7 +56,7 @@ export function toArray(value: []): []; // eslint-disable-line unused-imports/no
  * @returns {ArrayFrom<Value>} The resulting array.
  * @template [Value=unknown] - Inferred type of the `value` argument, defaulting to `unknown`.
  */
-export function toArray<Value = unknown>(value: Value): ArrayFrom<Value>; // eslint-disable-line unused-imports/no-unused-vars
+export function toArray<Value = unknown>(value: Value): ArrayFrom<Value>;
 
 export function toArray(value: unknown): unknown[] {
   validateArgsLength(arguments);

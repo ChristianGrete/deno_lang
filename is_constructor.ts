@@ -23,7 +23,7 @@ import type { Func } from "./is_function.ts";
  *
  * @name lang/is_constructor.Constructor
  */
-export type Constructor = new (...args: unknown[]) => unknown; // eslint-disable-line unused-imports/no-unused-vars
+export type Constructor = new (...args: unknown[]) => unknown;
 
 /**
  * Checks whether a value is a constructor function or class.

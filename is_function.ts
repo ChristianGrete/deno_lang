@@ -25,7 +25,7 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  *
  * @name lang/is_function.Func
  */
-export type Func = (...args: unknown[]) => unknown; // eslint-disable-line unused-imports/no-unused-vars
+export type Func = (...args: unknown[]) => unknown;
 
 /**
  * Checks whether a value is a function.

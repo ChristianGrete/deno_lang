@@ -66,7 +66,7 @@ export type TagLabel = BuiltinTagLabel | ExtendedTagLabel | NullOrUndefinedTagLa
  *
  * @name lang/tag_label_of~getTagLabel
  */
-export const getTagLabel = toString.call.bind(toString) as (value: unknown) => TagLabel; // eslint-disable-line unused-imports/no-unused-vars
+export const getTagLabel = toString.call.bind(toString) as (value: unknown) => TagLabel;
 
 /**
  * Returns the tag label of a value (e.g. `"[object Array]"`).

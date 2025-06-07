@@ -18,7 +18,7 @@ import { unsetPrototype, validateArgsLength, validatePlainObjArg, validateStrict
 import { getType } from "./type_of.ts";
 
 // deno-lint-ignore no-explicit-any
-type ErrorConstructorOf<ErrorInstance extends Error> = new (..._args: any) => ErrorInstance;
+type ErrorConstructorOf<ErrorInstance extends Error> = new (...args: any) => ErrorInstance;
 
 /**
  * Represents a configuration options object.
