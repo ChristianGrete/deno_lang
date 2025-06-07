@@ -14,6 +14,7 @@ export const run = async (args: string[], mode?: Mode) => {
   const cmd = new Deno.Command(args[0], {
     args: args.slice(1),
     stderr: mode === "silent" || mode === "suppress" ? "null" : "inherit",
+    stdin: "inherit",
     stdout: mode === "quiet" || mode === "silent" ? "null" : "inherit",
   });
   const { code } = await cmd.output();

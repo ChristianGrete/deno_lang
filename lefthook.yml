@@ -15,3 +15,12 @@ pre-commit:
   commands:
     check-staged-files:
       run: deno task lint-staged
+
+pre-push:
+  commands:
+    check-types:
+      run: deno check
+    run-linters:
+      run: deno task lint
+    run-tests:
+      run: deno task test

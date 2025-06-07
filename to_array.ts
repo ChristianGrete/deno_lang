@@ -26,7 +26,7 @@ import { nativeIsArray } from "./is_array.ts";
 import { hasArrayLikeShape } from "./is_array_like.ts";
 
 const { slice: nativeSlice } = Array.prototype;
-const slice = nativeSlice.call.bind(nativeSlice);
+const slice = nativeSlice.call.bind(nativeSlice) as (_value: ArrayLike<unknown>) => unknown[];
 
 /**
  * Infers the return type of {@link toArray} based on the input type.
@@ -61,16 +61,16 @@ export function toArray<Value = unknown>(value: Value): ArrayFrom<Value>; // esl
 export function toArray(value: unknown): unknown[] {
   validateArgsLength(arguments);
 
-  if (nativeIsArray(value)) return value as unknown[];
+  if (nativeIsArray(value)) return slice(value);
 
   if (value == null) return [];
 
   if (!hasArrayLikeShape(value)) return [value];
 
   try {
-    return slice(value as ArrayLike<unknown>) as unknown[];
+    return slice(value);
   } catch {
-    return [value];
+    return [value as unknown];
   }
 }
 

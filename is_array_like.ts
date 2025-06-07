@@ -29,7 +29,7 @@ import { hasWindowLikeShape } from "./is_window.ts";
  *
  * @name lang/is_array_like~hasArrayLikeShape
  */
-export const hasArrayLikeShape = (value: unknown): boolean => {
+export const hasArrayLikeShape = (value: unknown): value is ArrayLike<unknown> => {
   if (value == null || typeof value === "function" || hasWindowLikeShape(value) || value === globalThis) return false;
 
   const { length } = value as { length?: unknown };
