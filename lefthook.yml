@@ -19,7 +19,7 @@ pre-commit:
 pre-push:
   commands:
     check-types:
-      run: deno check
+      run: deno check -q
     run-linters:
       run: deno task lint
     run-tests:
