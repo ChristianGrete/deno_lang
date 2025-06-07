@@ -12,6 +12,7 @@
     "@std/assert": "jsr:@std/assert",
     "@std/fmt": "jsr:@std/fmt",
     "@std/path": "jsr:@std/path",
+    "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin",
     "@typescript-eslint/parser": "npm:@typescript-eslint/parser",
     "eslint": "npm:eslint",
     "eslint-plugin-import": "npm:eslint-plugin-import",
