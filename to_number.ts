@@ -1,12 +1,13 @@
 /**
- * Utility module for converting a value into a number.
+ * Provides a safe and consistent way to convert values into numbers.
  *
- * Normalizes common edge cases and avoids pitfalls of JavaScript's `Number()`
- * casting, such as converting `[4]` to `4` or `"123abc"` to `123`.
+ * Converts primitives, nullish values, and other common inputs into numbers
+ * using a combination of type-aware coercion and `parseFloat()`. Strings with
+ * numeric content are parsed, boolean `true` becomes `1`, and falsy values like
+ * `false`, `null`, or `""` become `0`.
  *
- * Falsy values like `null`, `undefined`, `false`, and empty strings return `0`.
- * Arrays and unsupported types return `NaN`. Strings are parsed using
- * `parseFloat`, with optional strict mode for exact numeric syntax.
+ * A strict mode is available to disable lossy coercion and enforce exact
+ * numeric syntax. Invalid or non-numeric input results in `NaN`.
  *
  * @author Miller Medeiros <miller@millermedeiros.com>
  * @author Christian Grete <webmaster@christiangrete.com>
@@ -33,7 +34,7 @@ const { isNaN } = Number;
  */
 export interface ToNumberOptions {
   /**
-   * Optional flag to enforce exact numeric syntax.
+   * Whether to enforce exact numeric syntax.
    *
    * @default false
    */
@@ -48,7 +49,7 @@ const getValidatedOptions = (optionalOptions?: ToNumberOptions): Required<ToNumb
 
   validatePlainObjArg("options", options);
 
-  return { strict: validateStrictOpt(options.strict) };
+  return { strict: validateStrictOpt(options.strict) } satisfies Required<ToNumberOptions>;
 };
 
 /**
@@ -95,7 +96,7 @@ export const numberFrom = (value: unknown, { strict }: Required<ToNumberOptions>
  * @name lang/to_number.toNumber
  * @param {unknown} value - The value to convert.
  * @param {ToNumberOptions} [options] - An optional configuration object.
- * @returns {number} The resulting number or `NaN` if conversion is not safe.
+ * @returns {number} The resulting number, or `NaN` if conversion isn't safe.
  * @see {@link lang/is_numeric.isNumeric}
  */
 export function toNumber(value: unknown, options?: ToNumberOptions): number {
