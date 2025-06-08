@@ -71,6 +71,12 @@ interface ToNumberOptions {
 
 ---
 
+## See also
+
+- [`mout@1.2.4/lang/toNumber`](https://github.com/mout/mout/blob/v1.2.4/src/lang/toNumber.js)
+
+---
+
 Copyright © 2025 ([MIT][repository-license-url]) [Christian Grete][repository-owner-url] for
 [Denoverse][repository-organization-url] and [contributors][repository-contributors-url]
 
