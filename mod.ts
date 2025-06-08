@@ -2,7 +2,7 @@
  * The main entry point providing all runtime type utilities.
  *
  * Covers everything from type checks and conversion helpers to general-purpose
- * types and constants - all accessible through a single import.
+ * types and constants.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
