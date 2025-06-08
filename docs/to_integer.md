@@ -46,7 +46,7 @@ toInteger([4]); // NaN
 
 ### Returns
 
-`number` – The resulting integer, or `NaN` if conversion isn’t safe.
+`number` — The resulting integer, or `NaN` if conversion isn’t safe.
 
 ---
 

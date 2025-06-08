@@ -48,7 +48,7 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 
 ### Returns
 
-`ErrorInstance` – The resulting error object.
+`ErrorInstance` — The resulting error object.
 
 ### Type parameters
 
