@@ -26,11 +26,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isError({ message: "fail", name: "Error" }); // false
  *
  * @name lang/is_error.isError
- * @param {unknown} _value - The value to check.
- * @returns {_value is Error} Whether the value is an error object.
+ * @param {unknown} value - The value to check.
+ * @returns {value is Error} Whether the value is an error object.
  * @see {@link lang/type_of.typeOf}
  */
-export function isError(_value: unknown): _value is Error {
+export function isError(value: unknown): value is Error {
   return boundTypeOf(arguments) === "error";
 }
 

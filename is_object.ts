@@ -37,11 +37,11 @@ export type Obj = Record<PropertyKey, unknown>;
  * isObject("hello"); // false
  *
  * @name lang/is_object.isObject
- * @param {unknown} _value - The value to check.
- * @returns {_value is Obj} Whether the value is an object.
+ * @param {unknown} value - The value to check.
+ * @returns {value is Obj} Whether the value is an object.
  * @see {@link lang/type_of.typeOf}
  */
-export function isObject(_value: unknown): _value is Obj {
+export function isObject(value: unknown): value is Obj {
   return boundTypeOf(arguments) === "object";
 }
 

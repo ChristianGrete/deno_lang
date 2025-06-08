@@ -25,11 +25,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isNumber("123"); // false
  *
  * @name lang/is_number.isNumber
- * @param {unknown} _value - The value to check.
- * @returns {_value is number} Whether the value is a number.
+ * @param {unknown} value - The value to check.
+ * @returns {value is number} Whether the value is a number.
  * @see {@link lang/type_of.typeOf}
  */
-export function isNumber(_value: unknown): _value is number {
+export function isNumber(value: unknown): value is number {
   return boundTypeOf(arguments) === "number";
 }
 

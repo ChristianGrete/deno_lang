@@ -57,7 +57,7 @@ const config: Linter.Config[] = [{
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": ["error", {
       args: "after-used",
-      argsIgnorePattern: "^_",
+      argsIgnorePattern: "^_|^value$",
       ignoreRestSiblings: true,
       vars: "all",
     }],

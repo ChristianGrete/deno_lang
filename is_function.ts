@@ -37,11 +37,11 @@ export type Func = (...args: unknown[]) => unknown;
  * isFunction("hello"); // false
  *
  * @name lang/is_function.isFunction
- * @param {unknown} _value - The value to check.
- * @returns {_value is Func} Whether the value is a function.
+ * @param {unknown} value - The value to check.
+ * @returns {value is Func} Whether the value is a function.
  * @see {@link lang/type_of.typeOf}
  */
-export function isFunction(_value: unknown): _value is Func {
+export function isFunction(value: unknown): value is Func {
   return boundTypeOf(arguments) === "function";
 }
 

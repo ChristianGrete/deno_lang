@@ -22,11 +22,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isPromise({ then() {} }); // false
  *
  * @name lang/is_promise.isPromise
- * @param {unknown} _value - The value to check.
- * @returns {_value is Promise<unknown>} Whether the value is a promise.
+ * @param {unknown}value - The value to check.
+ * @returns {value is Promise<unknown>} Whether the value is a promise.
  * @see {@link lang/type_of.typeOf}
  */
-export function isPromise(_value: unknown): _value is Promise<unknown> {
+export function isPromise(value: unknown): value is Promise<unknown> {
   return boundTypeOf(arguments) === "promise";
 }
 

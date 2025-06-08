@@ -24,6 +24,11 @@
     "jsonc-eslint-parser": "npm:jsonc-eslint-parser",
     "lint-staged": "npm:lint-staged"
   },
+  "lint": {
+    "rules": {
+      "exclude": ["no-unused-vars"]
+    }
+  },
   "nodeModulesDir": "auto",
   "tasks": {
     "commitlint": "deno run -A npm:@commitlint/cli -g ./commitlint.ts",

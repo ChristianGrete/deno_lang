@@ -27,11 +27,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isRegExp({}); // false
  *
  * @name lang/is_regexp.isRegExp
- * @param {unknown} _value - The value to check.
- * @returns {_value is RegExp} Whether the value is a regular expression.
+ * @param {unknown} value - The value to check.
+ * @returns {value is RegExp} Whether the value is a regular expression.
  * @see {@link lang/type_of.typeOf}
  */
-export function isRegExp(_value: unknown): _value is RegExp {
+export function isRegExp(value: unknown): value is RegExp {
   return boundTypeOf(arguments) === "regexp";
 }
 

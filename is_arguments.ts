@@ -16,14 +16,19 @@
 
 import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
 
+/* eslint-disable jsdoc/check-template-names, jsdoc/require-template */
+
 /**
  * Represents an array-like `arguments` list.
  *
  * Used as type predicate by {@link isArguments}.
  *
  * @name lang/is_arguments.Arguments
+ * @template [Argument=unknown] - The type of each argument in the arguments list, defaulting to `unknown`.
  */
-export type Arguments = ArrayLike<unknown>;
+export type Arguments<Argument = unknown> = ArrayLike<Argument>;
+
+/* eslint-enable jsdoc/check-template-names, jsdoc/require-template */
 
 /**
  * Checks whether a value is an arguments list.
@@ -36,11 +41,11 @@ export type Arguments = ArrayLike<unknown>;
  * isArguments({ length: 2 }); // false
  *
  * @name lang/is_arguments.isArguments
- * @param {unknown} _value - The value to check.
- * @returns {_value is Arguments} Whether the value is an `arguments` list.
+ * @param {unknown} value - The value to check.
+ * @returns {value is Arguments} Whether the value is an `arguments` list.
  * @see {@link lang/type_of.typeOf}
  */
-export function isArguments(_value: unknown): _value is Arguments {
+export function isArguments(value: unknown): value is Arguments {
   return boundTypeOf(arguments) === "arguments";
 }
 

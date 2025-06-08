@@ -25,11 +25,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isMap({ set() {}, get() {} }); // false
  *
  * @name lang/is_map.isMap
- * @param {unknown} _value - The value to check.
- * @returns {_value is Map<unknown, unknown>} Whether the value is a map.
+ * @param {unknown} value - The value to check.
+ * @returns {value is Map<unknown, unknown>} Whether the value is a map.
  * @see {@link lang/type_of.typeOf}
  */
-export function isMap(_value: unknown): _value is Map<unknown, unknown> {
+export function isMap(value: unknown): value is Map<unknown, unknown> {
   return boundTypeOf(arguments) === "map";
 }
 

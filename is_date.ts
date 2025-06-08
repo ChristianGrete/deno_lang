@@ -25,11 +25,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isDate({}); // false
  *
  * @name lang/is_date.isDate
- * @param {unknown} _value - The value to check.
- * @returns {_value is Date} Whether the value is a `Date` object.
+ * @param {unknown} value - The value to check.
+ * @returns {value is Date} Whether the value is a `Date` object.
  * @see {@link lang/type_of.typeOf}
  */
-export function isDate(_value: unknown): _value is Date {
+export function isDate(value: unknown): value is Date {
   return boundTypeOf(arguments) === "date";
 }
 

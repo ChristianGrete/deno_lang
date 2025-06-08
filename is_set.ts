@@ -25,11 +25,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isSet([]); // false
  *
  * @name lang/is_set.isSet
- * @param {unknown} _value - The value to check.
- * @returns {_value is Set<unknown>} Whether the value is a set.
+ * @param {unknown} value - The value to check.
+ * @returns {value is Set<unknown>} Whether the value is a set.
  * @see {@link lang/type_of.typeOf}
  */
-export function isSet(_value: unknown): _value is Set<unknown> {
+export function isSet(value: unknown): value is Set<unknown> {
   return boundTypeOf(arguments) === "set";
 }
 

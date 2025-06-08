@@ -25,11 +25,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isString(123); // false
  *
  * @name lang/is_string.isString
- * @param {unknown} _value - The value to check.
- * @returns {_value is string} Whether the value is a string.
+ * @param {unknown} value - The value to check.
+ * @returns {value is string} Whether the value is a string.
  * @see {@link lang/type_of.typeOf}
  */
-export function isString(_value: unknown): _value is string {
+export function isString(value: unknown): value is string {
   return boundTypeOf(arguments) === "string";
 }
 

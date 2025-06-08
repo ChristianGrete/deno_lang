@@ -23,11 +23,11 @@ import { boundTypeOf, unsetPrototype } from "./internal/mod.ts";
  * isSymbol("Symbol()"); // false
  *
  * @name lang/is_symbol.isSymbol
- * @param {unknown} _value - The value to check.
- * @returns {_value is symbol} Whether the value is a symbol.
+ * @param {unknown} value - The value to check.
+ * @returns {value is symbol} Whether the value is a symbol.
  * @see {@link lang/type_of.typeOf}
  */
-export function isSymbol(_value: unknown): _value is symbol {
+export function isSymbol(value: unknown): value is symbol {
   return boundTypeOf(arguments) === "symbol";
 }
 
