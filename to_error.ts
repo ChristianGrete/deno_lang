@@ -62,7 +62,9 @@ const getValidatedOptions = <ErrorInstance extends Error>(
       ? errorConstructor
       : Error;
 
-  return { errorConstructor: ErrorCtor, strict: validateStrictOpt(strict) };
+  return { errorConstructor: ErrorCtor, strict: validateStrictOpt(strict) } satisfies Required<
+    ToErrorOptions<Error | ErrorInstance>
+  >;
 };
 
 /* eslint-disable jsdoc/check-template-names, jsdoc/require-template */
