@@ -1,1 +1,1 @@
-# lang
+# lang ([mod.ts](../mod.ts))
