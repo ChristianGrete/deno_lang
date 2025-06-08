@@ -1,4 +1,4 @@
-# [lang](../mod.ts)/[to\_integer](../to_integer.ts)
+# [lang](mod.md)/[to\_integer](../to_integer.ts)
 
 > Provides a safe and consistent way to convert values into integers.
 

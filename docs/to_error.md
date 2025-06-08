@@ -1,4 +1,4 @@
-# [lang](../mod.ts)/[to\_error](../to_error.ts)
+# [lang](mod.md)/[to\_error](../to_error.ts)
 
 > Provides a safe and type-aware way to coerce any value into an error object.
 
