@@ -1,5 +1,5 @@
-export const validateArgsLength = (args: unknown, min: number = 1, max: number = min): void => {
-  const { length } = args as unknown[];
+export const validateArgsLength = (args: ArrayLike<unknown>, min: number = 1, max: number = min): void => {
+  const { length } = args;
 
   if (length < min || length > max) {
     throw new TypeError(
