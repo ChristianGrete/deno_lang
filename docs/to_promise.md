@@ -26,7 +26,7 @@ function toPromise<Value = unknown>(value: Value): PromiseFrom<Value>;
 ### Example
 
 ```ts
-import { toPromise } from "@denoverse/lang/to_promise";
+import { toPromise } from "@denoverse/lang";
 
 await toPromise(123); // 123
 await toPromise(Promise.resolve("ok")); // "ok"

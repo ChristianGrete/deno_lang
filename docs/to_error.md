@@ -35,7 +35,7 @@ function toError<ErrorInstance extends Error = Error>(
 ### Example
 
 ```ts
-import { toError } from "@denoverse/lang/to_error";
+import { toError } from "@denoverse/lang";
 
 toError(new Error("fail")); // Error: fail
 toError("fail"); // Error: fail

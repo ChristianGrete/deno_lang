@@ -29,7 +29,7 @@ function toInteger(value: unknown, options?: ToIntegerOptions): number;
 ### Example
 
 ```ts
-import { toInteger } from "@denoverse/lang/to_integer";
+import { toInteger } from "@denoverse/lang";
 
 toInteger("42.9"); // 42
 toInteger("10.1", { strict: true }); // 10

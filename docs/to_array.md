@@ -25,7 +25,7 @@ function toArray<Value = unknown>(value: Value): ArrayFrom<Value>;
 ### Example
 
 ```ts
-import { toArray } from "@denoverse/lang/to_array";
+import { toArray } from "@denoverse/lang";
 
 toArray([1, 2, 3]); // [1, 2, 3]
 toArray("hi"); // ["h", "i"]

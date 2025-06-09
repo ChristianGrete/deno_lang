@@ -29,7 +29,7 @@ function toNumber(value: unknown, options?: ToNumberOptions): number;
 ### Example
 
 ```ts
-import { toNumber } from "@denoverse/lang/to_number";
+import { toNumber } from "@denoverse/lang";
 
 toNumber("123"); // 123
 toNumber("123abc"); // 123
