@@ -5,14 +5,10 @@
 Converts array-like structures into real arrays and wraps everything else into a single-element array. Unlike
 `Array.from()`, it won’t throw on `null`, plain objects, or functions — making it safe for unpredictable inputs.
 
----
-
 ## Members
 
 - [`toArray`](#function-toarray)
 - [`type ArrayFrom`](#type-arrayfrom)
-
----
 
 ## Function: `toArray()`
 
@@ -49,8 +45,6 @@ toArray(null); // []
 | --------- | ---------- | --------- | --------------------------------------------------------------- |
 | `Value`   | –          | `unknown` | Inferred type of the `value` argument, defaulting to `unknown`. |
 
----
-
 ## Type: `ArrayFrom`
 
 Infers the return type of [`toArray()`](#function-toarray) based on the input type.
@@ -64,8 +58,6 @@ type ArrayFrom<Value>
 | Parameter | Constraint | Default | Description                                          |
 | --------- | ---------- | ------- | ---------------------------------------------------- |
 | `Value`   | –          | –       | The type to unwrap if array-like, or to wrap if not. |
-
----
 
 ## See also
 

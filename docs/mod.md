@@ -4,8 +4,6 @@
 
 Provides everything from type checks and conversion helpers to general-purpose types and constants.
 
----
-
 ## Members
 
 - [lang/to_array](to_array.md)

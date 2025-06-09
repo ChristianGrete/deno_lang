@@ -9,14 +9,10 @@ Converts primitives, nullish values, and other common inputs into numbers using 
 A strict mode is available to disable lossy coercion and enforce exact numeric syntax. Invalid or non-numeric input
 results in `NaN`.
 
----
-
 ## Members
 
 - [`toNumber`](#function-tonumber)
 - [`interface ToNumberOptions`](#interface-tonumberoptions)
-
----
 
 ## Function: `toNumber()`
 
@@ -49,8 +45,6 @@ toNumber(null); // 0
 
 `number` — The resulting number, or `NaN` if conversion isn’t safe.
 
----
-
 ## Interface: `ToNumberOptions`
 
 Represents a configuration options object.
@@ -68,8 +62,6 @@ interface ToNumberOptions {
 | Property  | Type      | Default | Description                              |
 | --------- | --------- | ------- | ---------------------------------------- |
 | `strict?` | `boolean` | `false` | Whether to enforce exact numeric syntax. |
-
----
 
 ## See also
 

@@ -12,14 +12,10 @@ values are non-standard.
 
 Symbols are passed through to the constructor and may result in a `TypeError`, depending on how it handles symbol input.
 
----
-
 ## Members
 
 - [`toError`](#function-toerror)
 - [`type ToErrorOptions`](#interface-toerroroptions)
-
----
 
 ## Function: `toError()`
 
@@ -66,8 +62,6 @@ toError<TypeError>("invalid", { errorConstructor: TypeError }); // TypeError: in
 | Error       | Description                                                          |
 | ----------- | -------------------------------------------------------------------- |
 | `TypeError` | When `value` is a symbol and the error constructor cannot handle it. |
-
----
 
 ## Interface: `ToErrorOptions`
 

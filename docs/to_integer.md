@@ -9,14 +9,10 @@ coercion and `Math.floor()`. Strings with numeric content are parsed, boolean `t
 A strict mode is available to disable lossy coercion and enforce exact numeric syntax. Invalid or non-numeric input
 results in `NaN`.
 
----
-
 ## Members
 
 - [`toInteger`](#function-tointeger)
 - [`interface ToIntegerOptions`](#interface-tointegeroptions)
-
----
 
 ## Function: `toInteger()`
 
@@ -47,8 +43,6 @@ toInteger([4]); // NaN
 ### Returns
 
 `number` — The resulting integer, or `NaN` if conversion isn’t safe.
-
----
 
 ## Interface: `ToIntegerOptions`
 

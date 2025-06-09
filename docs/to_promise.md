@@ -6,14 +6,10 @@ Converts native promises, thenables, and other values into promise objects. Inpu
 thenables are wrapped using `Promise.resolve()`. Primitive and non-promise values result in immediately resolved
 promises.
 
----
-
 ## Members
 
 - [`toPromise`](#function-topromise)
 - [`type PromiseFrom`](#type-promisefrom)
-
----
 
 ## Function: `toPromise()`
 
@@ -49,8 +45,6 @@ await toPromise({ then: (res) => res("done") }); // "done"
 | Parameter | Constraint | Default   | Description                                                     |
 | --------- | ---------- | --------- | --------------------------------------------------------------- |
 | `Value`   | –          | `unknown` | Inferred type of the `value` argument, defaulting to `unknown`. |
-
----
 
 ## Type: `PromiseFrom`
 
