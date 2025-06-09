@@ -55,6 +55,10 @@ toArray(null); // []
 
 Infers the return type of [`toArray()`](#function-toarray) based on the input type.
 
+```ts
+type ArrayFrom<Value>
+```
+
 ### Type parameters
 
 | Parameter | Constraint | Default | Description                                          |
