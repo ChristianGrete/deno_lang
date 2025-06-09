@@ -16,10 +16,13 @@ Covers everything from type checks and conversion helpers to general-purpose typ
   - [`type ToErrorOptions`](to_error.md#interface-toerroroptions)
 - [lang/to_integer](to_integer.md)
   - [`toInteger`](to_integer.md#function-tointeger)
-  - [`interface ToIntegerOptions`](to_integer.md#interface-tointegeroptions)
+  - [`type ToIntegerOptions`](to_integer.md#interface-tointegeroptions)
 - [lang/to_number](to_number.md)
   - [`toNumber`](to_number.md#function-tonumber)
-  - [`interface ToNumberOptions`](to_number.md#interface-tonumberoptions)
+  - [`type ToNumberOptions`](to_number.md#interface-tonumberoptions)
+- [lang/to_promise](to_promise.md)
+  - [`toPromise`](to_promise.md#function-topromise)
+  - [`type PromiseFrom`](to_promise.md#type-promisefrom)
 
 ---
 
