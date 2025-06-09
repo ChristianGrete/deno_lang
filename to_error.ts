@@ -2,10 +2,17 @@
  * Provides a safe and type-aware way to coerce any value into an error object.
  *
  * Coerces primitives, plain objects, and error objects into usable error
- * instances. Supports optional fallback behavior through configurable options.
+ * instances.
  *
- * Symbols are passed through to the constructor and may result in a `TypeError`,
- * depending on how it handles symbol input.
+ * A configuration object can be used to select a custom error constructor,
+ * allowing the use of specific error types like `TypeError`, `RangeError`, or
+ * others.
+ *
+ * A strict mode is also available to enforce descriptive fallback messages
+ * instead of generic or empty ones when input values are non-standard.
+ *
+ * Symbols are passed through to the constructor and may result in a
+ * `TypeError`, depending on how it handles symbol input.
  *
  * @author Christian Grete <webmaster@christiangrete.com>
  * @author ChatGPT <chatgpt@openai.com>
