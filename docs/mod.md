@@ -21,6 +21,8 @@ Provides everything from type checks and conversion helpers to general-purpose t
 - [lang/to_promise](to_promise.md)
   - [`toPromise`](to_promise.md#function-topromise)
   - [`type PromiseFrom`](to_promise.md#type-promisefrom)
+- [lang/to_string](to_string.md)
+  - [`toString`](to_string.md#function-tostring)
 
 ---
 

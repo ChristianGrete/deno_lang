@@ -1,8 +1,10 @@
 /**
- * Utility module for converting a value into a string.
+ * Provides a safe and consistent way to convert values into strings.
  *
- * This implementation returns an empty string for `null` or `undefined`. All
- * other values are safely converted using JavaScript's `String()` constructor.
+ * Converts all supported values into string representations in a safe and
+ * consistent manner. Nullish values are normalized to an empty string, while
+ * all other inputs are handled using JavaScript's native `String()` behavior,
+ * including support for boxed primitives and symbol wrappers.
  *
  * @author Conrad Zimmerman <me@conradz.com>
  * @author Christian Grete <webmaster@christiangrete.com>
