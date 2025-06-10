@@ -80,10 +80,10 @@ type NullOrUndefinedType;
 
 Mapping from tag label strings to runtime type strings.
 
-Used by [`typeOf()`](#function-typeof).
+Used in [`typeOf()`](#function-typeof) to determine types by tag labels.
 
 ```ts
-const typeByTagLabel: Record<TagLabel, Type>;
+const typeByTagLabel: Readonly<Record<TagLabel, Type>>;
 ```
 
 ## See also

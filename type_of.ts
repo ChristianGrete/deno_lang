@@ -77,7 +77,7 @@ export type Type = BuiltinType | ExtendedType | NullOrUndefinedType;
 /**
  * Mapping from tag label strings to runtime type strings.
  *
- * Used by {@link typeOf}.
+ * Used in {@link typeOf} to determine types by tag labels.
  *
  * @name lang/type_of.typeByTagLabel
  * @readonly
