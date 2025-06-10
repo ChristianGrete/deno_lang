@@ -51,7 +51,7 @@ await toPromise({ then: (res) => res("done") }); // "done"
 Infers the return type of [`toPromise()`](#function-topromise) based on the input type.
 
 ```ts
-type PromiseFrom<Value>
+type PromiseFrom<Value>;
 ```
 
 ### Type parameters
