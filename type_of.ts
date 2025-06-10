@@ -1,11 +1,10 @@
 /**
- * Utility module for determining the runtime type of a value.
+ * Provides a reliable and consistent way to determine a value's runtime type.
  *
- * This uses tag-based detection for accurate results beyond `typeof`.
- *
- * It returns a normalized string that matches all standard TypeScript
- * types which can be distinguished at runtime, including `null`, `array`,
- * `map`, and more.
+ * Determines the runtime type of a value using tag-based detection and returns
+ * a normalized string representing its basic TypeScript type, as far as
+ * distinguishable at runtime. This includes types such as `"null"`, `"array"`,
+ * or `"map"`, which are not reliably detected via JavaScript's native `typeof`.
  *
  * @author Valerio Proietti <kamicane@gmail.com>
  * @author Christophe Beyls <software@digitalia.be>
@@ -100,7 +99,7 @@ export const typeByTagLabel = freeze(
     "[object Set]": "set",
     "[object String]": "string",
     "[object Symbol]": "symbol",
-  } as const,
+  } as const satisfies Record<TagLabel, Type>,
 );
 
 /**
@@ -127,7 +126,7 @@ export const getType = (value: unknown): Type => {
  *
  * @name lang/type_of.typeOf
  * @param {unknown} value - The value to check.
- * @returns {Type} A string representing the value's type.
+ * @returns {Type} A string representing the value's runtime type.
  * @see {@link lang/tag_label_of.tagLabelOf}
  */
 export function typeOf(value: unknown): Type {
